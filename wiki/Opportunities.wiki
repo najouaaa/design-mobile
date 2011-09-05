@@ -1,10 +1,5 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
-
-This page will list possible competition, challenges, opportunities through which you can take your mobile project further
-
-
-= Details =
+This page will list possible competition, challenges, opportunities through which you can take your mobile project further:
 
   * BMIC University Mobile Challenge™ http://t.co/EwcD9F5 - Deadline 1st of October 2011 - Yearly competition.
