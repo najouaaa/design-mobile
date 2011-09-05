@@ -2,5 +2,7 @@
 
 This page will list possible competition, challenges, opportunities through which you can take your mobile project further:
 
+----
   * BMIC University Yearly Mobile Challenge™ http://t.co/EwcD9F5 - 
-  ** Registration: 1st of October 2011 
+  * *Registration*: 1st of October 2011 
+----
