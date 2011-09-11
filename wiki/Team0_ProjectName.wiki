@@ -1,0 +1,16 @@
+#This page provides a template for proposing your project and for your user reviews
+
+Make sure to name your page as the above title, team mumber and project name
+
+= Name of your project =
+
+description of the idea of your project
+
+
+= Scenarios = (5 scenarios)
+
+Describe the real life detailed scene for a mobile user in which your application becomes crucial for the user. If you feel that a desktop computer in the story/scene your are telling can be there to solve the problem, then this is not good. you need to bring in real needs. 
+
+Make sure you describe the following in this scene: where, things existing in the scene, weather, moving or still, available connection, people around, friends involved (if any)
+
+Every reviewer should review the scenes and decide whether to accept them or not. Do they make sense? would he/she as a user behave in this way if in the situation or not? Remember that you will be the user for this project till the end, so you will test these scenes in a simulated way at a time. Think very well of the scene. Make sure to leave a comment with acceptance or not of how many scenes.
