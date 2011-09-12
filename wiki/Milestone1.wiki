@@ -1,0 +1,32 @@
+#The first step towards teams own project
+
+=Team =
+
+Make sure you form a team of 5
+
+= Idea =
+
+ * Think of an idea that you can be a killer mobile app.
+ * Check the [http://code.google.com/p/design-mobile/wiki/Opportunities Opportunities] page if you are interested to target a certain competition.
+ * Don't worry about the technology now. Just make sure you
+
+= Questions =
+
+While thinking of your idea, ask yourself the following questions and may be try to research some numbers online? Think of estimates, make a good guess :)
+
+ * What need will this idea fulfill?
+ * How often does mobile users face this need? How valuable is this  need to mobile users?
+ * What are the benefits of being mobile for this specific idea?
+ * Is there something similar for desktop users ?
+ * If yes, what features will be in common between you and the desktop version? will you take everything? Will you change or customize the features to make use of any mobile medium or component? 
+
+
+Try to find aim for exploiting the benefits of being mobile, not merely build a regular application.
+
+= Submission =
+Please create a page on the wiki with the following characteristics:
+  * Name of the page should be: TeamNumber_Project name, for example Team1_SmartTimer.
+  * Have a heading1 of Team and list the team members. 
+  * Have another heading1 of Project and describe the aim of your project. 
+  * Create a code.google project for your new project and link to it under this heading. 
+ 
