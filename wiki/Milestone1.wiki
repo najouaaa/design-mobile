@@ -1,14 +1,15 @@
 #The first step towards teams own project
 
-=Team =
+= Team =
 
-Make sure you form a team of 5
+Make sure you form a team of 5. Team members will review each other constantly. Additionally, team members might be selected to randomly review other teams (cross-team reviewing). 
 
 = Idea =
 
- * Think of an idea that you can be a killer mobile app.
+ * Think of an idea that you believe can be a killer mobile app.
+ * Try to find aim for exploiting the benefits of being mobile.
  * Check the [http://code.google.com/p/design-mobile/wiki/Opportunities Opportunities] page if you are interested to target a certain competition.
- * Don't worry about the technology now. Just make sure you
+ * Don't worry about the technology now. Just make sure you answer the following questions:
 
 = Questions =
 
@@ -19,10 +20,9 @@ While thinking of your idea, ask yourself the following questions and may be try
  * What are the benefits of being mobile for this specific idea?
  * Is there something similar for desktop users ?
  * If yes, what features will be in common between you and the desktop version? will you take everything? Will you change or customize the features to make use of any mobile medium or component? 
+ * What kind of input specific to mobile can you take that desktop applications can't give you?
+ * What kind of output can  you give that you can't provide without mobile? 
 
-
-
-Try to find aim for exploiting the benefits of being mobile, not merely build a regular application.
 
 = Submission =
 Please create a page on the wiki with the following characteristics:
