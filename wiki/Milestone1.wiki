@@ -15,7 +15,7 @@ Make sure you form a team of 5
 While thinking of your idea, ask yourself the following questions and may be try to research some numbers online? Think of estimates, make a good guess :)
 
  * What need will this idea fulfill?
- * How often does mobile users face this need? How valuable is this  need to mobile users?
+ * How often does mobile users face this need? How valuable is this  need to mobile users? (you can ask possible users if you want)
  * What are the benefits of being mobile for this specific idea?
  * Is there something similar for desktop users ?
  * If yes, what features will be in common between you and the desktop version? will you take everything? Will you change or customize the features to make use of any mobile medium or component? 
