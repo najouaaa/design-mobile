@@ -31,3 +31,5 @@ Please create a page on the wiki with the following characteristics:
   * Have another heading1 of Project and describe the aim of your project. 
   * Create a code.google project for your new project and link to it under this heading. 
  
+= When =
+It is crucial to get this done on *20th of Sept" at 5 pm. I have to prepare things based on your submission, therefore being late is not acceptable.
