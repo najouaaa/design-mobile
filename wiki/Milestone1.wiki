@@ -21,6 +21,7 @@ While thinking of your idea, ask yourself the following questions and may be try
  * If yes, what features will be in common between you and the desktop version? will you take everything? Will you change or customize the features to make use of any mobile medium or component? 
 
 
+
 Try to find aim for exploiting the benefits of being mobile, not merely build a regular application.
 
 = Submission =
