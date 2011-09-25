@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello Mahmoud, your Chinese name is Shi Ming hao (which means you\'re bright, light, brilliant, clear, and brave, heroic, chivalrous -- I\'m sure we all know that already) and your Chinese horoscope is Tiger (which means: Deep thinking and sensitive, the Tiger is able to give great sympathy. You are very short tempered but gain much respect from others. You usually get credit when credit is due you but tend to have trouble making decisions. While a bit selfish and suspicious of others, you are courageous and powerful. -- again, obviously apparent.)</string>
+    <string name="app_name">Hello, Android</string>
+</resources>
