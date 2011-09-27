@@ -9,8 +9,6 @@ public class HelloWorldActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView tv = new TextView(this);
-        tv.setText("Hello Rana Morsi, your Chinese name is \'Ma Rui nuo\' and your Chinese horoscope is \'Horse\'");
-        setContentView(tv);
+        setContentView(R.layout.main);
     }
 }
