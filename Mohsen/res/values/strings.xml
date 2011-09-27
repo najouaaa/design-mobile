@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello Mohsen, your chinese name is 毛 昂 郝 (Mao Ang Hao)
+     and your chinese horoscope is 蛇 (the snake)</string>
+    <string name="app_name">Hello Android!</string>
+</resources>
