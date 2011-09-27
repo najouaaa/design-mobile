@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello, Dina! \nyour Chinese name is Han Tu nu \nand your Chinese horoscope is the Horse!\nThe Horse is popular, cheerful and smart with the use of money. Wise and talented, you are also good with your hands. You may be showy it times and although perceptive, sometimes saying too much. Large crowds are enjoyable to you.  The Horse is known to be impatient and hot blooded in all regards but your daily work.</string>
+    <string name="app_name">My First Android app</string>
+</resources>
