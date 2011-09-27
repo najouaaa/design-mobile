@@ -11,7 +11,7 @@ public class HelloAndroid extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         TextView tv = new TextView(this);
-        tv.setText("Hello, Android...My Chinese name is  An Minghuan....My Chinese horoscope is the Rabbit !!!");
+        tv.setText("Hello, Anwar...My Chinese name is  An Minghuan....My Chinese horoscope is the Rabbit !!!");
         setContentView(tv);
         
     }
