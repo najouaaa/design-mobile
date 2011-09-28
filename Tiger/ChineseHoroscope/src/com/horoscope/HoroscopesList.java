@@ -1,8 +1,5 @@
 package com.horoscope;
 
-import com.example.hellolistview.R;
-
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +7,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.view.*;
 
 public class HoroscopesList extends ListActivity {
@@ -31,7 +26,7 @@ public class HoroscopesList extends ListActivity {
     	    	 switch(position) {
     	    	 case 0:
     	    		 Intent i = new Intent(getBaseContext(), HoroscopeDetails.class);
-    	    		 i.putExtra("text", R.string.horse1);
+    	    		 i.putExtra("text1", R.string.horse1);
     	    		 i.putExtra("text2", R.string.horse2);
     	    		 startActivity(i);
     	    	    }	
