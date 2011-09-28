@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World !</string>
+    <string name="app_name">Chinesisches Horoskop</string>
+        <string-array name="countries_array">
+        <item>Ratte</item>
+        <item>Büffel</item>
+        <item>Tiger</item>
+        <item>Hase</item>
+        <item>Drache</item>
+        <item>Schlange</item>
+        <item>Pferd</item>
+        <item>Ziege</item>
+        <item>Affe</item>
+        <item>Hahn</item>
+        <item>Hund</item>
+        <item>Schwein</item>
+    
+    </string-array>
+    
+    <string name="a11">Die Ratte ist zu klug, um sich mit Diskussionen aufzuhalten. Sie weiß, was sie will!</string>
+    <string name="a12">Das Leben ist zu kurz, um sich zu grämen. "Mein Schatz, ich bin mal weg! Meine Kreativität kann ich in Australien beim Surfen ausleben und zum Künstler bin ich geboren." Zum Glück machen Rattenkinder gerne mit.</string>
+    
+    <string name="a21">"Ein behäbiger Zeitgenosse", denkt so mancher aus der Entfernung.</string>
+    <string name="a22">Und wundert sich, wenn die Büffel ihm dank ihrer Ausdauer locker aus der Ferne zuwinken. Frau und Herr Büffel bleiben sich treu. "Was soll die ganze Aufregung? Das Leben ist doch kein Affen-, sondern ein Kuhstall!"</string>
+    
+    <string name="a31">Diese Wildkatzen sind im Dschungel zu Hause. Da wird das Anschleichen geübt, und aus einem putzigen Kätzchen wird schnell ein richtiges Raubtier.</string>
+    <string name="a32">Tiger mögen die Abwechslung. Ganz entspannt spielen sie ein bisschen herum. Eine Prise Leidenschaft darf nicht fehlen, in der Liebe und im Beruf.</string>
+    
+    <string name="a41">Charmante Zeitgenossen! Hinter dem harmlosen Äußeren kann sich ein Casanova verstecken, und Frau Hase wird zur Femme fatale mit einer Prise Ökoflitter.</string>
+    <string name="a42">Haben sich die Langohren einmal entschieden, hüten sie ihr Familienglück. Die Kinder sollen doch im Grünen aufwachsen.</string>
+    
+    <string name="a51">Drachen sind geborene Führer, egal ob Frau oder Mann.</string>
+    <string name="a52">"Folgt mir zu neuen Ufern oder zumindest auf mein Schloss." Der Drache gibt sich gerne wählerisch und will ausdauernd umworben werden. "Was gibt es denn hier zu präsentieren?" Der breite Rücken eines Drachen wirft große Schatten.</string>
+    
+    <string name="a61">Schlangen sind kreative Geister, wenn es darum geht, ihre Ziele zu erreichen.</string>
+    <string name="a62">Im Verborgenen ziehen sie die Strippen, um zur rechten Zeit elegant die Lorbeeren einzuheimsen. Frau Schlange ist die geborene Diplomatin. Herr Schlange nutzt die Kunst der Rede, um die Damen zu bezirzen.</string>
+    
+    <string name="a71">Pferde sind wilde Zeitgenossen, wenn sie das Gefühl haben, jemand will sie im Stall einsperren.</string>
+    <string  name="a72">Immer auf der Suche, etwas Neues zu erleben, sind sie mit Alltagstrott nicht zu beglücken. Die Pferde gehen mit ihnen durch, wenn sie auf langweilige Buchhaltertypen treffen. Treckerfahrer!</string>
+    
+    <string name="a81">Ziegen sind freundliche Wesen mit dem Hang, immer ein wenig pingelig zu wirken.</string>
+    <string name="a82"> Dabei wollen sie doch nur niemandem auf die Füße treten! Schaut man großzügig über ihre kleinen Marotten hinweg, sind sie treue Freunde und dank ihrer Liebenswürdigkeit echte Kummervertreiber.</string>
+    
+    <string name="a91">Affen sind mutige Kletterer. Je höher ein Ziel in den Baumwipfeln verborgen liegt, desto klügere Strategien entwickeln diese kreativen Köpfe.</string>
+    <string name="a92"> Neue Ideen braucht das Land! Familie Affe bricht gerne auf zu neuen Ufern. "Auswandern, wunderbar, endlich freies Land für freie Bürger." Monkeytown!</string>
+    
+    <string name="a101">Dieses Federvieh glitzert gerne in allen Farben. Noch mehr zu scheinen, kann doch nicht schaden.</string>
+    <string name="a102">Hähne sind sich ihres Wertes sehr bewusst und suchen immer das Besondere. Sie lieben die neuesten Trends, und das Smartphone muss schon einen Apfel auf der Rückseite haben. "Guten Appetit!"</string>
+    
+    <string name="a111">Das Leben kann ganz einfach sein, mit treuen Freunden an der Seite.</string>
+    <string name="a112">Hunde sind gerne in der Natur und lieben es, einen großen Freundeskreis zu haben. Sie wissen ganz genau, auf wen sie sich verlassen können. Schnickschnack ist ihre Sache nicht. Es darf gerne einfach und solide sein, aber nur das Beste!</string>
+    
+    <string name="a121">Diese entspannten Genießer sind echte Rudeltiere. Macht doch mehr Spaß, gemeinsam die Sau rauszulassen.</string>
+    <string name="a122">Schweine sind sehr fürsorglich. Unter ihren Fittichen setzt man dank ihres heiteren Umsorgens schnell einige Speckrollen an. Man arbeitet doch, um glücklich und heiter zu leben!</string>
+    
+</resources>
