@@ -14,24 +14,28 @@ public class HoroscopeDetails extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		int pos = (getIntent().getIntExtra("pos", 1)) + 1;
-		String name = getIntent().getStringExtra("title");
+		int pos = (getIntent().getIntExtra("pos", 1)) + 1; //position of item in list
+		String name = getIntent().getStringExtra("title"); //text of item
 
 		setContentView(R.layout.linear);
 		setImageAndText(pos, name);
 	}
 
 	public void setImageAndText(int pos, String title) {
+		//horoscope image
 		ImageView horoscope = (ImageView) findViewById(R.id.horoscope_image);
 		horoscope.setImageDrawable(getResources().getDrawable(R.drawable.icon));// getResources().getIdentifier("image_"+name,
 		// "string","com.horoscope")));
-
+		
+		//name of horoscope
 		TextView t = (TextView) findViewById(R.id.title);
 		t.setText(title);
-
+		
+		//first part of description, id is a+position of item in list+1
 		TextView text1 = (TextView) findViewById(R.id.text1);
 		text1.setText(getResources().getString(getResources().getIdentifier("a" + pos + "1", "string", "com.horoscope")));
-
+		
+		//second part of description id is a+position of item in list+2
 		TextView text2 = (TextView) findViewById(R.id.text2);
 		text2.setText(getResources().getString(getResources().getIdentifier("a" + pos + "2", "string", "com.horoscope")));
 	}
