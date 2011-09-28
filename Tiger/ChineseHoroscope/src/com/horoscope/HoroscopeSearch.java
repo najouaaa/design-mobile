@@ -19,12 +19,20 @@ public class HoroscopeSearch extends Activity {
 		super.onCreate(savedInstance);
 		setContentView(R.layout.search);
 		horoscopes = getResources().getStringArray(R.array.horoscope_array);
-		
+
+		/*
+		 * Link autocomplete textbox to list of horoscopes
+		 */
 		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view, horoscopes);
 		textView.setAdapter(adapter);
 	}
 
+	/**
+	 * What to do when clicking ok? Search.
+	 * 
+	 * @param view
+	 */
 	public void onOkClick(View view) {
 		int position = 0;
 		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
@@ -38,14 +46,19 @@ public class HoroscopeSearch extends Activity {
 		}
 		if (position == horoscopes.length)
 			return;
-		
+
 		Intent i = new Intent(getBaseContext(), HoroscopeDetails.class);
 		i.putExtra("pos", position);
 		i.putExtra("title", ((TextView) view).getText());
 		startActivity(i);
 	}
 
+	/**
+	 * Performed when clicking cancel. Empties search box for now.
+	 * 
+	 * @param view
+	 */
 	public void onCancelClick(View view) {
-
+		((AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope)).setText("");		
 	}
 }
