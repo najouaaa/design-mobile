@@ -2,7 +2,7 @@
 <resources>
     <string name="hello">Hello World !</string>
     <string name="app_name">Chinese Horoscopes</string>
-    <string-array name="countries_array">
+    <string-array name="horoscope_array">
         <item>Rat</item>
         <item>Ox</item>
         <item>Tiger</item>
@@ -15,8 +15,8 @@
         <item>Rooster</item>
         <item>Dog</item>
         <item>Pig</item>
-    
     </string-array>
+    
     <string name="a11">Rats are imaginative, charming, and truly generous to the ones they love. However, Rats have a tendency to be quick-tempered and overly critical.</string>
     <string name="a12">At ease with company and groups of people, their intelligence and observation allows them to quickly grasp a situation from multiple perspectives. Rats know how to spot opportunities and seize them, but their opportunism, ambition and restlessness can lead to too many commitments. </string>
     
