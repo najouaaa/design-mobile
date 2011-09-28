@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Hello_List_ViewActivity!</string>
-    <string name="app_name">Hello_List_View</string>
+    <string name="hello">Hello World !</string>
+    <string name="app_name">Chinese Horoscopes</string>
         <string-array name="countries_array">
         <item>Rat</item>
         <item>Ox</item>
@@ -16,7 +16,7 @@
         <item>Dog</item>
         <item>Pig</item>
     </string-array>
-        <string name="horse1">The Horse is popular, cheerful and smart with the use of money.</string>
+    <string name="horse1">The Horse is popular, cheerful and smart with the use of money.</string>
     <string  name="horse2">Wise and talented, you are also good with your hands. You may be showy it times and although perceptive, sometimes saying too much. Large crowds are enjoyable to you. The Horse is known to be impatient and hot blooded in all regards but your daily work.</string>
     
     <string name="tiger1">Deep thinking and sensitive, the Tiger is able to give great sympathy.</string>

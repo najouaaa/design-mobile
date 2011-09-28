@@ -7,8 +7,6 @@ Created: 24/09/2011
 
 package com.horoscope;
 
-import com.example.hellolistview.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
