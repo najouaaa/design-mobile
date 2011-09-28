@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Hello_List_ViewActivity!</string>
+    <string name="app_name">Hello_List_View</string>
+        <string-array name="countries_array">
+        <item>Rat</item>
+        <item>Ox</item>
+        <item>Tiger</item>
+        <item>Rabbit</item>
+        <item>Dragon</item>
+        <item>Snake</item>
+        <item>Horse</item>
+        <item>Sheep</item>
+        <item>Monkey</item>
+        <item>Rooster</item>
+        <item>Dog</item>
+        <item>Pig</item>
+    </string-array>
+        <string name="horse1">The Horse is popular, cheerful and smart with the use of money.</string>
+    <string  name="horse2">Wise and talented, you are also good with your hands. You may be showy it times and although perceptive, sometimes saying too much. Large crowds are enjoyable to you. The Horse is known to be impatient and hot blooded in all regards but your daily work.</string>
+    
+    <string name="tiger1">Deep thinking and sensitive, the Tiger is able to give great sympathy.</string>
+    <string name="tiger2">You are very short tempered but gain much respect from others. You usually get credit when credit is due you but tend to have trouble making decisions. While a bit selfish and suspicious of others, you are courageous and powerful.</string>
+    
+    <string name="rabbit1">The rabbit is talented, ambitious and quite lucky.</string>
+    <string name="rabbit2">Having virtuous qualities, you tend to have very good taste and are some what reserved: You are admired, trusted and are loving to those very close to you. Business wise and conscientious you never back out of a contract. Seldom do you lose your temper.</string>
+</resources>
