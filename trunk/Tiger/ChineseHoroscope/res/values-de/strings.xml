@@ -2,7 +2,7 @@
 <resources>
     <string name="hello">Hello World !</string>
     <string name="app_name">Chinesisches Horoskop</string>
-        <string-array name="countries_array">
+        <string-array name="horoscope_array">
         <item>Ratte</item>
         <item>Büffel</item>
         <item>Tiger</item>

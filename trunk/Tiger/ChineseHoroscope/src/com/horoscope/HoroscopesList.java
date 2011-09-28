@@ -18,9 +18,9 @@ public class HoroscopesList extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		String[] countries = getResources().getStringArray(R.array.countries_array);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, countries));
+		
+		String[] horoscopes = getResources().getStringArray(R.array.horoscope_array);
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, horoscopes));
 
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
@@ -28,10 +28,8 @@ public class HoroscopesList extends ListActivity {
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent i = new Intent(getBaseContext(), HoroscopeDetails.class);
-
 				i.putExtra("pos", position);
 				i.putExtra("title", ((TextView) view).getText());
-
 				startActivity(i);
 			}
 		});
