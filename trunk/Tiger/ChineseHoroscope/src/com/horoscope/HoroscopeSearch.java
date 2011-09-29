@@ -55,13 +55,4 @@ public class HoroscopeSearch extends Activity {
 		i.putExtra("title", query);
 		startActivity(i);
 	}
-
-	/**
-	 * Performed when clicking cancel. Empties search box for now.
-	 * 
-	 * @param view
-	 */
-	public void onCancelClick(View view) {
-		((HomePage) this.getParent()).switchTab(0);
-	}
 }

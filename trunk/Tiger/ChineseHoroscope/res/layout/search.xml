@@ -21,13 +21,4 @@
                 android:layout_marginLeft="10dp"
                 android:text="OK"
                 android:onClick="onOkClick" />
-        <Button
-                android:id="@+id/cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/ok"
-                android:layout_alignTop="@id/ok"
-                android:text="Cancel"
-                android:onClick="onCancelClick" />
-
 </RelativeLayout>
