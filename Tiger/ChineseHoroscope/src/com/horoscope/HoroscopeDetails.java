@@ -24,9 +24,7 @@ public class HoroscopeDetails extends Activity {
 	public void setImageAndText(int pos, String title) {
 		//horoscope image
 		ImageView horoscope = (ImageView) findViewById(R.id.horoscope_image);
-		horoscope.setImageDrawable(getResources().getDrawable(R.drawable.icon));// getResources().getIdentifier("image_"+name,
-		// "string","com.horoscope")));
-		
+		horoscope.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(title.toLowerCase()+"_zodiac","drawable","com.horoscope")));
 		//name of horoscope
 		TextView t = (TextView) findViewById(R.id.title);
 		t.setText(title);
