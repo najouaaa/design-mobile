@@ -12,6 +12,9 @@ import android.widget.Toast;
  * @author kamasheto
  */
 public class HoroscopeSearch extends Activity {
+	/**
+	 * Shortlink for the horoscopes array (extracted from strings.xml)
+	 */
 	String[] horoscopes;
 
 	@Override
@@ -38,11 +41,18 @@ public class HoroscopeSearch extends Activity {
 		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
 		//
 		int position = 0;
+		/*
+		 * Are we searching for an empty box?
+		 */
 		if (textView.getText() == null) {
 			showMessage("Please enter a search query.");
 			return;
 		}
 
+		/*
+		 * Does this term exist in anything? For now we're searching case
+		 * insensitive, but do we want that?
+		 */
 		String query = textView.getText().toString();
 		boolean found = false;
 		for (String horoscope : horoscopes) {
@@ -65,6 +75,12 @@ public class HoroscopeSearch extends Activity {
 		startActivity(i);
 	}
 
+	/**
+	 * Shortcut: Shows modal box with the desired message.
+	 * 
+	 * @param text
+	 *            message to show
+	 */
 	public void showMessage(String text) {
 		Toast.makeText(HoroscopeSearch.this, text, Toast.LENGTH_SHORT).show();
 	}
