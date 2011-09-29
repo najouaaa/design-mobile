@@ -53,7 +53,7 @@ public class ImageAdapter extends BaseAdapter {
 
 	// references to our images
 	// private Integer[] mThumbIds = {};
-	private Integer[] mThumbIds = { R.drawable.boar, R.drawable.dog, R.drawable.dragon, R.drawable.hare, R.drawable.horse, R.drawable.monkey, R.drawable.rat, R.drawable.rooster, R.drawable.sheep, R.drawable.snake, R.drawable.tiger, R.drawable.ox,
+	private Integer[] mThumbIds = { R.drawable.pig_zodiac, R.drawable.dog_zodiac, R.drawable.dragon_zodiac, R.drawable.rabbit_zodiac, R.drawable.horse_zodiac, R.drawable.monkey_zodiac, R.drawable.rat_zodiac, R.drawable.rooster_zodiac, R.drawable.sheep_zodiac, R.drawable.snake_zodiac, R.drawable.tiger_zodiac, R.drawable.ox_zodiac,
 
 	};
 
