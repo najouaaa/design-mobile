@@ -17,6 +17,11 @@ public class HoroscopeSearch extends Activity {
 	 */
 	String[] horoscopes;
 
+	/**
+	 * 
+	 */
+	AutoCompleteTextView textView;
+
 	@Override
 	protected void onCreate(Bundle savedInstance) {
 		super.onCreate(savedInstance);
@@ -26,10 +31,18 @@ public class HoroscopeSearch extends Activity {
 		/*
 		 * Link autocomplete textbox to list of horoscopes
 		 */
-		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
+		textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view, horoscopes);
 		textView.setThreshold(1);
 		textView.setAdapter(adapter);
+	}
+
+	/**
+	 * Clears search box every time activity is brought to focus
+	 */
+	protected void onResume() {
+		super.onStart();
+		textView.setText("");
 	}
 
 	/**
@@ -38,7 +51,6 @@ public class HoroscopeSearch extends Activity {
 	 * @param view
 	 */
 	public void onOkClick(View view) {
-		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
 		//
 		int position = 0;
 		/*
@@ -54,6 +66,15 @@ public class HoroscopeSearch extends Activity {
 		 * insensitive, but do we want that?
 		 */
 		String query = textView.getText().toString();
+
+		/*
+		 * 
+		 */
+		if (query.length() == 0) {
+			showMessage("Please enter a search query.");
+			return;
+		}
+
 		boolean found = false;
 		for (String horoscope : horoscopes) {
 			if (horoscope.toLowerCase().contains(query.toLowerCase())) {
