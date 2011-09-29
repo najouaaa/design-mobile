@@ -26,7 +26,7 @@ public class HomePage extends TabActivity{
         // Create an Intent to launch an Activity for the tab (to be reused)
         intent = new Intent().setClass(this, HoroscopesList.class);
         spec = tabHost.newTabSpec("list").setIndicator("",
-                res.getDrawable(R.drawable.layout_icon))
+                res.getDrawable(R.drawable.list_view_state))
             .setContent(intent);
 
         // Initialize a TabSpec for each tab and add it to the TabHost
@@ -36,7 +36,7 @@ public class HomePage extends TabActivity{
 
         // Initialize a TabSpec for each tab and add it to the TabHost
         spec = tabHost.newTabSpec("grid").setIndicator("",
-                res.getDrawable(R.drawable.layout_icon))
+                res.getDrawable(R.drawable.grid_view_state))
             .setContent(intent);
         tabHost.addTab(spec);
       
@@ -44,7 +44,7 @@ public class HomePage extends TabActivity{
 
         // Initialize a TabSpec for each tab and add it to the TabHost
         spec = tabHost.newTabSpec("search").setIndicator("",
-                res.getDrawable(R.drawable.layout_icon))
+                res.getDrawable(R.drawable.search_view_state))
             .setContent(intent);
         tabHost.addTab(spec);
         
