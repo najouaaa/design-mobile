@@ -3,11 +3,15 @@ package com.example;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RelativeActivity extends Activity {
     
@@ -26,29 +30,17 @@ public class RelativeActivity extends Activity {
 		horse = (Button) findViewById(R.id.horse);
 		
 		
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("7as7as")
-		    .setCancelable(false)
-		    .setTitle("Sheep")
-		    .setPositiveButton("Done", new DialogInterface.OnClickListener() {
-		        public void onClick(DialogInterface dialog, int id) {
-		        dialog.dismiss();
-		        }
-		    });
-		final AlertDialog alert = builder.create();
-		
-		
 		sheep.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-		
-				id = R.array.goat_array;
-				Resources res = getResources();
-				String[] horse = res.getStringArray(id);
-				setContentView(R.layout.linearlayout);
-				TextView titleView = (TextView) findViewById(R.id.title);
-				TextView descriptionView = (TextView) findViewById(R.id.description);
-				titleView.setText("Sheep");
-				descriptionView.setText(horse[1]);
+
+			Toast.makeText(getApplicationContext(),
+					((Button) sheep).getText().toString() , 
+					Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
+	    		Bundle bundle = new Bundle();
+	    		bundle.putString("param1", ((Button) sheep).getText().toString());
+	    		i.putExtras(bundle);
+				startActivity(i);
 				
 		
 			}
@@ -57,44 +49,46 @@ public class RelativeActivity extends Activity {
 		rabbit.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
 			
-				id = R.array.rabbit_array;
-				Resources res = getResources();
-				String[] horse = res.getStringArray(id);
-				setContentView(R.layout.linearlayout);
-				TextView titleView = (TextView) findViewById(R.id.title);
-				TextView descriptionView = (TextView) findViewById(R.id.description);
-				titleView.setText("Rabbit");
-				descriptionView.setText(horse[1]);
+				Toast.makeText(getApplicationContext(),
+						((Button) rabbit).getText().toString() , 
+						Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
+	    		Bundle bundle = new Bundle();
+	    		bundle.putString("param1", ((Button) rabbit).getText().toString());
+	    		i.putExtras(bundle);
+				startActivity(i);
+				
 			
 			}
 		});
 		
 		snake.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
+
+				Toast.makeText(getApplicationContext(),
+						((Button) snake).getText().toString() , 
+						Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
+	    		Bundle bundle = new Bundle();
+	    		bundle.putString("param1", ((Button) snake).getText().toString());
+	    		i.putExtras(bundle);
+				startActivity(i);
 				
-				id = R.array.snake_array;
-				Resources res = getResources();
-				String[] horse = res.getStringArray(id);
-				setContentView(R.layout.linearlayout);
-				TextView titleView = (TextView) findViewById(R.id.title);
-				TextView descriptionView = (TextView) findViewById(R.id.description);
-				titleView.setText("Snake");
-				descriptionView.setText(horse[1]);
 				
 			}
 		});
 		
 		horse.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				
-				id = R.array.horse_array;
-				Resources res = getResources();
-				String[] horse = res.getStringArray(id);
-				setContentView(R.layout.linearlayout);
-				TextView titleView = (TextView) findViewById(R.id.title);
-				TextView descriptionView = (TextView) findViewById(R.id.description);
-				titleView.setText("Horse");
-				descriptionView.setText(horse[1]);
+
+				Toast.makeText(getApplicationContext(),
+						((Button) horse).getText().toString() , 
+						Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
+	    		Bundle bundle = new Bundle();
+	    		bundle.putString("param1", ((Button) horse).getText().toString());
+	    		i.putExtras(bundle);
+				startActivity(i);
 				
 			}
 		});
