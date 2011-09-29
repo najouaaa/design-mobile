@@ -7,13 +7,15 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
         <activity android:name=".HoroscopesList">
+        </activity>
+        <activity android:name=".HoroscopeDetails"></activity>
+		<activity android:name=".HoroscopeSearch">
+		</activity>
+		<activity android:name=".HoroscopeGrid">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".HoroscopeDetails"></activity>
-		<activity android:name=".HoroscopeSearch">
 		</activity>
     </application>
 </manifest>
