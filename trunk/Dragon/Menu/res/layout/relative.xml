@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/horse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="50dip"
+        android:text="Horse"
+        android:onClick="myClickHandler"
+         />
+    <Button
+    	android:id="@+id/dragon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/horse"
+        android:layout_marginBottom="50dip"
+        android:text="Dragon" 
+        android:onClick="myClickHandler" />
+    <Button
+    	android:id="@+id/snake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/dragon"
+        android:layout_marginBottom="50dip"
+        android:text="Snake"
+        android:onClick="myClickHandler" />
+    <Button
+    	android:id="@+id/rabbit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horse"
+        android:layout_toRightOf="@id/snake"
+        android:text="Rabbit"
+        android:onClick="myClickHandler" />
+    <Button
+    	android:id="@+id/sheep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dragon"
+        android:layout_alignTop="@id/rabbit"
+        android:layout_toLeftOf="@id/snake"
+        android:text="Sheep"
+        android:onClick="myClickHandler" />
+</RelativeLayout>
