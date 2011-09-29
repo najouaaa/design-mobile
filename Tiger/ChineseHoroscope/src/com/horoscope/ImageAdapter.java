@@ -52,14 +52,11 @@ public class ImageAdapter extends BaseAdapter {
 
 		imageView.setImageResource(mThumbIds[position]);
 		/*
-		 * setting tags to the icons I have a problem of getting these list of
-		 * strings from string.xml .. getResources() didn't work here
+		 * setting tags to the icons.
 		 * 
 		 */
-		
-		String[] horoscopes = { "Rat", "Ox", "Tiger", "Rabbit", "Dragon",
-				"Snake", "Horse", "Sheep", "Monkey", "Rooster", "Dog", "Pig" };
-		imageView.setTag(horoscopes[position]);
+		String [] horStrings= mContext.getResources().getStringArray(R.array.horoscope_array);
+		imageView.setTag(horStrings[position]);
 
 		return imageView;
 	}
