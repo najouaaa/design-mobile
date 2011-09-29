@@ -26,6 +26,15 @@ public class HoroscopesList extends ListActivity {
 		lv.setTextFilterEnabled(true);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
+			/***
+			 * Called when selecting a horoscope from the list
+			 * goes to the detailed view
+			 * 
+			 * @param parent
+			 * @param view
+			 * @param position: position of horoscope in the list
+			 * @param id: horoscope id in the list
+			 */
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent i = new Intent(getBaseContext(), HoroscopeDetails.class);
 				i.putExtra("pos", position);
