@@ -11,9 +11,12 @@ import android.widget.ImageView;
  * @author Gad
  */
 public class ImageAdapter extends BaseAdapter {
+	/*
+	 * This adapter creates the item of the Grid view.
+	 */
 	private Context mContext;
 
-	public ImageAdapter (Context c) {
+	public ImageAdapter(Context c) {
 		mContext = c;
 	}
 
@@ -48,12 +51,27 @@ public class ImageAdapter extends BaseAdapter {
 		}
 
 		imageView.setImageResource(mThumbIds[position]);
+		/*
+		 * setting tags to the icons I have a problem of getting these list of
+		 * strings from string.xml .. getResources() didn't work here
+		 * 
+		 */
+		
+		String[] horoscopes = { "Rat", "Ox", "Tiger", "Rabbit", "Dragon",
+				"Snake", "Horse", "Sheep", "Monkey", "Rooster", "Dog", "Pig" };
+		imageView.setTag(horoscopes[position]);
+
 		return imageView;
 	}
 
 	// references to our images
-	// private Integer[] mThumbIds = {};
-	private Integer[] mThumbIds = { R.drawable.pig_zodiac, R.drawable.dog_zodiac, R.drawable.dragon_zodiac, R.drawable.rabbit_zodiac, R.drawable.horse_zodiac, R.drawable.monkey_zodiac, R.drawable.rat_zodiac, R.drawable.rooster_zodiac, R.drawable.sheep_zodiac, R.drawable.snake_zodiac, R.drawable.tiger_zodiac, R.drawable.ox_zodiac,
+	private Integer[] mThumbIds = { R.drawable.rat_zodiac,
+			R.drawable.ox_zodiac, R.drawable.tiger_zodiac,
+			R.drawable.rabbit_zodiac, R.drawable.dragon_zodiac,
+			R.drawable.snake_zodiac, R.drawable.horse_zodiac,
+			R.drawable.sheep_zodiac, R.drawable.monkey_zodiac,
+			R.drawable.rooster_zodiac, R.drawable.dog_zodiac,
+			R.drawable.pig_zodiac,
 
 	};
 
