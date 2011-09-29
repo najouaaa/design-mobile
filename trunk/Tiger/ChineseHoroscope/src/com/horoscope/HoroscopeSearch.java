@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 /**
  * @author kamasheto
@@ -44,9 +45,11 @@ public class HoroscopeSearch extends Activity {
 			}
 			position++;
 		}
-		if (position == horoscopes.length)
+		if (position == horoscopes.length) {
+			Toast.makeText(HoroscopeSearch.this, "No matches found.", Toast.LENGTH_SHORT).show();
 			return;
-		
+		}
+
 		Intent i = new Intent(getBaseContext(), HoroscopeDetails.class);
 		i.putExtra("pos", position);
 		i.putExtra("title", query);
@@ -59,6 +62,6 @@ public class HoroscopeSearch extends Activity {
 	 * @param view
 	 */
 	public void onCancelClick(View view) {
-		((AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope)).setText("");		
+		((HomePage) this.getParent()).switchTab(0);
 	}
 }
