@@ -35,18 +35,27 @@ public class HoroscopeSearch extends Activity {
 	 * @param view
 	 */
 	public void onOkClick(View view) {
-		int position = 0;
 		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
-		String query = textView.getText().toString();
 		//
+		int position = 0;
+		if (textView.getText() == null) {
+			showMessage("Please enter a search query.");
+			return;
+		}
+
+		String query = textView.getText().toString();
+		boolean found = false;
 		for (String horoscope : horoscopes) {
-			if (horoscope.contains(query)) {
+			if (horoscope.toLowerCase().contains(query.toLowerCase())) {
+				found = true;
+				query = horoscope;
 				break;
 			}
 			position++;
 		}
-		if (position == horoscopes.length) {
-			Toast.makeText(HoroscopeSearch.this, "No matches found.", Toast.LENGTH_SHORT).show();
+
+		if (!found) {
+			showMessage("No matches found.");
 			return;
 		}
 
@@ -54,5 +63,9 @@ public class HoroscopeSearch extends Activity {
 		i.putExtra("pos", position);
 		i.putExtra("title", query);
 		startActivity(i);
+	}
+
+	public void showMessage(String text) {
+		Toast.makeText(HoroscopeSearch.this, text, Toast.LENGTH_SHORT).show();
 	}
 }
