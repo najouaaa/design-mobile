@@ -23,18 +23,19 @@ public class HomePage extends TabActivity{
         TabHost.TabSpec spec;  // Resusable TabSpec for each tab
         Intent intent;  // Reusable Intent for each tab
 
-        // Create an Intent to launch an Activity for the tab (to be reused)
+        // Create an Intent to launch the horoscopesList activity
         intent = new Intent().setClass(this, HoroscopesList.class);
+        // Initialize tab spec
         spec = tabHost.newTabSpec("list").setIndicator("",
                 res.getDrawable(R.drawable.list_view_state))
             .setContent(intent);
 
-        // Initialize a TabSpec for each tab and add it to the TabHost
+        // Add tabspec to the TabHost
         tabHost.addTab(spec);
       
         intent = new Intent().setClass(this, HoroscopeGrid.class);
 
-        // Initialize a TabSpec for each tab and add it to the TabHost
+        // Same as done above is repeated for the rest of the views; grid and search
         spec = tabHost.newTabSpec("grid").setIndicator("",
                 res.getDrawable(R.drawable.grid_view_state))
             .setContent(intent);
@@ -42,12 +43,13 @@ public class HomePage extends TabActivity{
       
         intent = new Intent().setClass(this, HoroscopeSearch.class);
 
-        // Initialize a TabSpec for each tab and add it to the TabHost
+
         spec = tabHost.newTabSpec("search").setIndicator("",
                 res.getDrawable(R.drawable.search_view_state))
             .setContent(intent);
         tabHost.addTab(spec);
         
+        //Set the open tab to be the first tab which is the list view
         tabHost.setCurrentTab(0);
     }
 
