@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+    android:gravity="center_horizontal">
+	<Button android:id="@+id/horse_button" 
+		android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:text="@string/horse"
+        android:textSize="18sp" />
+        
+	<Button android:id="@+id/tiger_button" 
+		android:layout_width="100dip"
+		android:layout_height="wrap_content" 
+		android:layout_toRightOf="@id/horse_button"
+	 	android:layout_alignTop="@id/horse_button" 
+	 	android:text="@string/tiger"
+	 	android:textSize="18sp" />	
+	 	
+	<Button android:id="@+id/rabbit_button" 
+		android:layout_width="100dip"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/horse_button"
+		android:text="@string/rabbit"
+		android:textSize="18sp" />
+		
+	<Button android:id="@+id/sheep_button" 
+		android:layout_width="100dip"
+		android:layout_height="wrap_content" 
+		android:layout_toRightOf="@id/rabbit_button"
+		android:layout_alignTop="@id/rabbit_button" 
+		android:text="@string/sheep"
+		android:textSize="18sp" />
+		
+	<Button android:id="@+id/snake_button" 
+		android:layout_width="100dip"
+		android:layout_height="wrap_content" 
+		android:layout_below="@id/rabbit_button"
+		android:text="@string/snake"
+		android:textSize="18sp"
+		android:layout_marginLeft="50dip" />
+</RelativeLayout>
