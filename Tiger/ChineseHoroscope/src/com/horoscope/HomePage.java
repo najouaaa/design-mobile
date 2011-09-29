@@ -44,7 +44,7 @@ public class HomePage extends TabActivity {
 
 		// Set the open tab to be the first tab which is the list view
 		// tabHost.setCurrentTab(0);
-		switchTab(1);
+		switchTab(0);
 	}
 
 	public void switchTab(int tab) {
