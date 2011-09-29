@@ -21,6 +21,12 @@ public class HoroscopeDetails extends Activity {
 		setImageAndText(pos, name);
 	}
 
+	/***
+	 * Called when going to the details view (linear view)
+	 * 
+	 * @param pos
+	 * @param title
+	 */
 	public void setImageAndText(int pos, String title) {
 		//horoscope image
 		ImageView horoscope = (ImageView) findViewById(R.id.horoscope_image);
