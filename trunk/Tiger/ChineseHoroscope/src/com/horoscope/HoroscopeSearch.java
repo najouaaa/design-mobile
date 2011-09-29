@@ -25,6 +25,7 @@ public class HoroscopeSearch extends Activity {
 		 */
 		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_horoscope);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view, horoscopes);
+		textView.setThreshold(1);
 		textView.setAdapter(adapter);
 	}
 
@@ -46,10 +47,10 @@ public class HoroscopeSearch extends Activity {
 		}
 		if (position == horoscopes.length)
 			return;
-
+		
 		Intent i = new Intent(getBaseContext(), HoroscopeDetails.class);
 		i.putExtra("pos", position);
-		i.putExtra("title", ((TextView) view).getText());
+		i.putExtra("title", query);
 		startActivity(i);
 	}
 
