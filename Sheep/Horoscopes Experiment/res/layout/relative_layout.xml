@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+        
+        <Button android:id="@+id/sheep" 
+        	android:text="Sheep" 
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+        	android:layout_alignParentTop="true" 
+        	android:layout_alignParentLeft="true" 
+        	android:layout_marginLeft="49dp">
+        </Button>
+        
+        
+        <Button 
+        	android:id="@+id/rabbit" 
+        	android:text="Rabbit" 
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+        	android:layout_alignParentTop="true" 
+        	android:layout_alignParentRight="true" 
+        	android:layout_marginRight="54dp">
+       </Button>
+       
+        <Button 
+        	android:id="@+id/horse" 
+        	android:text="Horse" 
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+        	android:layout_alignParentBottom="true" 
+        	android:layout_alignLeft="@+id/sheep" 
+        	android:layout_marginBottom="53dp">
+        </Button>
+        
+        <Button 
+        	android:id="@+id/snake" 
+        	android:text="Snake" 
+        	android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+        	android:layout_alignBottom="@+id/horse" 
+        	android:layout_alignLeft="@+id/rabbit">
+        </Button>
+
+</RelativeLayout>
