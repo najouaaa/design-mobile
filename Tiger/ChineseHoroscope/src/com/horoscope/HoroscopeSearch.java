@@ -41,7 +41,7 @@ public class HoroscopeSearch extends Activity {
 	 * Clears search box every time activity is brought to focus
 	 */
 	protected void onResume() {
-		super.onStart();
+		super.onResume();
 		textView.setText("");
 	}
 
