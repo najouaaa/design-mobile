@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:stretchColumns="2"
+	>
+
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_rat">
+		<ImageView android:layout_column="1" android:src="@drawable/rat"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp"		
+			/>
+		<TextView android:layout_column="2" android:text="@string/h_rat"
+			android:padding="3dip" />
+	</TableRow>
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_ox">
+		<ImageView android:layout_column="1" android:src="@drawable/ox"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/h_ox"
+			android:padding="3dip" />
+	</TableRow>
+
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_tiger">
+		<ImageView android:layout_column="1" android:src="@drawable/tiger"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/h_tiger"
+			android:padding="3dip" />
+	</TableRow>
+
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_rabbit">
+		<ImageView android:layout_column="1" android:src="@drawable/rabbit"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/h_rabbit"
+			android:padding="3dip" />
+	</TableRow>
+
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_dragon">
+		<ImageView android:layout_column="1" android:src="@drawable/dragon"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/h_dragon"
+			android:padding="3dip" />
+	</TableRow>
+
+
+</TableLayout>

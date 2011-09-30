@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button android:layout_height="wrap_content" android:text="@string/h_ox"  android:onClick="onClickButton" android:layout_width="wrap_content" android:id="@+id/ox" android:layout_alignBaseline="@+id/rabbit" android:layout_alignBottom="@+id/rabbit" android:layout_toRightOf="@+id/rabbit" android:layout_marginLeft="85dp"></Button>
+    <Button android:layout_height="wrap_content" android:text="@string/h_rabbit" android:onClick="onClickButton" android:layout_width="wrap_content" android:id="@+id/rabbit" android:layout_alignParentBottom="true" android:layout_alignLeft="@+id/dragon" android:layout_marginBottom="130dp"></Button>
+    <Button android:layout_height="wrap_content" android:text="@string/h_rat" android:onClick="onClickButton" android:layout_width="wrap_content" android:id="@+id/rat" android:layout_alignParentTop="true" android:layout_alignLeft="@+id/ox" android:layout_marginTop="135dp"></Button>
+    <Button android:layout_height="wrap_content" android:text="@string/h_dragon" android:onClick="onClickButton" android:layout_width="wrap_content" android:id="@+id/dragon" android:layout_alignBaseline="@+id/rat" android:layout_alignBottom="@+id/rat" android:layout_alignParentLeft="true" android:layout_marginLeft="31dp"></Button>
+    <Button android:layout_height="wrap_content" android:text="@string/h_tiger" android:onClick="onClickButton" android:layout_width="wrap_content" android:id="@+id/tiger" android:layout_centerVertical="true" android:layout_toRightOf="@+id/dragon"></Button>
+</RelativeLayout>
