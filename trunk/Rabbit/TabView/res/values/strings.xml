@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, TabViewActivity!</string>
+    <string name="app_name">TabView</string>
+    <string name="relative_view">RelativeView</string>
+    <string name="grid_view">GridView</string>
+    <string name="list_view">ListView</string>
+    <string name="table_view">TableView</string>
+    <string name="h_rat">Rat</string>
+    <string name="h_ox">Ox</string>
+    <string name="h_tiger">Tiger</string>
+    <string name="h_rabbit">Rabbit</string>
+    <string name="h_dragon">Dragon</string>
+    <string name="h_snake">Snake</string>
+    <string name="h_horse">Horse</string>
+    <string name="h_sheep">Sheep</string>
+    <string name="h_monkey">Monkey</string>
+    <string name="h_rooster">Rooster</string>
+    <string name="h_dog">Dog</string>
+    <string name="h_pig">Pig</string>
+    <string name="ox_desc">The Year of the Metal Rabbit should bring progress and expansion for you. The Metal element exerts a beneficial influence on Water, which is your sign element. Did you have a bumpy ride last year? You still might hit a few obstacles in 2011, but you will have 10 favorable months to look forward to, and only two not-so-favorable months. If you are a typical Ox, you might need to work on being less stubborn and learning to bend with the wind. Compromise is your friend.</string>
+	<string name="tiger_desc">Do you want the good news or the bad news first? The good news is that this years ruling animal, the Rabbit, is one of your complementary signs. The bad news is that the years element, Metal, has a destructive relationship with your signs element of Wood. In plain English? Youll probably have a so-so year. But dont get discouraged -- as a Tiger, you have the guts and gusto to face challenges like a Mortal Kombat fighter. When youre not engaged in battle, it could be a good time to lay low and borrow some of the Rabbits reserve. If you plot your course ahead of time, youll be able to navigate the changing waters of this year with grace and agility.</string>
+	<string name="rabbit_desc">Ah ... it feels good to be home, doesnt it? The Year of the Metal Rabbit should be a welcome shift after dealing with the Tiger in 2010. In your home sign, youll have a lot to look forward to. With 11 favorable months and only one unfavorable, you can probably count your eggs before they hatch and eat dessert before dinner. Your talents and assets should shine brightly with the Rabbits influence. Are you ready to reap the rewards of your creative genius? Do you want recognition for your contributions? You might get all of that and more if you plot your course wisely. Bring forth a bit of bravery. Stand tall and proud. Claim whats rightfully yours.</string>
+	<string name="dragon_desc">This year could feel like a roller coaster ride, so buckle up and hang on. Did you have a wild ride with Tiger in 2010? The Year of the Metal Rabbit will deliver its ups and downs. Youll have six good months, two so-so months, and four not-so-good months. The Rabbits influence can clash with your bold and fiery nature. Additionally, your sign element of Wood has a negative relationship with the Metal year element. But dont worry. If youre a typical Dragon, it will take more than a few hits to bring you down. Take advantage of your favorable months and try to lay low during the unfavorable ones. Be cool, calm, and compromising to get your way.</string>
+	<string name="rat_desc">If last year was a bit wild for you, things might calm down a bit in the Year of the Metal Rabbit. Your signs element is Fire, which has a harmful influence on the Metal year element -- make sure you plot your course carefully. Even though your favorability for the year is only 65%, almost all your months will be favorable. Your determination and perseverance might need a tune-up. Are there ways you can boost your motivation? Give yourself a daily dose of self-confidence with words of affirmation. Theres room for you to accomplish great things.</string>
+</resources>
