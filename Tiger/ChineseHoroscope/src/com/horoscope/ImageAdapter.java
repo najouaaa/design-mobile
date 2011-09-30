@@ -10,6 +10,7 @@ import android.widget.ImageView;
 /**
  * @author Gad
  */
+
 public class ImageAdapter extends BaseAdapter {
 	/*
 	 * This adapter creates the item of the Grid view.
