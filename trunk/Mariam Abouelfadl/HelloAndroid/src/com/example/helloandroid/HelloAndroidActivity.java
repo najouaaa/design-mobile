@@ -2,15 +2,15 @@ package com.example.helloandroid;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.TextView;
+//import android.widget.TextView;
 
 public class HelloAndroidActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView tv = new TextView(this);
-        tv.setText("Hello Mariam Abouelfadl, your Chinese name is Ao Mu rui and your Chinese horoscope is the Snake.");
-        setContentView(tv);
+ //       TextView tv = new TextView(this);
+ //       tv.setText();
+        setContentView(R.layout.main);
     }
 }
