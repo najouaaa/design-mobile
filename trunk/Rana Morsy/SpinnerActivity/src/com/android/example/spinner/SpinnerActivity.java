@@ -140,7 +140,7 @@ public class SpinnerActivity extends Activity {
          * The test will fail because the selection listener for the
          * Spinner is not set.
          */
-         // spinner.setOnItemSelectedListener(null);
+          spinner.setOnItemSelectedListener(null);
 
     }
 
