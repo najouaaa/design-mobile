@@ -44,6 +44,9 @@ public class SpinnerActivityTest extends
 		mPlanetData = mSpinner.getAdapter();
 	}
 
+	/*
+	 * To test the initialization values of the app
+	 */
 	public void testPreConditions() {
 		assertTrue(mSpinner.getOnItemSelectedListener() != null);
 		assertTrue(mPlanetData != null);
