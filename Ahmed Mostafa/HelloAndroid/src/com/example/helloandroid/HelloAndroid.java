@@ -9,9 +9,6 @@ public class HelloAndroid extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TextView tv = new TextView(this);
-		tv.setText("Hello, Dr. Fatma," + " My chineese name is Meng Ai hui,"
-				+ " My zodiac sign is the Sheep");
-		setContentView(tv);
+		setContentView(R.layout.main);
 	}
 }
