@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:stretchColumns="2"
+	>
+
+	<TableRow android:id="@+id/horse" android:onClick="myClickHandler" android:tag="@string/Horse">
+		<ImageView android:layout_column="1" android:src="@drawable/horse"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp"		
+			/>
+		<TextView android:layout_column="2" android:text="@string/Horse"
+			android:padding="3dip" />
+	</TableRow>
+		<TableRow android:id="@+id/snake" android:onClick="myClickHandler" android:tag="@string/Snake">
+		<ImageView android:layout_column="1" android:src="@drawable/snake"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/Snake"
+			android:padding="3dip" />
+	</TableRow>
+	
+		<TableRow android:id="@+id/dragon" android:onClick="myClickHandler" android:tag="@string/Dragon">
+		<ImageView android:layout_column="1" android:src="@drawable/dragon"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/Dragon"
+			android:padding="3dip" />
+	</TableRow>
+	
+		<TableRow android:id="@+id/rabbit" android:onClick="myClickHandler" android:tag="@string/Rabbit">
+		<ImageView android:layout_column="1" android:src="@drawable/rabbit"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/Rabbit"
+			android:padding="3dip" />
+	</TableRow>
+	
+	<TableRow android:id="@+id/sheep" android:onClick="myClickHandler" android:tag="@string/Sheep">
+		<ImageView android:layout_column="1" android:src="@drawable/sheep"
+			android:padding="10dip" android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+		<TextView android:layout_column="2" android:text="@string/Sheep"
+			android:padding="3dip" />
+	</TableRow>
+
+
+
+
+
+
+
+
+</TableLayout>
