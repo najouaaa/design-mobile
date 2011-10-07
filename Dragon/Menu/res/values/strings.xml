@@ -11,4 +11,9 @@
     <string name="SnakeDescription">Snake Description</string>
     <string name="SheepName">Sheep Name</string>
     <string name="SheepDescription">Sheep Description</string>
+     <string name="Rabbit">Rabbit</string>
+    <string name="Dragon">Dragon</string>
+    <string name="Snake">Snake</string>
+    <string name="Horse">Horse</string>
+    <string name="Sheep">Sheep</string>
 </resources>
