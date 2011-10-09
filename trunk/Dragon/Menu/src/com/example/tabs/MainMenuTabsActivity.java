@@ -45,14 +45,6 @@ public class MainMenuTabsActivity extends TabActivity {
                       .setContent(intent);
         tabHost.addTab(spec);
         
-        // Create an Intent to launch an Activity for the tab (to be reused)
-        intent = new Intent().setClass(this, TableViewActivity.class);
-
-        // Initialize a TabSpec for each tab and add it to the TabHost
-        spec = tabHost.newTabSpec("table").setIndicator("table",
-                          res.getDrawable(R.drawable.ic_tab_grid_view))
-                      .setContent(intent);
-        tabHost.addTab(spec);
         
         tabHost.setCurrentTab(1);
     }
