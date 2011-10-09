@@ -25,32 +25,32 @@ public class GridViewActivity extends Activity {
     	        	 Intent intent;  // Reusable Intent for each tab
     	        	switch(position){
     	        	case 0:
-    	        		LinearActivity.the_id=0;
-    	        		intent = new Intent().setClass(GridViewActivity.this, LinearActivity.class);
+    	        		TableActivity.the_id=0;
+    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
     	        		startActivity(intent);
     	        	break;
     	        	case 1:
-    	        		LinearActivity.the_id=1;
-    	        		intent = new Intent().setClass(GridViewActivity.this, LinearActivity.class);
+    	        		TableActivity.the_id=1;
+    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
     	        		startActivity(intent);
     	        	break;
     	        	case 2:
-    	        		LinearActivity.the_id=2;
-    	        		intent = new Intent().setClass(GridViewActivity.this, LinearActivity.class);
+    	        		TableActivity.the_id=2;
+    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
     	        		startActivity(intent);
     	        	break;
     	        	case 3:
-    	        		LinearActivity.the_id=3;
-    	        		intent = new Intent().setClass(GridViewActivity.this, LinearActivity.class);
+    	        		TableActivity.the_id=3;
+    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
     	        		startActivity(intent);
     	        	break;
     	        	case 4:
-    	        		LinearActivity.the_id=4;
-    	        		intent = new Intent().setClass(GridViewActivity.this, LinearActivity.class);
+    	        		TableActivity.the_id=4;
+    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
     	        		startActivity(intent);
     	        	break;
     	        	}
-    	        	 //Toast.makeText(GridViewActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+    	        	 
     	            
     	        }
     	    });
