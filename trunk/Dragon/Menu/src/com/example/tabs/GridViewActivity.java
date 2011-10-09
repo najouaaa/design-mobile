@@ -50,7 +50,7 @@ public class GridViewActivity extends Activity {
     	        		startActivity(intent);
     	        	break;
     	        	}
-    	        	 Toast.makeText(GridViewActivity.this, "" + position, Toast.LENGTH_SHORT).show();
+    	        	 //Toast.makeText(GridViewActivity.this, "" + position, Toast.LENGTH_SHORT).show();
     	            
     	        }
     	    });
