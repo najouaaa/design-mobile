@@ -23,35 +23,9 @@ public class GridViewActivity extends Activity {
     	    gridview.setOnItemClickListener(new OnItemClickListener() {
     	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
     	        	 Intent intent;  // Reusable Intent for each tab
-    	        	switch(position){
-    	        	case 0:
-    	        		TableActivity.the_id=0;
+    	        		TableActivity.the_id=position;
     	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
     	        		startActivity(intent);
-    	        	break;
-    	        	case 1:
-    	        		TableActivity.the_id=1;
-    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
-    	        		startActivity(intent);
-    	        	break;
-    	        	case 2:
-    	        		TableActivity.the_id=2;
-    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
-    	        		startActivity(intent);
-    	        	break;
-    	        	case 3:
-    	        		TableActivity.the_id=3;
-    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
-    	        		startActivity(intent);
-    	        	break;
-    	        	case 4:
-    	        		TableActivity.the_id=4;
-    	        		intent = new Intent().setClass(GridViewActivity.this, TableActivity.class);
-    	        		startActivity(intent);
-    	        	break;
-    	        	}
-    	        	 
-    	            
     	        }
     	    });
     }
