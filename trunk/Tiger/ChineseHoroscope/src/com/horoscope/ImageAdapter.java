@@ -64,6 +64,7 @@ public class ImageAdapter extends BaseAdapter {
 		TextView textView=new TextView(mContext);
 		String [] horStrings= mContext.getResources().getStringArray(R.array.horoscope_array);
 		//imageView.setTag(horStrings[position%12]);
+		textView.setTag(horStrings[position%12]);
 		textView.setText(horStrings[position%12]);//%12 because I increased the list size
 		Drawable img = mContext.getResources().getDrawable(mThumbIds[position]);
 		img.setBounds(0,0,32,46);
