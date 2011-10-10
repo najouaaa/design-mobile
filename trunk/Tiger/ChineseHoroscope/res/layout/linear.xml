@@ -32,7 +32,7 @@ android:layout_height="fill_parent">
 								   android:scaleType="fitStart"
 								   android:src="@drawable/icon"
 								   android:layout_weight="1"
-								   android:layout_height="100px"
+								   android:layout_height="0dip"
 								   
 								    />
 			
