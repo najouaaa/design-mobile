@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 /**
@@ -42,8 +43,8 @@ public class HoroscopeGrid extends Activity {
 				 */
 				
 				Intent i = new Intent(getBaseContext(), HoroscopeDetails.class);
-				i.putExtra("pos", position);
-				i.putExtra("title", ((String)((ImageView)v).getTag()).toString());
+				i.putExtra("pos", position%12);
+				i.putExtra("title", ((String)((TextView)v).getTag()).toString());
 				startActivity(i);
 				
 			}
