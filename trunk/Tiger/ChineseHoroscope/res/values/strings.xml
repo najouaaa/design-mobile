@@ -17,39 +17,42 @@
         <item>Pig</item>
     </string-array>
     
-    <string name="a11">Rats are imaginative, charming, and truly generous to the ones they love. However, Rats have a tendency to be quick-tempered and overly critical.</string>
-    <string name="a12">At ease with company and groups of people, their intelligence and observation allows them to quickly grasp a situation from multiple perspectives. Rats know how to spot opportunities and seize them, but their opportunism, ambition and restlessness can lead to too many commitments. </string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
     
-    <string name="a21">Born leaders, Ox people inspire confidence from all those around them. They are conservative, methodical, and good with their hands.</string>
-    <string name="a22">However, they can be at times chauvinistic and demanding. In fact, the strength of an Ox person comes out in great shows of determination, obstinance, and defense for what they believe in. Although they enjoy their private life and doing things on their own.</string>
+    <string name="a01">Rats are imaginative, charming, and truly generous to the ones they love. However, Rats have a tendency to be quick-tempered and overly critical.</string>
+    <string name="a02">At ease with company and groups of people, their intelligence and observation allows them to quickly grasp a situation from multiple perspectives. Rats know how to spot opportunities and seize them, but their opportunism, ambition and restlessness can lead to too many commitments. </string>
     
-    <string name="a31">Deep thinking and sensitive, the Tiger is able to give great sympathy.</string>
-    <string name="a32">You are very short tempered but gain much respect from others. You usually get credit when credit is due you but tend to have trouble making decisions. While a bit selfish and suspicious of others, you are courageous and powerful.</string>
+    <string name="a11">Born leaders, Ox people inspire confidence from all those around them. They are conservative, methodical, and good with their hands.</string>
+    <string name="a12">However, they can be at times chauvinistic and demanding. In fact, the strength of an Ox person comes out in great shows of determination, obstinance, and defense for what they believe in. Although they enjoy their private life and doing things on their own.</string>
     
-    <string name="a41">The rabbit is talented, ambitious and quite lucky.</string>
-    <string name="a42">Having virtuous qualities, you tend to have very good taste and are some what reserved: You are admired, trusted and are loving to those very close to you. Business wise and conscientious you never back out of a contract. Seldom do you lose your temper.</string>
+    <string name="a21">Deep thinking and sensitive, the Tiger is able to give great sympathy.</string>
+    <string name="a22">You are very short tempered but gain much respect from others. You usually get credit when credit is due you but tend to have trouble making decisions. While a bit selfish and suspicious of others, you are courageous and powerful.</string>
     
-    <string name="a51">Full of vitality and enthusiasm, Dragons are popular individuals, despite being seen as foolhardy or "big-mouthed" at times.</string>
-    <string name="a52">They are intelligent, gifted perfectionists that are demanding of others. Their intolerance usually causes a stir, but Dragons enjoy attracting attention, and prefer demanding situations to everyday rountines. To Dragons, rules and regulations are made only for others.</string>
+    <string name="a31">The rabbit is talented, ambitious and quite lucky.</string>
+    <string name="a32">Having virtuous qualities, you tend to have very good taste and are some what reserved: You are admired, trusted and are loving to those very close to you. Business wise and conscientious you never back out of a contract. Seldom do you lose your temper.</string>
     
-    <string name="a61">Rich in wisdom and charm, Snakes are romantic and deep thinkers. Their intuition guides them strongly.</string>
-    <string name="a62">Snakes usually do things at their own pace, and when the moment is right, shed their skin and take up something completely new. It is for this reason that people avoid Snakes -- They can\'t handle their mistrust and secretiveness.</string>
+    <string name="a41">Full of vitality and enthusiasm, Dragons are popular individuals, despite being seen as foolhardy or "big-mouthed" at times.</string>
+    <string name="a42">They are intelligent, gifted perfectionists that are demanding of others. Their intolerance usually causes a stir, but Dragons enjoy attracting attention, and prefer demanding situations to everyday rountines. To Dragons, rules and regulations are made only for others.</string>
     
-    <string name="a71">The Horse is popular, cheerful and smart with the use of money.</string>
-    <string  name="a72">Wise and talented, you are also good with your hands. You may be showy at times and although perceptive, sometimes saying too much. Large crowds are enjoyable to you. The Horse is known to be impatient and hot blooded in all regards but your daily work.</string>
+    <string name="a51">Rich in wisdom and charm, Snakes are romantic and deep thinkers. Their intuition guides them strongly.</string>
+    <string name="a52">Snakes usually do things at their own pace, and when the moment is right, shed their skin and take up something completely new. It is for this reason that people avoid Snakes -- They can\'t handle their mistrust and secretiveness.</string>
     
-    <string name="a81">Except for a knack of always getting off on the wrong foot, Sheep can be charming company.</string>
-    <string name="a82">Sheep sometimes hold back their emotions, and are not fully appreciated for their true nature. Still, they are first to complain about discomfort. Naturally pessimistic, mild mannered and even shy, the Sheep person is a sympathetic voice.</string>
+    <string name="a61">The Horse is popular, cheerful and smart with the use of money.</string>
+    <string  name="a62">Wise and talented, you are also good with your hands. You may be showy at times and although perceptive, sometimes saying too much. Large crowds are enjoyable to you. The Horse is known to be impatient and hot blooded in all regards but your daily work.</string>
     
-    <string name="a91">Monkeys are intelligent, witty and possess an overall magnetic personality. They are sociable and easy to communicate with -- Monkeys love to talk.</string>
-    <string name="a92">Fast learners and quick on the draw, they can be crafty opportunists, and can adapt to many situations. Some people love the eccentricity of the Monkey personality; others mistrust their restless, sly, inquistive behaviour. </string>
+    <string name="a71">Except for a knack of always getting off on the wrong foot, Sheep can be charming company.</string>
+    <string name="a72">Sheep sometimes hold back their emotions, and are not fully appreciated for their true nature. Still, they are first to complain about discomfort. Naturally pessimistic, mild mannered and even shy, the Sheep person is a sympathetic voice.</string>
     
-    <string name="a101">Roosters are hard workers; shrewd and definite in their decision making, often speaking their minds.</string>
-    <string name="a102">Because of this, Roosters seem to boast. They like to put all their cards on the table and respect those who do the same. Roosters love to mix socially -- They are dreamers, flashy dressers and extravagant. They love to attract attention and admiration, and and get angry when someone steals the spotlight.</string>
+    <string name="a81">Monkeys are intelligent, witty and possess an overall magnetic personality. They are sociable and easy to communicate with -- Monkeys love to talk.</string>
+    <string name="a82">Fast learners and quick on the draw, they can be crafty opportunists, and can adapt to many situations. Some people love the eccentricity of the Monkey personality; others mistrust their restless, sly, inquistive behaviour. </string>
     
-    <string name="a111">Dogs are naturally honest and faithful to the ones they love. Dogs seem to specialize -- they find an hobby or interest they enjoy and stick to it.</string>
-    <string name="a112">Unfortunately, most Dog people are plagued by worry, a sharp tongue, and a tendency to find fault in things. They have a sense of justice and fair play, and are particularly good at finding logical solutions to problems. As far as Dogs are concerned, it is the people that count.</string>
+    <string name="a91">Roosters are hard workers; shrewd and definite in their decision making, often speaking their minds.</string>
+    <string name="a92">Because of this, Roosters seem to boast. They like to put all their cards on the table and respect those who do the same. Roosters love to mix socially -- They are dreamers, flashy dressers and extravagant. They love to attract attention and admiration, and and get angry when someone steals the spotlight.</string>
     
-    <string name="a121">Pigs are splendid companions, intellectuals with a very strong need to set difficult goals and carry them out.</string>
-    <string name="a122">They are sincere, tolerant, and honest. By expecting the same from others, they are incredibly naive and sometimes taken advantage of. Regardless, they seldom hold a grudge. Pigs are exceptionally funny and good-humoured, and will overlook other people\'s faults for the sake of social harmony.</string>
+    <string name="a101">Dogs are naturally honest and faithful to the ones they love. Dogs seem to specialize -- they find an hobby or interest they enjoy and stick to it.</string>
+    <string name="a102">Unfortunately, most Dog people are plagued by worry, a sharp tongue, and a tendency to find fault in things. They have a sense of justice and fair play, and are particularly good at finding logical solutions to problems. As far as Dogs are concerned, it is the people that count.</string>
+    
+    <string name="a111">Pigs are splendid companions, intellectuals with a very strong need to set difficult goals and carry them out.</string>
+    <string name="a112">They are sincere, tolerant, and honest. By expecting the same from others, they are incredibly naive and sometimes taken advantage of. Regardless, they seldom hold a grudge. Pigs are exceptionally funny and good-humoured, and will overlook other people\'s faults for the sake of social harmony.</string>
 </resources>
