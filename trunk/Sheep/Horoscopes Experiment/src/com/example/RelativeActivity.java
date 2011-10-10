@@ -1,97 +1,145 @@
 package com.example;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
+import android.view.ViewStub;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class RelativeActivity extends Activity {
     
 	protected static final String alert = null;
-	Button sheep, rabbit, snake, horse;
 	int id;
+	
+
+    protected int mPos;
+    protected String mSelection;
+    
+    ViewStub stub;
+    View inflated;
+	
+	/**
+     * ArrayAdapter connects the spinner widget to array-based data.
+     */
+    protected ArrayAdapter<CharSequence> mAdapter;
+
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        
 		setContentView(R.layout.relative_layout);
 		
-		sheep = (Button) findViewById(R.id.sheep);
-		rabbit = (Button) findViewById(R.id.rabbit);
-		snake = (Button) findViewById(R.id.snake);
-		horse = (Button) findViewById(R.id.horse);
+		 
+		Spinner spinner = (Spinner) findViewById(R.id.Spinner01);
 		
+		this.mAdapter = ArrayAdapter.createFromResource(this, 
+						R.array.horo_array, android.R.layout.simple_spinner_dropdown_item);
 		
-		sheep.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View arg0) {
 
-			Toast.makeText(getApplicationContext(),
-					((Button) sheep).getText().toString() , 
-					Toast.LENGTH_SHORT).show();
-				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
-	    		Bundle bundle = new Bundle();
-	    		bundle.putString("param1", ((Button) sheep).getText().toString());
-	    		i.putExtras(bundle);
-				startActivity(i);
-				
-		
-			}
-		});
-		
-		rabbit.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View arg0) {
-			
-				Toast.makeText(getApplicationContext(),
-						((Button) rabbit).getText().toString() , 
-						Toast.LENGTH_SHORT).show();
-				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
-	    		Bundle bundle = new Bundle();
-	    		bundle.putString("param1", ((Button) rabbit).getText().toString());
-	    		i.putExtras(bundle);
-				startActivity(i);
-				
-			
-			}
-		});
-		
-		snake.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View arg0) {
+        spinner.setAdapter(mAdapter);
+		OnItemSelectedListener spinnerListener = new myOnItemSelectedListener(this,this.mAdapter);
+        spinner.setOnItemSelectedListener(spinnerListener);
+        
 
-				Toast.makeText(getApplicationContext(),
-						((Button) snake).getText().toString() , 
-						Toast.LENGTH_SHORT).show();
-				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
-	    		Bundle bundle = new Bundle();
-	    		bundle.putString("param1", ((Button) snake).getText().toString());
-	    		i.putExtras(bundle);
-				startActivity(i);
-				
-				
-			}
-		});
-		
-		horse.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View arg0) {
-
-				Toast.makeText(getApplicationContext(),
-						((Button) horse).getText().toString() , 
-						Toast.LENGTH_SHORT).show();
-				Intent i = new Intent(RelativeActivity.this, LinearLayouts.class);
-	    		Bundle bundle = new Bundle();
-	    		bundle.putString("param1", ((Button) horse).getText().toString());
-	    		i.putExtras(bundle);
-				startActivity(i);
-				
-			}
-		});
+ 	    stub = (ViewStub) findViewById(R.id.stub);
+ 	    inflated = stub.inflate();
 
     }
+	
+	 /**
+     *  A callback listener that implements the
+     *  {@link android.widget.AdapterView.OnItemSelectedListener} interface
+     *  For views based on adapters, this interface defines the methods available
+     *  when the user selects an item from the View.
+     *
+     */
+    public class myOnItemSelectedListener implements OnItemSelectedListener {
+
+        /*
+         * provide local instances of the mLocalAdapter and the mLocalContext
+         */
+
+        ArrayAdapter<CharSequence> mLocalAdapter;
+        Activity mLocalContext;
+
+        /**
+         *  Constructor
+         *  @param c - The activity that displays the Spinner.
+         *  @param ad - The Adapter view that
+         *    controls the Spinner.
+         *  Instantiate a new listener object.
+         */
+        public myOnItemSelectedListener(Activity c, ArrayAdapter<CharSequence> ad) {
+
+          this.mLocalContext = c;
+          this.mLocalAdapter = ad;
+
+        }
+
+        /**
+         * When the user selects an item in the spinner, this method is invoked by the callback
+         * chain. Android calls the item selected listener for the spinner, which invokes the
+         * onItemSelected method.
+         *
+         * @see android.widget.AdapterView.OnItemSelectedListener#onItemSelected(
+         *  android.widget.AdapterView, android.view.View, int, long)
+         * @param parent - the AdapterView for this listener
+         * @param v - the View for this listener
+         * @param pos - the 0-based position of the selection in the mLocalAdapter
+         * @param row - the 0-based row number of the selection in the View
+         */
+        public void onItemSelected(AdapterView<?> parent, View v, int pos, long row) {
+
+            // RelativeActivity.this.mPos = pos;
+            RelativeActivity.this.mSelection = parent.getItemAtPosition(pos).toString();
+            /*
+             * Set the value of the text field in the UI
+             */
+            
+           if(RelativeActivity.this.mPos != pos)
+           {
+  
+            TextView des = (TextView) inflated.findViewById(R.id.description);
+            TextView title = (TextView) inflated.findViewById(R.id.title);
+
+            title.setText(RelativeActivity.this.mSelection);
+            
+            int num = 0;
+            if(title.getText().toString().equalsIgnoreCase("Sheep"))
+            	num = R.array.goat_array;
+            else if(title.getText().toString().equalsIgnoreCase("Horse"))
+            	num = R.array.horse_array;
+            else if(title.getText().toString().equalsIgnoreCase("Snake"))
+            	num = R.array.snake_array;
+            else if(title.getText().toString().equalsIgnoreCase("Rabbit"))
+            	num = R.array.rabbit_array;
+
+    		Resources res = getResources();
+    		String[] horse = res.getStringArray(num);
+    	    des.setText(horse[1]);
+            
+           } 
+           
+           RelativeActivity.this.mPos = pos;
+        }
+
+        /**
+         * The definition of OnItemSelectedListener requires an override
+         * of onNothingSelected(), even though this implementation does not use it.
+         * @param parent - The View for this Listener
+         */
+        public void onNothingSelected(AdapterView<?> parent) {
+
+            // do nothing
+
+        }
+    }
+
+	
 }
+
