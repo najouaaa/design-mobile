@@ -20,5 +20,23 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"/>
 	</TableRow>
+	<TableRow >
+	
+    <Button android:id="@+id/button_one" 
+      android:layout_width="wrap_content" 
+      android:layout_height="wrap_content" 
+      android:paddingLeft="10px" 
+      android:paddingRight="10px" 
+      android:layout_marginRight="10px"
+      android:text="Back"/> 
+      
+    <Button android:id="@+id/button_two" 
+      android:layout_width="wrap_content" 
+      android:layout_height="wrap_content" 
+      android:paddingLeft="10px" 
+      android:paddingRight="10px" 
+      android:layout_marginRight="10px"
+      android:text="Next"/> 
+	</TableRow>
 
 </TableLayout>
