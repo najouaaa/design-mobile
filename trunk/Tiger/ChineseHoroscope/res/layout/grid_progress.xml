@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"> 
+<include layout="@layout/grid"
+		 android:visibility="invisible"/>
+
+<ProgressBar
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         style="@android:style/Widget.ProgressBar.Horizontal"
+         android:id="@+id/progressbar1"
+         android:visibility="visible"
+         android:indeterminate="true"
+         />
+
+</merge>

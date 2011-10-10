@@ -51,6 +51,7 @@ public class HoroscopeGrid extends Activity {
 		});
 		//hide bar when done
 		progressHorizontal.setVisibility(View.INVISIBLE);
+		gridview.setVisibility(View.VISIBLE);
 		
        
 	}
