@@ -3,10 +3,14 @@ package com.horoscope;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.AdapterView.OnItemClickListener;
 
 /**
@@ -17,7 +21,11 @@ public class HoroscopeGrid extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.grid);
+		
+		setContentView(R.layout.grid_progress);//grid);
+		ProgressBar progressHorizontal = (ProgressBar) findViewById(R.id.progressbar1);
+		//progressHorizontal.setVisibility(View.VISIBLE);
+		
 		/*
 		 * Adding the grid for the view
 		 */
@@ -40,5 +48,10 @@ public class HoroscopeGrid extends Activity {
 				
 			}
 		});
+		//hide bar when done
+		progressHorizontal.setVisibility(View.INVISIBLE);
+		
+       
 	}
+	
 }
