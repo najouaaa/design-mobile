@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+	<string name="horoscope_prompt">Choose a Horoscope</string>
+	<string-array name="horoscopes_array">
+		<item>Rat</item>
+		<item>Ox</item>
+		<item>Tiger</item>
+        <item>Rabbit</item>
+        <item>Dragon</item>
+    </string-array>
+    
     <string name="hello">Hello World, TabViewActivity!</string>
     <string name="app_name">TabView</string>
     <string name="relative_view">RelativeView</string>
