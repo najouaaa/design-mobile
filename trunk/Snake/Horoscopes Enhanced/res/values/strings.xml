@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World! Hello Horoscopes!</string>
+	<string name="app_name">Horoscopes</string>
+	<string name="rabbit">Rabbit</string>
+	<string name="snake">Snake</string>
+	<string name="tiger">Tiger</string>
+	<string name="horse">Horse</string>
+	<string name="sheep">Sheep</string>
+	<string name="sheep_desc">Years:\nSheep Years are eighth in the cycle
+		following the Horse Years, and recur every twelfth
+		year.\n\nCharacteristics:\nSmart, Artistic, Kind, Happy, Reserved,
+		Insecure, Dependent.\n\nSheep simply want a bit of peace. They enjoy
+		carrying on with life in their own quiet, individual way, content to
+		be in the middle of it all rather than to be leading it. Sheep are
+		quiet and calm people. They enjoy cultural things and focus much of
+		their energy on artistic hobbies. Sheep are easygoing and relaxed,
+		happy to be going with the flow.
+	</string>
+	<string name="rabbit_desc">Years:\nRabbit Years are fourth in the cycle,
+		following Tiger Years, and recur every twelfth
+		year.\n\nCharacteristics:\nKeen, Wise, Fragile, Tranquil, Serene,
+		Considerate, Fashionable, Sneaky, Obsessive.\n\nRabbits are private
+		individuals, a bit introverted and withdrawn. People born into this
+		sign would rather work behind-the-scenes instead of being the center
+		of attention in any situation. Do not misunderstand … the Rabbit is
+		not a recluse. In fact, he is a reasonably friendly individual who
+		enjoys the company of a group of good friends whether at a business
+		dinner or a holiday party. Rabbits just like to be a part of the gang
+		as opposed to the leader of it.
+	</string>
+	<string name="snake_desc">Years:\nSnake Years are sixth in the cycle,
+		following the Dragon Years, and recur every twelfth
+		year.\n\nCharacteristics:\nAcute, Aware, Cunning, Proud, Vain,
+		Vicious.\n\nAncient Chinese wisdom says a Snake in the house is a good
+		omen because it means your family will not starve. This could be taken
+		metaphorically to mean that a Snake could never have a problem with
+		his family starving because he is such a great mediator, making him
+		good at business. Or it could mean that a Snake would be willing to
+		sacrifice his possessions, something the Snake has a lot of, in order
+		to pay for his family’s food. Any way it is interpreted is
+		representative of the Snake’s character and is a measure of the value
+		he puts on his material wealth. The Snake is keen and cunning, quite
+		intelligent and wise.
+	</string>
+	<string name="horse_desc">Years:\nHorse Years are seventh in the cycle,
+		following the Snake Years, and recur every twelfth
+		year.\n\nCharacteristics:\nSelf-reliant, Joyful, Outgoing,
+		Sophisticated, Greedy, Resilient, Arrogant.\n\nExciting and
+		extroverted, vivid and animated, the Horse is the life of any party he
+		attends. He is bursting with energy, always looking for the next place
+		to kick up his heels and hang loose. He entertains friends and
+		strangers alike with his humor and appeal.
+	</string>
+	<string name="tiger_desc">Years:\nTiger Years are third in the cycle and
+		recur every twelfth year.\n\nCharacteristics:\nCourage, Vehemence,
+		Self-Reliance, Friendliness, Hopefulness, Resilience, Vanity,
+		Disregard.\n\nThe Tiger is said to be lucky vivid, lively and
+		engaging. Another attribute of the Tiger is his incredible bravery,
+		evidenced in his willingness to engage in battle or his undying
+		courage. Maybe he’s so brave because he is so lucky. But the Chinese
+		say a Tiger having a Tiger in the house is the very best protection
+		against the evils of fire, burglary.
+	</string>
+	<string-array name="horoscope_array">
+		<item>Horse</item>
+		<item>Tiger</item>
+		<item>Rabbit</item>
+		<item>Sheep</item>
+		<item>Snake</item>
+	</string-array>
+</resources>
