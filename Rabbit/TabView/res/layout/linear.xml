@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <ImageView android:layout_width="wrap_content" android:id="@+id/icon" android:src="@drawable/ox" android:layout_marginRight="6dip" android:layout_height="171dp"></ImageView>
-        <LinearLayout android:layout_width="wrap_content" android:layout_weight="1" android:layout_height="fill_parent" android:orientation="vertical" android:weightSum="1">
-            <TextView android:textSize="15pt" android:text="Ox" android:layout_height="wrap_content" android:id="@+id/textview1" android:layout_width="wrap_content"></TextView>
-            <TextView android:textSize="6pt" android:text="@string/ox_desc" android:layout_height="wrap_content" android:id="@+id/textview2" android:layout_width="wrap_content" android:layout_weight="0.67"></TextView>
-            <Button android:onClick="onClickButton" android:text="Next" android:id="@+id/next" android:layout_height="wrap_content" android:layout_width="72dp"></Button>
-        	<Button android:layout_height="wrap_content" android:text="Previous" android:onClick="onClickButton" android:id="@+id/previous" android:layout_centerVertical="true" android:layout_weight="0.01" android:layout_width="wrap_content"></Button>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+    
+	<ImageView android:layout_width="wrap_content" android:id="@+id/icon" android:src="@drawable/ox" android:layout_marginRight="6dip" android:layout_height="171dp"></ImageView>
+	<TextView android:layout_height="wrap_content" android:textSize="15pt" android:layout_width="wrap_content" android:onClick="onClickButton" android:text="Ox" android:id="@+id/textview1" android:layout_alignTop="@+id/icon" android:layout_alignParentRight="true" android:layout_marginRight="58dp"></TextView>
+	<Button android:layout_height="wrap_content" android:text="Previous" android:id="@+id/previous" android:layout_width="wrap_content" android:onClick="onClickButton" android:layout_alignParentBottom="true" android:layout_alignRight="@+id/icon" android:layout_marginBottom="37dp"></Button>
+	<Button android:layout_height="wrap_content" android:text="Next" android:id="@+id/next" android:layout_width="72dp" android:onClick="onClickButton" android:layout_above="@+id/previous" android:layout_alignParentLeft="true" android:layout_marginLeft="17dp"></Button>
+	<TextView android:layout_height="wrap_content" android:textSize="6pt" android:layout_width="wrap_content" android:text="@string/ox_desc" android:id="@+id/textview2" android:layout_toRightOf="@+id/icon" android:layout_alignBottom="@+id/previous" android:layout_below="@+id/textview1"></TextView>
+</RelativeLayout>
