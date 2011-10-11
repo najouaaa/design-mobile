@@ -22,8 +22,6 @@ public class HoroscopeSearch extends Activity {
 	/**
 	 * 
 	 */
-	// AutoCompleteTextView textView;
-
 	Spinner spinner;
 
 	@Override
@@ -51,7 +49,10 @@ public class HoroscopeSearch extends Activity {
 
 	public class MyOnItemSelectedListener implements OnItemSelectedListener {
 
-		boolean activateListener = false;
+		/**
+		 * 
+		 */
+		private boolean activateListener = false;
 
 		public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 			if (!activateListener) {
@@ -60,19 +61,6 @@ public class HoroscopeSearch extends Activity {
 			}
 			//
 			int position = 0;
-			/*
-			 * Are we searching for an empty box?
-			 */
-			// if (textView.getText() == null) {
-			// showMessage("Please enter a search query.");
-			// return;
-			// }
-
-			/*
-			 * Does this term exist in anything? For now we're searching case
-			 * insensitive, but do we want that?
-			 */
-			// String query = textView.getText().toString();
 			String query = parent.getItemAtPosition(pos).toString();
 
 			/*
@@ -92,7 +80,7 @@ public class HoroscopeSearch extends Activity {
 				}
 				position++;
 			}
-			//
+
 			if (!found) {
 				showMessage("No matches found.");
 				return;
@@ -102,13 +90,9 @@ public class HoroscopeSearch extends Activity {
 			i.putExtra("pos", position);
 			i.putExtra("title", query);
 			startActivity(i);
-			// Toast.makeText(parent.getContext(), "The planet is " +
-			// parent.getItemAtPosition(pos).toString(),
-			// Toast.LENGTH_LONG).show();
 		}
 
-		public void onNothingSelected(AdapterView parent) {
-			// Do nothing.
+		public void onNothingSelected(AdapterView<?> parent) {
 		}
 	}
 }
