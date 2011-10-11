@@ -3,15 +3,18 @@ package com.example;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.View;
 import android.view.ViewStub;
+import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class RelativeActivity extends Activity {
+public class RelativeActivity extends Activity   {
     
 	protected static final String alert = null;
 	int id;
@@ -22,21 +25,21 @@ public class RelativeActivity extends Activity {
     
     ViewStub stub;
     View inflated;
+    Spinner spinner;
+    ScrollView mScroller;
 	
 	/**
      * ArrayAdapter connects the spinner widget to array-based data.
      */
     protected ArrayAdapter<CharSequence> mAdapter;
 
-	
+    	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        
 		setContentView(R.layout.relative_layout);
-		
-		 
-		Spinner spinner = (Spinner) findViewById(R.id.Spinner01);
-		
+ 
+		 spinner = (Spinner) findViewById(R.id.Spinner01);
 		this.mAdapter = ArrayAdapter.createFromResource(this, 
 						R.array.horo_array, android.R.layout.simple_spinner_dropdown_item);
 		
@@ -44,12 +47,18 @@ public class RelativeActivity extends Activity {
         spinner.setAdapter(mAdapter);
 		OnItemSelectedListener spinnerListener = new myOnItemSelectedListener(this,this.mAdapter);
         spinner.setOnItemSelectedListener(spinnerListener);
+        spinner.setPrompt("Choose a horoscope");
         
-
+        
+        mScroller = (ScrollView) findViewById(R.id.ScrollView01);
+        mScroller.setMinimumHeight(150);
+       
  	    stub = (ViewStub) findViewById(R.id.stub);
  	    inflated = stub.inflate();
 
     }
+	
+	
 	
 	 /**
      *  A callback listener that implements the
@@ -121,13 +130,16 @@ public class RelativeActivity extends Activity {
 
     		Resources res = getResources();
     		String[] horse = res.getStringArray(num);
-    	    des.setText(horse[1]);
+    		
+            des.setText(horse[1]);
             
            } 
            
            RelativeActivity.this.mPos = pos;
         }
 
+        
+ 
         /**
          * The definition of OnItemSelectedListener requires an override
          * of onNothingSelected(), even though this implementation does not use it.

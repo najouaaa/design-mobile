@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<merge
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<merge>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01" android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        >
+
     
     
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
           
-	 <Spinner 
+	 <Spinner
+		
         android:id="@+id/Spinner01"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:layout_marginTop="100dp"
-        android:drawSelectorOnTop = "true">
+        android:drawSelectorOnTop = "true"
+        >
     </Spinner>
 	
-	
-</RelativeLayout>
-
-
-  <ViewStub android:id="@+id/stub"
+	  <ViewStub android:id="@+id/stub"
                android:inflatedId="@+id/des"
                android:layout="@layout/linearlayout"
                android:layout_width="fill_parent"
-               android:layout_height="fill_parent" />
+               android:layout_height="fill_parent"
+               android:layout_gravity="bottom" 
+               android:layout_marginTop="150dp"
+               
+               
+               
+   />
+   
+</RelativeLayout>
+
+
+
+</ScrollView>
 
 </merge>
