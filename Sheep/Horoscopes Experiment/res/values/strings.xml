@@ -31,7 +31,8 @@
 			The Snake (蛇) is one of the 12-year cycle of animals which
 			appear in the
 			Chinese zodiac related to the Chinese calendar. The
-			Year of the Snake
+			Year
+			of the Snake
 			is associated with the earthly branch symbol 巳.
     	</item>
 		<item>
@@ -43,30 +44,24 @@
 			the first
 			rabbits to be taken to China, and the word is now
 			erroneously
-			back-translated into English as "rabbit". The hare is the
-			fourth
-			animal in the 12-year cycle of the Chinese zodiac. The Year of
-			the
-			Hare is associated with the earthly branch symbol 卯.
+			back-translated into English as "rabbit".
 		</item>
 	</string-array>
-	
-	
-		
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 	<string-array name="rabbit_array">
 		<item>Rabbit</item>
 		<item>The Chinese Year of the Rabbit ( 兔 ) is actually the Chinese
 			Year of the Hare, as China has seven native species of hares and no
 			native species of rabbits. The Chinese applied their word for hare to
 			the first rabbits to be taken to China, and the word is now
-			erroneously back-translated into English as "rabbit". The hare is the
-			fourth animal in the 12-year cycle of the Chinese zodiac. The Year of
-			the Hare is associated with the earthly branch symbol 卯.</item>
+			erroneously back-translated into English as "rabbit".</item>
 	</string-array>
 
 	<string-array name="horse_array">
