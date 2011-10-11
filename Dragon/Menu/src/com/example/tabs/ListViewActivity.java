@@ -6,20 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
+import android.widget.RatingBar.OnRatingBarChangeListener;
+import android.widget.Toast;
 
 public class ListViewActivity extends ListActivity {
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
+    
 
-      setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, HOROSCOPES));
+      setListAdapter(new ListAdapter(this));
 
       ListView lv = getListView();
       lv.setTextFilterEnabled(true);
-
+      
+    
       lv.setOnItemClickListener(new OnItemClickListener() {
         public void onItemClick(AdapterView<?> parent, View view,
             int position, long id) {
@@ -58,5 +63,5 @@ public class ListViewActivity extends ListActivity {
       });
       
     }
-    static final String[] HOROSCOPES = new String[] {"Dragon","Horse","Rabbit","Snake","Sheep"};
+    
 }
