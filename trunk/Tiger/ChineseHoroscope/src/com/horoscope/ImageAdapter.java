@@ -52,7 +52,8 @@ public class ImageAdapter extends BaseAdapter {
 		textView.setText(horStrings[position%12]);//%12 because I increased the list size
 		//the icon
 		Drawable img = mContext.getResources().getDrawable(mThumbIds[position]);
-		img.setBounds(0,0,32,46);
+		img.setBounds(0,0,20,30);
+		
 		
 		//textView.setLayoutParams(new GridView.LayoutParams(90, 90));
 		textView.setCompoundDrawablesWithIntrinsicBounds(null,img, null, null);
