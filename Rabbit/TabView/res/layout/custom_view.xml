@@ -16,14 +16,10 @@
 		<TextView android:layout_column="2" 
 			android:text="@string/h_rat"
 			android:textSize="30sp"
-			android:translationX="20dp" 
-			android:translationY="10dp"  />
+			  />
 			
 		<RatingBar android:layout_column="3" 
-			android:id="@+id/ratingbar1"
-        	android:translationY="10dp" 
-        	android:scaleX="0.6"
-        	android:scaleY="0.6" 
+			android:id="@+id/ratingbar1"   	
         	android:numStars="5"
         	android:stepSize="1.0"/>
 		
@@ -40,15 +36,10 @@
 			
 		<TextView android:layout_column="2" 
 			android:text="@string/h_ox"
-			android:textSize="30sp"
-			android:translationX="20dp" 
-			android:translationY="10dp"  />
+			android:textSize="30sp"  />
 			
 		<RatingBar android:layout_column="3" 
 			android:id="@+id/ratingbar2"
-        	android:translationY="10dp" 
-        	android:scaleX="0.6"
-        	android:scaleY="0.6" 
         	android:numStars="5"
         	android:stepSize="1.0"/>
 		
@@ -65,15 +56,10 @@
 			
 		<TextView android:layout_column="2" 
 			android:text="@string/h_tiger"
-			android:textSize="30sp"
-			android:translationX="20dp" 
-			android:translationY="10dp"  />
+			android:textSize="30sp" />
 			
 		<RatingBar android:layout_column="3" 
 			android:id="@+id/ratingbar3"
-        	android:translationY="10dp" 
-        	android:scaleX="0.6"
-        	android:scaleY="0.6" 
         	android:numStars="5"
         	android:stepSize="1.0"/>
 		
@@ -90,15 +76,10 @@
 			
 		<TextView android:layout_column="2" 
 			android:text="@string/h_rabbit"
-			android:textSize="30sp"
-			android:translationX="20dp" 
-			android:translationY="10dp"  />
+			android:textSize="30sp"/>
 			
 		<RatingBar android:layout_column="3" 
 			android:id="@+id/ratingbar4"
-        	android:translationY="10dp" 
-        	android:scaleX="0.6"
-        	android:scaleY="0.6" 
         	android:numStars="5"
         	android:stepSize="1.0"/>
 		
@@ -115,15 +96,10 @@
 			
 		<TextView android:layout_column="2" 
 			android:text="@string/h_dragon"
-			android:textSize="30sp"
-			android:translationX="20dp" 
-			android:translationY="10dp"  />
+			android:textSize="30sp" />
 			
 		<RatingBar android:layout_column="3" 
 			android:id="@+id/ratingbar5"
-        	android:translationY="10dp" 
-        	android:scaleX="0.6"
-        	android:scaleY="0.6" 
         	android:numStars="5"
         	android:stepSize="1.0"/>
 		
