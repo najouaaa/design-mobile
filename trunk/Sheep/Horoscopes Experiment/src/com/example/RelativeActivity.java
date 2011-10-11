@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewStub;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,8 +30,8 @@ public class RelativeActivity extends Activity   {
     View inflated;
     Spinner spinner;
     ScrollView mScroller;
-	
-	/**
+
+    /**
      * ArrayAdapter connects the spinner widget to array-based data.
      */
     protected ArrayAdapter<CharSequence> mAdapter;
@@ -53,11 +56,11 @@ public class RelativeActivity extends Activity   {
         mScroller = (ScrollView) findViewById(R.id.ScrollView01);
         mScroller.setMinimumHeight(150);
        
+        
  	    stub = (ViewStub) findViewById(R.id.stub);
  	    inflated = stub.inflate();
 
     }
-	
 	
 	
 	 /**
