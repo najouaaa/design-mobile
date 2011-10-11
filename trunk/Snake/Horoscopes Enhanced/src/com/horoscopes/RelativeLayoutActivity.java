@@ -49,6 +49,7 @@ public class RelativeLayoutActivity extends Activity {
 				long id) {
 
 			if (Flag) {
+				@SuppressWarnings("unused")
 				View importPanel = ((ViewStub) findViewById(R.id.stub))
 						.inflate();
 				int nameId = 0;
