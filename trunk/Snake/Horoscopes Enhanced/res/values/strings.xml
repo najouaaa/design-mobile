@@ -14,7 +14,7 @@
 		carrying on with life in their own quiet, individual way, content to
 		be in the middle of it all rather than to be leading it. Sheep are
 		quiet and calm people. They enjoy cultural things and focus much of
-		their energy on artistic hobbies. Sheep are easygoing and relaxed,
+		their energy on artistic hobbies. Sheep are easy going and relaxed,
 		happy to be going with the flow.
 	</string>
 	<string name="rabbit_desc">Years:\nRabbit Years are fourth in the cycle,
@@ -69,5 +69,23 @@
 		<item>Sheep</item>
 		<item>Snake</item>
 	</string-array>
+	<string-array name="horse_friend">
+		<item>Salma</item>
+		<item>Sara</item>
+		<item>Fatema</item>
+	</string-array>
+	<string-array name="sheep_friend">
+		<item>Aya</item>
+		<item>Jamica</item>
+		<item>Heba</item>
+	</string-array>
+	<string-array name="snake_friend">
+		<item>Marwa</item>
+		<item>Ahmed</item>
+		<item>Huda</item>
+		<item>Noha</item>
+	</string-array>
+	<string-array name="dragon_friend"/>
+	<string-array name="rabbit_friend"/>
 	<string name="horoscope_prompt">Choose a Horoscope</string>
 </resources>
