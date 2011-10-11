@@ -25,8 +25,6 @@ public class ArtistsActivity extends Activity {
 				Intent i = new Intent(getApplicationContext(),
 						Lab1Activity.class);
 
-				int titlePositionInArray = position;
-				int descriptoinPositionInArray = position;
 				int imageID = 0;
 
 				Resources res = getResources();
@@ -51,9 +49,7 @@ public class ArtistsActivity extends Activity {
 					break;
 				}
 
-				bundle.putInt("title_position", titlePositionInArray);
-				bundle.putInt("description_position",
-						descriptoinPositionInArray);
+				bundle.putInt("position", position);
 				bundle.putInt("image_id", imageID);
 				i.putExtras(bundle);
 				startActivity(i);

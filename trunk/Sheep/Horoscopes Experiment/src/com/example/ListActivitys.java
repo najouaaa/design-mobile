@@ -12,31 +12,49 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ListActivitys extends ListActivity {
-	
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-	  super.onCreate(savedInstanceState);
-	  String[] horos = getResources().getStringArray(R.array.horo_array);
-	  setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, horos));
+		super.onCreate(savedInstanceState);
+		String[] horos = getResources().getStringArray(R.array.horo_array);
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, horos));
 
-	  ListView lv = getListView();
-	  lv.setTextFilterEnabled(true);
+		ListView lv = getListView();
+		lv.setTextFilterEnabled(true);
 
-	  lv.setOnItemClickListener(new OnItemClickListener() {
-	    public void onItemClick(AdapterView<?> parent, View view,
-	        int position, long id) {
-	    		Toast.makeText(getApplicationContext(),((TextView) view).getText().toString() , Toast.LENGTH_SHORT).show();
-	    		Intent i = new Intent(ListActivitys.this, LinearLayouts.class);
-	    		Bundle bundle = new Bundle();
-	    		bundle.putString("param1", ((TextView) view).getText().toString());
-	    		i.putExtras(bundle);
-	    		startActivity(i);
-	    		
-	    }
-	  });
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				
+				int imageID = 0;
+				switch (position) {
+				case 0:
+					imageID = R.drawable.horse_big;
+					break;
+				case 1:
+					imageID = R.drawable.sheep_big;
+					break;
+				case 2:
+					imageID = R.drawable.snake_big;
+					break;
+				case 3:
+					imageID = R.drawable.rabbit_big;
+					break;
+				default:
+					break;
+				}
+				
+				Intent i = new Intent(ListActivitys.this, LinearLayouts.class);
+
+				Bundle bundle = new Bundle();
+				bundle.putInt("position", position);
+				bundle.putInt("image_id", imageID);
+				i.putExtras(bundle);
+				startActivity(i);
+
+			}
+		});
 	}
-	
-	
-	
+
 }

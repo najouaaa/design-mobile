@@ -10,25 +10,20 @@ public class LinearLayouts extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Bundle bundle = this.getIntent().getExtras();
-		String input = bundle.getString("param1");
-		int id = 0;
-		if (input.equals("Horse") )
-			id = R.array.horse_array;
-		else if (input.equals("Rabbit"))
-			id = R.array.rabbit_array;
-		else if (input.equals("Sheep"))
-			id = R.array.goat_array;
-		else if (input.equals("Snake"))
-			id = R.array.snake_array;
-		
-		Resources res = getResources();
-		String[] horse = res.getStringArray(id);
 		setContentView(R.layout.linearlayout);
+
+		Bundle bundle = getIntent().getExtras();
+
 		TextView titleView = (TextView) findViewById(R.id.title);
 		TextView descriptionView = (TextView) findViewById(R.id.description);
-		titleView.setText(input);
-		descriptionView.setText(horse[1]);
+		Resources res = getResources();
+		
+		String[] horo_names = res.getStringArray(R.array.horo_array);
+		String[] horo_descriptions = res
+				.getStringArray(R.array.horo_description_array);
+		
+		titleView.setText(horo_names[bundle.getInt("position")]);
+		descriptionView.setText(horo_descriptions[bundle.getInt("position")]);
 	}
 
 }
