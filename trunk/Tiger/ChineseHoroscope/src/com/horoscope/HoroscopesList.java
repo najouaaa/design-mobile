@@ -67,10 +67,16 @@ public class HoroscopesList extends Activity {
         hashmapElement("Rooster",R.drawable.rooster_zodiac, 2);
         hashmapElement("Dog",R.drawable.dog_zodiac, 9);
         hashmapElement("Pig",R.drawable.pig_zodiac, 10);
+       
         listView.setAdapter(new myListAdapter(horoscopes_hashmap,this));
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     }
-     
+    
+    /***
+     * 
+     * @author Dina
+     *
+     */
     private class myListAdapter extends BaseAdapter{
         private ArrayList<HashMap<String, Object>> Horoscopes;
         private LayoutInflater mInflater;
@@ -95,6 +101,14 @@ public class HoroscopesList extends Activity {
             // TODO Auto-generated method stub
             return position;
         }
+        
+        /***
+         * @param position
+         * @param convertView
+         * @param parent
+         * 
+         * customized view with text, image & rating
+         */
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder;
@@ -118,15 +132,27 @@ public class HoroscopesList extends Activity {
                 holder.rating.setRating((Integer)Horoscopes.get(position).get(RATINGKEY));
                 return convertView;
         }
+        /***
+         * 
+         * @author Dina
+         *
+         */
         class ViewHolder {
             TextView v;
-            TextView v1;
             ImageView icon;
             RatingBar rating;
         }
          
     }
  
+    /***
+     * 
+     * @param title
+     * @param img
+     * @param rate
+     * 
+     * insert zodiacs in the horoscopes hashmap
+     */
      public void hashmapElement(String title, int img, int rate)
      {
     	 HashMap<String, Object> hm;
