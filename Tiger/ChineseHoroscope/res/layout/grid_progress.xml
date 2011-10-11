@@ -8,7 +8,7 @@
          android:layout_height="wrap_content"
          style="@android:style/Widget.ProgressBar.Horizontal"
          android:id="@+id/progressbar1"
-         android:visibility="visible"
+         android:visibility="invisible"
          android:indeterminate="true"
          />
 
