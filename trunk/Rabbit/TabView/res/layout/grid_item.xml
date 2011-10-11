@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+> 
+<ImageView 
+    android:id="@+id/gridImageView"
+    android:layout_width="85dip" 
+    android:layout_height="85dip"
+    android:scaleType="centerCrop"
+/>
+<TextView 
+	android:id="@+id/gridTextView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:soundEffectsEnabled="true"
+  
+   >
+   <!--   android:gravity="center" : to centralize text--> 
+</TextView>
+</LinearLayout> 
+
+
+
