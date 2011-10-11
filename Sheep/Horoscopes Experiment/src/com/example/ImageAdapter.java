@@ -1,10 +1,11 @@
 package com.example;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
@@ -27,22 +28,28 @@ public class ImageAdapter extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
+    	View view;
         if (convertView == null) {  // if it's not recycled, initialize some attributes
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
-        } else {
-            imageView = (ImageView) convertView;
+            LayoutInflater li = LayoutInflater.from(mContext);
+            view = li.inflate(R.layout.icon, null);
+			TextView tv = (TextView)view.findViewById(R.id.icon_text);
+			tv.setText(mThumbText[position]);
+			
+			tv.setCompoundDrawablesWithIntrinsicBounds(0, mThumbIds[position],0, 0);
+        	  } else {
+            view = convertView;
         }
 
-        imageView.setImageResource(mThumbIds[position]);
-        return imageView;
+        
+        
+        return view;
     }
 
     // references to our images
     private Integer[] mThumbIds = {
-            R.drawable.horse, R.drawable.sheep, R.drawable.snake, R.drawable.rabbit
+            R.drawable.rabbit, R.drawable.horse, R.drawable.sheep, R.drawable.snake
+    };
+    private String[] mThumbText = {
+            "Rabbit", "Horse", "Sheep","Snake"
     };
 }
