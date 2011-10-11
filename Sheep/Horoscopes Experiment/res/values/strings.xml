@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, HoroActivity!</string>
-    <string name="app_name">HoroScopes</string>
-    <string-array name="horo_array">
-        <item>Horse</item>
-        <item>Sheep</item>
-        <item>Snake</item>
-        <item>Rabbit</item>	
-    </string-array>
-    <string-array name="rabbit_array">
+	<string name="hello">Hello World, HoroActivity!</string>
+	<string name="app_name">HoroScopes</string>
+
+	<string-array name="horo_array">
+		<item>Horse</item>
+		<item>Sheep</item>
+		<item>Snake</item>
+		<item>Rabbit</item>
+	</string-array>
+
+	<string-array name="horo_description_array">
+		<item>
+			The Horse (simplified Chinese: 马; traditional Chinese: 馬) is the
+			seventh
+			of the 12 animals which appear in the Chinese zodiac related
+			to the
+			Chinese calendar. The Year of the Horse is associated with the
+			earthly branch symbol 午.
+		</item>
+		<item>
+			The Sheep ( 羊 ) is the eighth sign of the 12-year cycle of
+			animals which
+			appear in the Chinese zodiac related to the Chinese
+			calendar. The Year
+			of the Sheep is associated with the earthly branch
+			symbol 未.
+    	</item>
+		<item>
+			The Snake (蛇) is one of the 12-year cycle of animals which
+			appear in the
+			Chinese zodiac related to the Chinese calendar. The
+			Year of the Snake
+			is associated with the earthly branch symbol 巳.
+    	</item>
+		<item>
+			The Chinese Year of the Rabbit ( 兔 ) is actually the Chinese
+			Year of the
+			Hare, as China has seven native species of hares and no
+			native species
+			of rabbits. The Chinese applied their word for hare to
+			the first
+			rabbits to be taken to China, and the word is now
+			erroneously
+			back-translated into English as "rabbit". The hare is the
+			fourth
+			animal in the 12-year cycle of the Chinese zodiac. The Year of
+			the
+			Hare is associated with the earthly branch symbol 卯.
+		</item>
+	</string-array>
+	
+	
+		
+	
+	
+	
+	
+	
+	<string-array name="rabbit_array">
 		<item>Rabbit</item>
 		<item>The Chinese Year of the Rabbit ( 兔 ) is actually the Chinese
 			Year of the Hare, as China has seven native species of hares and no
