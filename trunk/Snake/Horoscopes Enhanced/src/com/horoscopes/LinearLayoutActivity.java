@@ -3,9 +3,14 @@ package com.horoscopes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewStub;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class LinearLayoutActivity extends Activity {
@@ -32,6 +37,24 @@ public class LinearLayoutActivity extends Activity {
 
 		int imageId = b.getInt("image_id");
 		imageView.setImageResource(imageId);
+		
+		int arrayId = b.getInt("array_id");
+	//	String[] files = getResources().getStringArray(arrayId) ;
+		String[] files = getResources().getStringArray(R.array.horse_friend) ;
+		ViewStub stub = (ViewStub) findViewById(R.id.stub1);
+		ArrayAdapter<String> content=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,files);
+		
+		LayoutInflater factory = LayoutInflater.from(this);
+		final View textEntryView = (View)factory.inflate(R.layout.layout1,null);
+		
+		//TextView people = (TextView)textEntryView.findViewById(R.id.friends);
+	//	people.setText(files[0]);
+	//	Log.e("adapter", ""+content.getCount()+" "+people.getText());
+		
+		View inflated=stub.inflate();
+	  ListView people=(ListView)textEntryView.findViewById(R.id.friends);
+	//	ListView people=(ListView)inflated.findViewById(R.id.friends);
+		people.setAdapter(content);
 
 		position = b.getInt("position");
 		if (position == 0) {
