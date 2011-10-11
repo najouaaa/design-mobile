@@ -24,37 +24,27 @@ public class CustomListView extends Activity {
 	   
 	   final RatingBar ratingbar1 = (RatingBar) findViewById(R.id.ratingbar1);
        ratingbar1.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-               Toast.makeText(CustomListView.this, "New Rating: " + rating, Toast.LENGTH_SHORT).show();
-           }
+           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {}
        });
        
        final RatingBar ratingbar2 = (RatingBar) findViewById(R.id.ratingbar2);
        ratingbar2.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-               Toast.makeText(CustomListView.this, "New Rating: " + rating, Toast.LENGTH_SHORT).show();
-           }
+           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {}
        });
        
        final RatingBar ratingbar3 = (RatingBar) findViewById(R.id.ratingbar3);
        ratingbar3.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-               Toast.makeText(CustomListView.this, "New Rating: " + rating, Toast.LENGTH_SHORT).show();
-           }
+           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {}
        });
        
        final RatingBar ratingbar4 = (RatingBar) findViewById(R.id.ratingbar4);
        ratingbar4.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-               Toast.makeText(CustomListView.this, "New Rating: " + rating, Toast.LENGTH_SHORT).show();
-           }
+           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {}
        });
        
        final RatingBar ratingbar5 = (RatingBar) findViewById(R.id.ratingbar5);
        ratingbar5.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-               Toast.makeText(CustomListView.this, "New Rating: " + rating, Toast.LENGTH_SHORT).show();
-           }
+           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {}
        });
    }
    
