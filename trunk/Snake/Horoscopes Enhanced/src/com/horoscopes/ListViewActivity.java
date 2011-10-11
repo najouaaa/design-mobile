@@ -1,5 +1,8 @@
 package com.horoscopes;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,21 +10,39 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 public class ListViewActivity extends ListActivity {
 
+	
+	static String[] horoscopes;
+	static private Integer[] thumbsDrawableIds = { R.drawable.horse, R.drawable.tiger,
+			R.drawable.rabbit, R.drawable.sheep, R.drawable.snake };
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		String[] horoscopes = getResources().getStringArray(
-				R.array.horoscope_array);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
-				horoscopes));
-
+		
+		horoscopes  = getResources().getStringArray(
+    			R.array.horoscope_array);
+		
+		 setContentView(R.layout.custom_list_view);
+		  SimpleAdapter adapter = new SimpleAdapter(
+	        		this,
+	        		list,
+	        		R.layout.custom_row_view,
+	        		new String[] {"text","image"},
+	        		new int[] {R.id.text1,R.id.imageEins}
+	        		);
+		    populateList();
+	        setListAdapter(adapter); 
+ 
 		ListView listView = getListView();
+
 		listView.setTextFilterEnabled(true);
-		listView.setOnItemClickListener(new OnItemClickListener() {
+				listView.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				int nameId = 0;
@@ -66,4 +87,24 @@ public class ListViewActivity extends ListActivity {
 			}
 		});
 	}
+	
+  
+	
+    static final ArrayList<HashMap<String,Object>> list = 
+    	new ArrayList<HashMap<String,Object>>(); 
+    private static boolean ht8 = false;
+    
+    private void populateList() {
+    	if(ht8) return;
+    	
+    	for(int i = 0; i < 5 ; i++)
+    	{
+    	HashMap<String,Object> temp = new HashMap<String,Object>();
+    	temp.put("text", horoscopes[i]); 
+        temp.put("image", thumbsDrawableIds[i]);
+    	list.add(temp);
+    	}
+        ht8 = true;
+    }
+	
 }
