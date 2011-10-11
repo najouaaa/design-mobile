@@ -24,9 +24,9 @@ public class Lab1Activity extends Activity {
 		TextView descriptionView = (TextView) findViewById(R.id.description);
 		ImageView imageView = (ImageView) findViewById(R.id.image);
 
-		titleView.setText(horo_names[bundle.getInt("title_position")]);
+		titleView.setText(horo_names[bundle.getInt("position")]);
 		descriptionView.setText(horo_descriptions[bundle
-				.getInt("description_position")]);
+				.getInt("position")]);
 		imageView.setImageResource(bundle.getInt("image_id"));
 	}
 }
