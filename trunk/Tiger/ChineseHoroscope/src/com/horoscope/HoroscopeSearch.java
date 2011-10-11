@@ -26,8 +26,6 @@ public class HoroscopeSearch extends Activity {
 
 	Spinner spinner;
 
-	boolean activateListener = false;
-
 	@Override
 	protected void onCreate(Bundle savedInstance) {
 		super.onCreate(savedInstance);
@@ -39,7 +37,6 @@ public class HoroscopeSearch extends Activity {
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
-		activateListener = true;
 	}
 
 	/**
@@ -54,8 +51,11 @@ public class HoroscopeSearch extends Activity {
 
 	public class MyOnItemSelectedListener implements OnItemSelectedListener {
 
+		boolean activateListener = false;
+
 		public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 			if (!activateListener) {
+				activateListener = true;
 				return;
 			}
 			//
