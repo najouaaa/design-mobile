@@ -1,22 +1,30 @@
 package com.example.helloViews;
 
 import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.RatingBar;
 
-public class HoroscopeInfoActivity extends Activity {
+public class HoroscopeInfoActivity extends Activity implements RatingBar.OnRatingBarChangeListener {
     /** Called when the activity is first created. */
     int ids[]; 
     static int currentIndex; 
 	
+    RatingBar myRatingBar;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.linear);
+        
+        myRatingBar = (RatingBar) findViewById(R.id.ratingBar);
+        myRatingBar.setOnRatingBarChangeListener(this);
+
         initIDs();
         // Get the intent to retrieve input between different activities
         Bundle extras = getIntent().getExtras();
@@ -28,6 +36,11 @@ public class HoroscopeInfoActivity extends Activity {
         this.setAnimal(animalValue);        
         
     }// end onCreate
+    
+    public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromTouch) {
+    	myRatingBar.setRating(rating);
+    }
+
     
     public void initIDs() {
     	ids = new int [5];
