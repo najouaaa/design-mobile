@@ -38,8 +38,9 @@ public class LinearLayouts extends Activity {
 			
 			public void onClick(View view) {
 				Intent intent = new Intent(getApplicationContext(), LinearLayouts.class);
-				Bundle bundle = new Bundle();
-				bundle.putInt("position", (position + 1) % 4);
+				int newPosition = (position >= 3) ? 0 : position + 1;
+				intent.putExtra("position", newPosition);
+				startActivity(intent);
 			}
 		});
 		
@@ -47,7 +48,10 @@ public class LinearLayouts extends Activity {
 		back.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View view) {
-				
+				Intent intent = new Intent(getApplicationContext(), LinearLayouts.class);
+				int newPosition = (position <= 0) ? 3 : position - 1;
+				intent.putExtra("position", newPosition);
+				startActivity(intent);
 			}
 		});
 	}
