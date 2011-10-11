@@ -11,12 +11,11 @@
     <string name="SnakeDescription">Snake Description</string>
     <string name="SheepName">Sheep Name</string>
     <string name="SheepDescription">Sheep Description</string>
-     <string name="Rabbit">Rabbit</string>
+    <string name="Rabbit">Rabbit</string>
     <string name="Dragon">Dragon</string>
     <string name="Snake">Snake</string>
     <string name="Horse">Horse</string>
     <string name="Sheep">Sheep</string>
-    
     <string name="description"> </string>
     <string-array name="horoscopes">
     	<item>Choose a horoscope</item>
@@ -26,5 +25,9 @@
         <item>Sheep</item>
         <item>Rabbit</item>
     </string-array>
-    
+    <string name="RabbitFriends">Name1, Name2</string>
+    <string name="DragonFriends">Name3</string>
+    <string name="SnakeFriends">Name4, Name5, Name6</string>
+    <string name="HorseFriends" />
+    <string name="SheepFriends" />
 </resources>
