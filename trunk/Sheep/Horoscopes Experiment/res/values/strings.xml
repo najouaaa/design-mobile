@@ -2,7 +2,7 @@
 <resources>
 	<string name="hello">Hello World, HoroActivity!</string>
 	<string name="app_name">HoroScopes</string>
-
+	<string name="loading">Loading</string>
 	<string-array name="horo_array">
 		<item>Horse</item>
 		<item>Sheep</item>
