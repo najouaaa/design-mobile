@@ -56,7 +56,6 @@ public class GridViewActivity extends Activity {
 				b.putInt("name_id", nameId);
 				b.putInt("desc_id", descriptionId);
 				b.putInt("image_id", imageId);
-				b.putInt("position", position);
 				Intent detailsIntent = new Intent(getBaseContext(),
 						LinearLayoutActivity.class);
 				detailsIntent.putExtras(b);

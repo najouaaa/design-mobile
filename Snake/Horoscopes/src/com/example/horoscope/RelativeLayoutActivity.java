@@ -23,7 +23,6 @@ public class RelativeLayoutActivity extends Activity {
 				b.putInt("name_id", nameId);
 				b.putInt("desc_id", descriptionId);
 				b.putInt("image_id", imageId);
-				b.putInt("position", 0);
 				Intent detailsIntent = new Intent(getBaseContext(),
 						LinearLayoutActivity.class);
 				detailsIntent.putExtras(b);
@@ -41,7 +40,6 @@ public class RelativeLayoutActivity extends Activity {
 				b.putInt("name_id", nameId);
 				b.putInt("desc_id", descriptionId);
 				b.putInt("image_id", imageId);
-				b.putInt("position", 3);
 				Intent detailsIntent = new Intent(getBaseContext(),
 						LinearLayoutActivity.class);
 				detailsIntent.putExtras(b);
@@ -63,7 +61,6 @@ public class RelativeLayoutActivity extends Activity {
 						LinearLayoutActivity.class);
 				detailsIntent.putExtras(b);
 				startActivity(detailsIntent);
-				b.putInt("position", 2);
 			}
 		});
 
@@ -77,7 +74,6 @@ public class RelativeLayoutActivity extends Activity {
 				b.putInt("name_id", nameId);
 				b.putInt("desc_id", descriptionId);
 				b.putInt("image_id", imageId);
-				b.putInt("position", 4);
 				Intent detailsIntent = new Intent(getBaseContext(),
 						LinearLayoutActivity.class);
 				detailsIntent.putExtras(b);
@@ -95,7 +91,6 @@ public class RelativeLayoutActivity extends Activity {
 				b.putInt("name_id", nameId);
 				b.putInt("desc_id", descriptionId);
 				b.putInt("image_id", imageId);
-				b.putInt("position", 1);
 				Intent detailsIntent = new Intent(getBaseContext(),
 						LinearLayoutActivity.class);
 				detailsIntent.putExtras(b);

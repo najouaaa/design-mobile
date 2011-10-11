@@ -4,8 +4,6 @@
 	android:layout_height="wrap_content"
 	android:id = "@+id/linear_details" >
 	
-	<include layout="@layout/home_back_next_bar" />
-	
 	<TextView android:id="@+id/horoscope_title_textview" 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
