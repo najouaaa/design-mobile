@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" 
 	android:layout_width="fill_parent"
@@ -12,6 +14,13 @@
 		android:gravity="center" 
 		android:textSize="25sp"
 		android:textStyle="bold" />
+
+	
+    <RatingBar android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1.0"/>
 
 	<ImageView android:id="@+id/horoscope_image" 
 		android:layout_width="fill_parent"
@@ -29,5 +38,10 @@
 			android:padding="10dip"
 			android:textSize="18sp" />	
 	</ScrollView>	
-</LinearLayout>
 
+<ViewStub android:id="@+id/stub1" android:inflatedId="@+id/showlayout"
+android:layout="@layout/layout1" android:layout_width="fill_parent"
+android:layout_height="wrap_content"/>	
+	
+</LinearLayout>
+</merge>
