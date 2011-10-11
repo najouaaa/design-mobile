@@ -17,7 +17,7 @@
         <activity android:name=".RelativeViewActivity" android:label="@string/relative_view"
         android:theme="@android:style/Theme.NoTitleBar">
         </activity>
-         <activity android:name=".ListViewActivity" android:label="@string/list_view"
+         <activity android:name=".CustomListView" android:label="@string/custom_view"
         android:theme="@android:style/Theme.NoTitleBar">
         </activity>
          <activity android:name=".GridViewActivity" android:label="@string/grid_view"
