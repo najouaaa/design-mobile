@@ -1,12 +1,13 @@
 package com.horoscopes;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 
 public class ImageAdapter extends BaseAdapter implements ListAdapter {
 
@@ -16,18 +17,22 @@ public class ImageAdapter extends BaseAdapter implements ListAdapter {
 			R.drawable.rabbit, R.drawable.sheep, R.drawable.snake };
 
 	public View getView(int position, View convertView, ViewGroup parent) {
-		ImageView imageView;
+		View v;
 		if (convertView == null) {
-			imageView = new ImageView(mContext);
-			imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-			imageView.setPadding(8, 8, 8, 8);
+
+			LayoutInflater li = LayoutInflater.from(mContext);
+			v = li.inflate(R.layout.grid_icon, null);
+			TextView tv = (TextView) v.findViewById(R.id.icon_text);
+			tv.setText((mContext.getResources().getStringArray(
+					R.array.horoscope_array)[position]));
+			ImageView iv = (ImageView) v.findViewById(R.id.icon_image);
+			iv.setImageResource(thumbsDrawableIds[position]);
+
 		} else {
-			imageView = (ImageView) convertView;
+			v = convertView;
 		}
 
-		imageView.setImageResource(thumbsDrawableIds[position]);
-		return imageView;
+		return v;
 	}
 
 	public ImageAdapter(Context c) {
