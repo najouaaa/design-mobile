@@ -32,8 +32,8 @@ public class TabViewActivity extends TabActivity {
         tabHost.addTab(spec);
 
         // Do the same for the other tabs
-        intent = new Intent().setClass(this, ListViewActivity.class);
-        spec = tabHost.newTabSpec("list_view").setIndicator("List View",  
+        intent = new Intent().setClass(this, CustomListView.class);
+        spec = tabHost.newTabSpec("custom_view").setIndicator("Custom List View",  
         						res.getDrawable(R.drawable.listxml))
                       .setContent(intent);
         tabHost.addTab(spec);
