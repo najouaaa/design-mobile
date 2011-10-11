@@ -28,6 +28,7 @@ public class HoroscopeDetails extends Activity {
 
 		setContentView(R.layout.linear);
 		setImageAndText(pos, name);
+		setButtonVisibilty(pos);
 	}
 
 	/***
@@ -61,25 +62,39 @@ public class HoroscopeDetails extends Activity {
 
 	/**
 	 * @author Rana
+	 * @param pos
+	 */
+	public void setButtonVisibilty(int pos) {
+		if (pos != 0 && pos != (horoscopes.length - 1)) {
+			findViewById(R.id.nextButton).setVisibility(
+					android.view.View.VISIBLE);
+			findViewById(R.id.prevButton).setVisibility(
+					android.view.View.VISIBLE);
+		} else {
+			if (pos == 0) {
+				findViewById(R.id.prevButton).setVisibility(
+						android.view.View.INVISIBLE);
+			} else {
+				findViewById(R.id.nextButton).setVisibility(
+						android.view.View.INVISIBLE);
+			}
+		}
+	}
+
+	/**
+	 * @author Rana
 	 * 
 	 * @param view
 	 */
 	public void showNextHoroscope(View view) {
 		nextCount++;
 		int pos = (getIntent().getIntExtra("pos", 0)) + nextCount; // position
-																	// of item
+		// of item
 
-		
 		String name = horoscopes[pos]; // Since next count starts by 1
 		setContentView(R.layout.linear);
 		setImageAndText(pos, name);
-		if (pos == (horoscopes.length - 1)) {
-			findViewById(R.id.nextButton).setVisibility(
-					android.view.View.INVISIBLE);
-		}else
-		{
-			findViewById(R.id.nextButton).setVisibility(android.view.View.VISIBLE);
-		}
+		setButtonVisibilty(pos);
 	}
 
 	/**
@@ -89,20 +104,12 @@ public class HoroscopeDetails extends Activity {
 	public void showPrevHoroscope(View view) {
 		nextCount--;
 		int pos = (getIntent().getIntExtra("pos", 0)) + nextCount; // position
-																	// of item
+		// of item
 
-		
 		String name = horoscopes[pos]; // Since next count starts by 1
 		setContentView(R.layout.linear);
 		setImageAndText(pos, name);
-		if (pos == 0) {
-			findViewById(R.id.prevButton).setVisibility(
-					android.view.View.INVISIBLE);
-		}
-		else
-		{
-			findViewById(R.id.prevButton).setVisibility(android.view.View.VISIBLE);
-		}
+		setButtonVisibilty(pos);
 
 	}
 }
