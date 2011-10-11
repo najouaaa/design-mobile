@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+     android:scrollbars="vertical|horizontal" 
+     android:layout_height="fill_parent" 
+     android:layout_width="fill_parent">
+
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	
+		<TableRow
+	    	android:onClick="onHoroscopeClick"
+	    	android:id="@+id/horse_row">
+	        <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/horse"
+	            android:padding="10dip" />
+	        <TextView
+	            android:text="@string/horse"
+	            android:padding="10dip"
+	            android:layout_gravity="center_vertical"
+	            android:textSize="18sp" />
+	    </TableRow>
+	
+	    <View
+	        android:layout_height="2dip"
+	        android:background="#FF909090" />
+	
+	    <TableRow
+	    	android:id="@+id/tiger_row"
+	    	android:onClick="onHoroscopeClick">
+	        <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/tiger"
+	            android:padding="10dip" />
+	        <TextView
+	            android:text="@string/tiger"
+	            android:padding="10dip"
+	            android:layout_gravity="center_vertical" 
+	            android:textSize="18sp"/>
+	    </TableRow>
+	    
+	    <View
+	        android:layout_height="2dip"
+	        android:background="#FF909090" />
+	        
+	    <TableRow
+	    	android:onClick="onHoroscopeClick"
+	    	android:id="@+id/rabbit_row">
+	        <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/rabbit"
+	            android:padding="10dip" />
+	        <TextView
+	            android:text="@string/rabbit"
+	            android:padding="10dip"
+	            android:layout_gravity="center_vertical"
+	            android:textSize="18sp" />
+	    </TableRow>
+	    
+	    <View
+	        android:layout_height="2dip"
+	        android:background="#FF909090" />
+	
+	    <TableRow
+	    	android:id="@+id/sheep_row"
+	    	android:onClick="onHoroscopeClick">
+	        <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/sheep"
+	            android:padding="10dip" />
+	        <TextView
+	            android:text="@string/sheep"
+	            android:padding="10dip"
+	            android:layout_gravity="center_vertical"
+	            android:textSize="18sp" />
+	    </TableRow>
+	    
+	    <View
+	        android:layout_height="2dip"
+	        android:background="#FF909090" />
+	
+	    <TableRow
+	    	android:onClick="onHoroscopeClick"
+	    	android:id="@+id/snake_row">
+	        <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/snake"
+	            android:padding="10dip" />
+	        <TextView
+	            android:text="@string/snake"
+	            android:padding="10dip"
+	            android:layout_gravity="center_vertical"
+	            android:textSize="18sp" />
+	    </TableRow>
+	</TableLayout>
+</ScrollView>
