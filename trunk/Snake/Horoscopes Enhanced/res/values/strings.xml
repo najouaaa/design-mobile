@@ -69,4 +69,5 @@
 		<item>Sheep</item>
 		<item>Snake</item>
 	</string-array>
+	<string name="horoscope_prompt">Choose a Horoscope</string>
 </resources>
