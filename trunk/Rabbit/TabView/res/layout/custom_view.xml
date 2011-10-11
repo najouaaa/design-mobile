@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" 
+	android:layout_height="fill_parent">
+
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_rat">
+		
+		<ImageView android:layout_column="1" 
+			android:src="@drawable/rat"
+			android:padding="10dip" 
+			android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+			
+		<TextView android:layout_column="2" 
+			android:text="@string/h_rat"
+			android:textSize="30sp"
+			android:translationX="20dp" 
+			android:translationY="10dp"  />
+			
+		<RatingBar android:layout_column="3" 
+			android:id="@+id/ratingbar1"
+        	android:translationY="10dp" 
+        	android:scaleX="0.6"
+        	android:scaleY="0.6" 
+        	android:numStars="5"
+        	android:stepSize="1.0"/>
+		
+	</TableRow>
+	
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_ox">
+		
+		<ImageView android:layout_column="1" 
+			android:src="@drawable/ox"
+			android:padding="10dip" 
+			android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+			
+		<TextView android:layout_column="2" 
+			android:text="@string/h_ox"
+			android:textSize="30sp"
+			android:translationX="20dp" 
+			android:translationY="10dp"  />
+			
+		<RatingBar android:layout_column="3" 
+			android:id="@+id/ratingbar2"
+        	android:translationY="10dp" 
+        	android:scaleX="0.6"
+        	android:scaleY="0.6" 
+        	android:numStars="5"
+        	android:stepSize="1.0"/>
+		
+	</TableRow>
+	
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_tiger">
+		
+		<ImageView android:layout_column="1" 
+			android:src="@drawable/tiger"
+			android:padding="10dip" 
+			android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+			
+		<TextView android:layout_column="2" 
+			android:text="@string/h_tiger"
+			android:textSize="30sp"
+			android:translationX="20dp" 
+			android:translationY="10dp"  />
+			
+		<RatingBar android:layout_column="3" 
+			android:id="@+id/ratingbar3"
+        	android:translationY="10dp" 
+        	android:scaleX="0.6"
+        	android:scaleY="0.6" 
+        	android:numStars="5"
+        	android:stepSize="1.0"/>
+		
+	</TableRow>
+	
+	<TableRow android:onClick="onClickRow" android:tag="@string/h_rabbit">
+		
+		<ImageView android:layout_column="1" 
+			android:src="@drawable/rabbit"
+			android:padding="10dip" 
+			android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+			
+		<TextView android:layout_column="2" 
+			android:text="@string/h_rabbit"
+			android:textSize="30sp"
+			android:translationX="20dp" 
+			android:translationY="10dp"  />
+			
+		<RatingBar android:layout_column="3" 
+			android:id="@+id/ratingbar4"
+        	android:translationY="10dp" 
+        	android:scaleX="0.6"
+        	android:scaleY="0.6" 
+        	android:numStars="5"
+        	android:stepSize="1.0"/>
+		
+	</TableRow>
+	
+		<TableRow android:onClick="onClickRow" android:tag="@string/h_dragon">
+		
+		<ImageView android:layout_column="1" 
+			android:src="@drawable/dragon"
+			android:padding="10dip" 
+			android:columnWidth="90dp"
+			android:layout_width="85dp"	
+			android:layout_height="85dp" />
+			
+		<TextView android:layout_column="2" 
+			android:text="@string/h_dragon"
+			android:textSize="30sp"
+			android:translationX="20dp" 
+			android:translationY="10dp"  />
+			
+		<RatingBar android:layout_column="3" 
+			android:id="@+id/ratingbar5"
+        	android:translationY="10dp" 
+        	android:scaleX="0.6"
+        	android:scaleY="0.6" 
+        	android:numStars="5"
+        	android:stepSize="1.0"/>
+		
+	</TableRow>
+	
+	
+
+	
+</TableLayout>
