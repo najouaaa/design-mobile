@@ -27,32 +27,12 @@ public class ListActivitys extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				
-				int imageID = 0;
-				switch (position) {
-				case 0:
-					imageID = R.drawable.horse_big;
-					break;
-				case 1:
-					imageID = R.drawable.sheep_big;
-					break;
-				case 2:
-					imageID = R.drawable.snake_big;
-					break;
-				case 3:
-					imageID = R.drawable.rabbit_big;
-					break;
-				default:
-					break;
-				}
-				
 				Intent i = new Intent(ListActivitys.this, LinearLayouts.class);
 
 				Bundle bundle = new Bundle();
 				bundle.putInt("position", position);
-				bundle.putInt("image_id", imageID);
 				i.putExtras(bundle);
 				startActivity(i);
-
 			}
 		});
 	}

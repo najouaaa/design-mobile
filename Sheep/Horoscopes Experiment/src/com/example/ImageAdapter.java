@@ -40,16 +40,14 @@ public class ImageAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        
-        
         return view;
     }
 
     // references to our images
     private Integer[] mThumbIds = {
-            R.drawable.rabbit, R.drawable.horse, R.drawable.sheep, R.drawable.snake
+            R.drawable.horse, R.drawable.sheep, R.drawable.snake, R.drawable.rabbit
     };
     private String[] mThumbText = {
-            "Rabbit", "Horse", "Sheep","Snake"
+            "Horse", "Sheep","Snake", "Rabbit"
     };
 }
