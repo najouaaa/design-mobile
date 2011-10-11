@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/lineItem"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:gravity="center_vertical">
+
+	<CheckBox android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_alignParentLeft="true"/>
+	
+	<ImageView android:id="@+id/iconLine" android:layout_width="48dip"
+		android:layout_height="48dip" android:layout_toRightOf="@+id/checkbox" />
+
+	<TextView android:id="@+id/textLine" android:layout_height="wrap_content"
+		android:layout_marginLeft="10dip" android:textSize="24sp"
+		android:layout_width="wrap_content"
+		android:layout_toRightOf="@+id/iconLine" />
+
+	<RatingBar android:numStars="1"
+	android:layout_alignParentRight="true"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:isIndicator="false"	
+	android:stepSize="0.1"
+	android:rating="0"
+	android:soundEffectsEnabled="true"
+	android:id="@+id/rate"	/>
+
+
+</RelativeLayout>
