@@ -2,6 +2,7 @@
 <resources>
     <string name="hello">Hello World !</string>
     <string name="app_name">Chinese Horoscopes</string>
+    <string name="horoscope_prompt">Choose a horoscope</string>
     <string-array name="horoscope_array">
         <item>Rat</item>
         <item>Ox</item>
