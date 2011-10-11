@@ -5,12 +5,11 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
  * @author Gad
+ * @author Dalia
  */
 
 public class ImageAdapter extends BaseAdapter {
@@ -43,29 +42,15 @@ public class ImageAdapter extends BaseAdapter {
 	// create a new ImageView for each item referenced by the Adapter
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
-		/*ImageView imageView;
-		if (convertView == null) {			
-			// if it's not recycled, initialize some attributes
-			imageView = new ImageView(mContext);
-			imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-			imageView.setPadding(8, 8, 8, 8);
-		} else {
-			imageView = (ImageView) convertView;
-		}
-
-		imageView.setImageResource(mThumbIds[position]);
-		*/
-		/*
-		 * setting tags to the icons.
-		 * 
-		 */
+		
 		//create textview with an image above the text
 		TextView textView=new TextView(mContext);
 		String [] horStrings= mContext.getResources().getStringArray(R.array.horoscope_array);
-		//imageView.setTag(horStrings[position%12]);
+		//set tag to view, to call with
 		textView.setTag(horStrings[position%12]);
+		//the text
 		textView.setText(horStrings[position%12]);//%12 because I increased the list size
+		//the icon
 		Drawable img = mContext.getResources().getDrawable(mThumbIds[position]);
 		img.setBounds(0,0,32,46);
 		
@@ -76,87 +61,7 @@ public class ImageAdapter extends BaseAdapter {
 	}
 
 	// references to our images
-	/*
-	private Integer[] mThumbIds = { R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar,R.drawable.rat,
-			R.drawable.ox, R.drawable.tiger,
-			R.drawable.hare, R.drawable.dragon,
-			R.drawable.snake, R.drawable.horse,
-			R.drawable.sheep, R.drawable.monkey,
-			R.drawable.rooster, R.drawable.dog,
-			R.drawable.boar};
-			*/
+	
 	private Integer[] mThumbIds = { R.drawable.rat_zodiac,
 			R.drawable.ox_zodiac, R.drawable.tiger_zodiac,
 			R.drawable.rabbit_zodiac, R.drawable.dragon_zodiac,
