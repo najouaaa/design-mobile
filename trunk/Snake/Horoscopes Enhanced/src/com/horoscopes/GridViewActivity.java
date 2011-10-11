@@ -3,23 +3,30 @@ package com.horoscopes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 
 import com.horoscopes.R;
 
 public class GridViewActivity extends Activity {
+
+	private ProgressBar progressBar;
+	private Handler handler = new Handler();
+	private int count = 100;
+	
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.grid_view);
-
-		GridView gridView = (GridView) findViewById(R.id.gridview);
+		progressBar = (ProgressBar) findViewById(R.id.progressbar);
+		final GridView gridView = (GridView) findViewById(R.id.gridview);
 		gridView.setAdapter(new ImageAdapter(this));
-
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
@@ -65,5 +72,30 @@ public class GridViewActivity extends Activity {
 				startActivity(detailsIntent);
 			}
 		});
+
+		new Thread(new Runnable() {
+			public void run() {
+				while (count < 100) {
+					count++;
+					try {
+						Thread.sleep(100);
+					} catch (Throwable t) {
+					}
+					handler.post(new Runnable() {
+						public void run() {
+							progressBar.setProgress(count);
+							if (count >= 100) {
+								progressBar.setVisibility(View.INVISIBLE);
+								gridView.setVisibility(View.VISIBLE);
+								return;
+							}
+						}
+					});
+				}
+
+			}
+		}).start();
+		
+
 	}
 }
