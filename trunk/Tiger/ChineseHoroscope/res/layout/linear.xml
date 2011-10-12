@@ -1,81 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/ScrollView01"
-android:layout_width="fill_parent"
-android:layout_height="fill_parent">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    
-	android:orientation="vertical"    
-	android:layout_width="wrap_content"    
-	android:layout_height="wrap_content">  
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"    
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:background="#cccccc"> 
-			<Button		android:id="@+id/prevButton"
-						android:layout_height="wrap_content"
-  						android:layout_width="wrap_content"
-  						android:text="@string/prev"
-  						android:textColor="#aa0000"
-  						android:background="#cccccc" 
-  						android:onClick="showPrevHoroscope"
-  						android:layout_marginLeft="5dp"
-  						android:layout_alignParentLeft="true"/>
-			<Button		android:id="@+id/nextButton"
-						android:layout_height="wrap_content"
-     					android:layout_width="wrap_content"
-     					android:text="@string/next"
-     					android:textColor="#aa0000" 
-     					android:background="#cccccc"
-     					android:onClick="showNextHoroscope"
-     					android:layout_marginRight="5dp" 
-     					android:layout_alignParentRight="true"/>
+	android:id="@+id/ScrollView01" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical" android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:background="#cccccc">
+			<Button android:id="@+id/prevButton" android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:text="@string/prev"
+				android:textColor="#aa0000" android:background="#cccccc"
+				android:onClick="showPrevHoroscope" android:layout_marginLeft="5dp"
+				android:layout_alignParentLeft="true" />
+			<Button android:id="@+id/nextButton" android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:text="@string/next"
+				android:textColor="#aa0000" android:background="#cccccc"
+				android:onClick="showNextHoroscope" android:layout_marginRight="5dp"
+				android:layout_alignParentRight="true" />
 
-     					</RelativeLayout>
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    
-			android:orientation="horizontal"    
-			android:layout_width="wrap_content"    
-			android:layout_height="wrap_content"
-		>  
-				<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    
-					android:orientation="vertical"    
-					android:layout_width="wrap_content"    
-					android:layout_height="wrap_content"
-					>
-					
-							<TextView android:id="@+id/title"
-									  android:text="Title"  
-									  android:textColor="#aa0000"      
-									  android:textSize="23sp"        
-									  android:layout_width="wrap_content"        
-									  android:layout_height="wrap_content"
-									   />
-									  
-							<ImageView android:id="@+id/horoscope_image"
-								   android:layout_width="100px"  
-								   android:scaleType="fitStart"
-								   android:src="@drawable/icon"
-								   android:layout_weight="1"
-								   android:layout_height="0dip"
-								   
-								    />
-			
-		</LinearLayout>	
-		
-		  
-		<TextView        android:id="@+id/text1"
-						 android:text="@string/a71"        
-						 android:textSize="23sp"        
-						 android:layout_width="0dip"        
-						 android:layout_height="wrap_content" 
-						 android:layout_weight="1" />    
+		</RelativeLayout>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical" android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+
+				<TextView android:id="@+id/title" android:text="Title"
+					android:textColor="#aa0000" android:textSize="23sp"
+					android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+				<ImageView android:id="@+id/horoscope_image"
+					android:layout_width="100px" android:scaleType="fitStart"
+					android:src="@drawable/icon" android:layout_weight="1"
+					android:layout_height="0dip" />
+
+			</LinearLayout>
+
+
+			<TextView android:id="@+id/text1" android:text="@string/a71"
+				android:textSize="23sp" android:layout_width="0dip"
+				android:layout_height="wrap_content" android:layout_weight="1" />
 		</LinearLayout>
-		
-		<TextView        android:id="@+id/text2"
-						 android:text="@string/a72"        
-						 android:textSize="23sp"        
-						 android:layout_width="fill_parent"        
-						 android:layout_height="0dip"        
-						 android:layout_weight="1" /> 
-</LinearLayout>
+
+		<TextView android:id="@+id/text2" android:text="@string/a72"
+			android:textSize="23sp" android:layout_width="fill_parent"
+			android:layout_height="0dip" android:layout_weight="1" />
+		<RatingBar android:layout_width="wrap_content"
+			android:layout_height="wrap_content" style="?android:attr/ratingBarStyleSmall"
+			android:id="@+id/detailstar" android:numStars="10" android:stepSize="0.1"
+			android:isIndicator="true" />
+		<ViewStub android:id="@+id/firends_stub" android:inflatedId="@+id/friends_list_import"
+			android:layout="@layout/friends_list" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			>
+			
+
+	
+	</ViewStub>
+
+	</LinearLayout>
 
 </ScrollView>
