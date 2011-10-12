@@ -16,8 +16,7 @@ public class GridViewActivity extends Activity {
 
 	private ProgressBar progressBar;
 	private Handler handler = new Handler();
-	private int count = 100;
-	
+	private int count = 0;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -76,7 +75,7 @@ public class GridViewActivity extends Activity {
 		new Thread(new Runnable() {
 			public void run() {
 				while (count < 100) {
-					count++;
+					count += 10;
 					try {
 						Thread.sleep(100);
 					} catch (Throwable t) {
@@ -95,7 +94,6 @@ public class GridViewActivity extends Activity {
 
 			}
 		}).start();
-		
 
 	}
 }
