@@ -9,7 +9,12 @@
 		<item>Snake</item>
 		<item>Rabbit</item>
 	</string-array>
-
+	<string-array name="horo_friends">
+		<item>Ahmed, Ali, Adam and Akram</item>
+		<item>Mohammed, Mahmoud, Mostafa and Magdy</item>
+		<item>Khaled, Belal, Hamza and Othman</item>
+		<item>Ayman, Amr, Omar and Ramy</item>
+	</string-array>
 	<string-array name="horo_description_array">
 		<item>
 			The Horse (simplified Chinese: 马; traditional Chinese: 馬) is the
