@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.view.ViewStub;
 
 /**
  * @author Dalia El Badawi
@@ -27,6 +29,44 @@ public class HoroscopeDetails extends Activity {
 		setContentView(R.layout.linear);
 		setImageAndText(pos, name);
 		setButtonVisibilty(pos);
+		
+		setRating(pos);
+		viewListOfFriends(pos);
+		
+	}
+
+	private void viewListOfFriends(int pos) {
+			
+		String[]names=getResources().getStringArray(getResources().getIdentifier("l"+pos, "array", "com.horoscope"));
+		if(names.length>1)
+		{	
+		ViewStub stub = (ViewStub) findViewById(R.id.firends_stub);
+	    TextView inflatedList=(TextView)stub.inflate();
+	    inflatedList.setText("Friends in this Horoscope:\n"+listToString(names));
+		}
+	    
+		
+	}
+	private static String listToString(String []ar){
+		String s="";
+		for (int i = 0; i < ar.length; i++) {
+			s+=("\n"+ar[i]);
+		}
+		return s;
+	}
+
+	/**
+	 * to set the rate value from ratings saved in strings.xml
+	 * 
+	 * @author Gad
+	 * @param pos
+	 */
+	private void setRating(int pos) {
+		// set the rating value according to ratings saved in strings.xml
+		RatingBar rt=(RatingBar) findViewById(R.id.detailstar);
+		String[]ratings=getResources().getStringArray(R.array.ratings);
+		rt.setRating(Float.parseFloat(ratings[pos]));
+		
 	}
 
 	/***
@@ -56,6 +96,7 @@ public class HoroscopeDetails extends Activity {
 		text2.setText(getResources().getString(
 				getResources().getIdentifier("a" + pos + "2", "string",
 						"com.horoscope")));
+		
 	}
 
 	/**
@@ -93,6 +134,9 @@ public class HoroscopeDetails extends Activity {
 		setContentView(R.layout.linear);
 		setImageAndText(pos, name);
 		setButtonVisibilty(pos);
+		// by Gad
+		setRating(pos);
+		viewListOfFriends(pos);
 	}
 
 	/**
@@ -108,6 +152,12 @@ public class HoroscopeDetails extends Activity {
 		setContentView(R.layout.linear);
 		setImageAndText(pos, name);
 		setButtonVisibilty(pos);
+		//by Gad
+		setRating(pos);
+		viewListOfFriends(pos);
 
 	}
+	
+	
+	
 }
