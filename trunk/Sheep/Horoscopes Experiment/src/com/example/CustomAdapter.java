@@ -42,31 +42,32 @@ public class CustomAdapter extends BaseAdapter {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		Holder h;
-		if(convertView == null)
-		{
+		if (convertView == null) {
 			convertView = lf.inflate(R.layout.list_menu, null);
 			h = new Holder();
 			h.iv = (ImageView) convertView.findViewById(R.id.iconLine);
 			h.rb = (RatingBar) convertView.findViewById(R.id.rate);
 			h.tv = (TextView) convertView.findViewById(R.id.textLine);
 			convertView.setOnClickListener(new OnClickListener() {
-		          @Override
-		          public void onClick(View v) {
-		        	  Intent i = new Intent(mcontext, LinearLayouts.class);
+				@Override
+				public void onClick(View v) {
+					Intent i = new Intent(mcontext, LinearLayouts.class);
+					double rating = ((RatingBar) v.findViewById(R.id.rate))
+							.getRating();
+					Bundle bundle = new Bundle();
+					bundle.putInt("position", position);
+					bundle.putDouble("rating", rating);
 
-		      		Bundle bundle = new Bundle();
-		      		bundle.putInt("position", position);
-		      		i.putExtras(bundle);
-		      		mcontext.startActivity(i);    
-		          }
-		        });
+					i.putExtras(bundle);
+
+					mcontext.startActivity(i);
+				}
+			});
 			convertView.setTag(h);
-		}
-		else
-		{
+		} else {
 			h = (Holder) convertView.getTag();
 		}
-		
+
 		h.tv.setText(tdata[position]);
 		h.iv.setImageResource(mThumbIds[position]);
 		return convertView;
