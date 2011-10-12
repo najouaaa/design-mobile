@@ -11,9 +11,7 @@
         android:id="@+id/spinner_horoscope"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/label"
-        android:prompt="@string/horoscope_prompt"
-    />
+                android:layout_below="@id/label"  />
         <Button
                 android:id="@+id/ok"
                 android:layout_width="wrap_content"
