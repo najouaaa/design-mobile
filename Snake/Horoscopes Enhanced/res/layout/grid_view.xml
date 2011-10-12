@@ -2,9 +2,10 @@
 <merge android:layout_width="fill_parent" android:layout_height="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	<ProgressBar android:id="@+id/progressbar"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		style="@android:style/Widget.ProgressBar.Horizontal"
-		android:layout_marginRight="200dp" android:layout_marginTop="200dp"/>
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:paddingLeft="50dp" android:paddingTop="150dp" 
+		android:minWidth="200dp"/>
 	<GridView xmlns:android="http://schemas.android.com/apk/res/android"
 		android:id="@+id/gridview" android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:numColumns="auto_fit"
