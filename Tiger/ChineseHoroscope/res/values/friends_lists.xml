@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+<string-array name="l0">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l1">
+    </string-array>
+    <string-array name="l2">
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l3">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l4">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l5">
+    </string-array>
+    <string-array name="l6">
+        <item>Ahmed</item>
+        <item>Mohamed</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l7">
+        <item>Ahmed</item>
+        <item>Mahmoud</item>
+    </string-array>
+    <string-array name="l8">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l9">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l10">
+    </string-array>
+    <string-array name="l11">
+    </string-array>
+
+</resources>
