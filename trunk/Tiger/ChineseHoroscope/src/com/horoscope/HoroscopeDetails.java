@@ -35,6 +35,11 @@ public class HoroscopeDetails extends Activity {
 		
 	}
 
+	/**
+	 * To generate the list of friends for each Horoscope. 
+	 * @author Gad
+	 * @param pos
+	 */
 	private void viewListOfFriends(int pos) {
 			
 		String[]names=getResources().getStringArray(getResources().getIdentifier("l"+pos, "array", "com.horoscope"));
@@ -47,6 +52,8 @@ public class HoroscopeDetails extends Activity {
 	    
 		
 	}
+	
+	// just to convert from list to string to be added to text view
 	private static String listToString(String []ar){
 		String s="";
 		for (int i = 0; i < ar.length; i++) {
