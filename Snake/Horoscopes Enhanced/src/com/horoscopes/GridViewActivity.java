@@ -75,9 +75,9 @@ public class GridViewActivity extends Activity {
 		new Thread(new Runnable() {
 			public void run() {
 				while (count < 100) {
-					count += 10;
+					count ++;
 					try {
-						Thread.sleep(100);
+						Thread.sleep(10);
 					} catch (Throwable t) {
 					}
 					handler.post(new Runnable() {
