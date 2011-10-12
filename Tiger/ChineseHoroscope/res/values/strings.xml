@@ -56,4 +56,66 @@
     
     <string name="a111">Pigs are splendid companions, intellectuals with a very strong need to set difficult goals and carry them out.</string>
     <string name="a112">They are sincere, tolerant, and honest. By expecting the same from others, they are incredibly naive and sometimes taken advantage of. Regardless, they seldom hold a grudge. Pigs are exceptionally funny and good-humoured, and will overlook other people\'s faults for the sake of social harmony.</string>
+    
+    <string-array name="l0">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l1">
+    </string-array>
+    <string-array name="l2">
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l3">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l4">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l5">
+    </string-array>
+    <string-array name="l6">
+        <item>Ahmed</item>
+        <item>Mohamed</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l7">
+        <item>Ahmed</item>
+    </string-array>
+    <string-array name="l8">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l9">
+        <item>Ahmed</item>
+        <item>Mohamed Atrees</item>
+        <item>GAD</item>
+    </string-array>
+    <string-array name="l10">
+    </string-array>
+    <string-array name="l11">
+    </string-array>
+    <string-array name="ratings">
+    <item>1</item>
+    <item>4</item>
+    <item>2</item>
+    <item>3</item>
+    <item>1</item>
+    <item>5</item>
+    <item>10</item>
+    <item>3</item>
+    <item>1</item>
+    <item>1</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    
+    
+    </string-array>
 </resources>
