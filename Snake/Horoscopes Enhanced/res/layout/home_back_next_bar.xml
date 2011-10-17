@@ -3,16 +3,19 @@
 	android:layout_height="wrap_content"
 	android:orientation="horizontal"
 	android:gravity="right">
+	
 	<ImageButton android:id = "@+id/homeButton"
 		android:src="@drawable/home"
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:onClick="goHome"/>
+		
 	<ImageButton android:id = "@+id/backButton"
 		android:src="@drawable/left_arrow"
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:onClick="goBack"/>
+		
 	<ImageButton android:id = "@+id/nextButton"
 		android:src="@drawable/right_arrow"
 		android:layout_height="wrap_content"
