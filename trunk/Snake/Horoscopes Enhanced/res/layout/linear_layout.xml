@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:id = "@+id/linear_details" >
-	
-	<include layout="@layout/home_back_next_bar" />
-	
-	<TextView android:id="@+id/horoscope_title_textview" 
+	<LinearLayout android:orientation="vertical" 
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content" 
-		android:gravity="center" 
-		android:textSize="25sp"
-		android:textStyle="bold" />
-
-	
-    <RatingBar android:id="@+id/ratingbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:stepSize="1.0"/>
-
-	<ImageView android:id="@+id/horoscope_image" 
-		android:layout_width="fill_parent"
-		android:layout_height="80dip" 
-		android:gravity="center"
-		android:padding="10dip" />
+		android:layout_height="wrap_content"
+		android:id = "@+id/linear_details" >
 		
-	<ScrollView android:scrollbars="vertical" 
-    	android:layout_height="wrap_content"
-    	android:layout_width="fill_parent">
-		<TextView android:id="@+id/horoscope_desc_textview" 
+		<include layout="@layout/home_back_next_bar" />
+		
+		<TextView android:id="@+id/horoscope_title_textview" 
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content" 
-			android:gravity="left"
-			android:padding="10dip"
-			android:textSize="18sp" />	
-	</ScrollView>	
-
-<ViewStub android:id="@+id/stub1" android:inflatedId="@+id/showlayout"
-android:layout="@layout/layout1" android:layout_width="fill_parent"
-android:layout_height="wrap_content"/>	
+			android:gravity="center" 
+			android:textSize="25sp"
+			android:textStyle="bold" />	
+		
+	    <RatingBar android:id="@+id/ratingbar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:numStars="5"
+	        android:stepSize="1.0"/>
 	
-</LinearLayout>
+		<ImageView android:id="@+id/horoscope_image" 
+			android:layout_width="fill_parent"
+			android:layout_height="80dip" 
+			android:gravity="center"
+			android:padding="10dip" />
+			
+		<ScrollView android:scrollbars="vertical" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_width="fill_parent">
+			<TextView android:id="@+id/horoscope_desc_textview" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" 
+				android:gravity="left"
+				android:padding="10dip"
+				android:textSize="18sp" />	
+		</ScrollView>	
+	
+		<ViewStub android:id="@+id/stub1" 
+			android:inflatedId="@+id/showlayout"
+			android:layout="@layout/layout1" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>	
+	</LinearLayout>
 </merge>
