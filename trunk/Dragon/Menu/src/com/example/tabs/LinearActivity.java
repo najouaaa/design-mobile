@@ -37,8 +37,8 @@ public class LinearActivity extends Activity implements View.OnClickListener,
 		content1 = (TextView) findViewById(R.id.txt1);
 		content2 = (TextView) findViewById(R.id.txt2);
 		myImg = (ImageView) findViewById(R.id.img);
-		button1 = (Button) findViewById(R.id.first_button);
-		button2 = (Button) findViewById(R.id.second_button);
+		button1 = (Button) findViewById(R.id.button_one);
+		button2 = (Button) findViewById(R.id.button_two);
 		button1.setClickable(true);
 		button2.setClickable(true);
 		button1.setOnClickListener(this);
