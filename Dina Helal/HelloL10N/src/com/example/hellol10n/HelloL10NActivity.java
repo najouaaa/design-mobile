@@ -1,3 +1,7 @@
+/***
+ * @Author: Dina
+ */
+
 package com.example.hellol10n;
 
 import android.app.Activity;
@@ -13,8 +17,8 @@ public class HelloL10NActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-     // assign flag.png to the button, loading correct flag image for current locale
         Button b;
+     // place flag.png on the button to show the flag corresponding to the country
         (b = (Button)findViewById(R.id.flag_button)).setBackgroundDrawable(this.getResources().getDrawable(R.drawable.flag));
 
         // build dialog box to display when user clicks the flag
