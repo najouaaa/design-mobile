@@ -5,15 +5,6 @@
     android:gravity="center"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-	
-		<Button android:id="@+id/first_button" 
-			android:orientation="horizontal" 
-	      android:layout_width="wrap_content" 
-	      android:layout_height="wrap_content" 
-	      android:paddingLeft="10px" 
-	      android:paddingRight="10px" 
-	      android:layout_marginLeft="10px"
-	      android:text="Back"/> 
 		
 		<LinearLayout
 			android:orientation="vertical"
@@ -61,18 +52,10 @@
 	   			android:id="@+id/bar"
 	   			android:numStars="5"
 	   			android:rating="3"
-	   			android:isIndicator="false"/> 
-   	   
-			    
-		    <Button android:id="@+id/second_button"
-			    android:orientation="horizontal"  
-			      android:layout_width="wrap_content" 
-			      android:layout_height="wrap_content" 
-			      android:paddingLeft="10px" 
-			      android:paddingRight="10px" 
-			      android:layout_marginRight="10px"
-			      android:text="Next"/> 
-			    
-		</LinearLayout>	
+	   			android:isIndicator="false"/> 	
+	   			<include android:id="@+id/buttons" layout="@layout/next_back_button" android:layout_weight="1" />		    
+		</LinearLayout>
+		
+		
 	
 </LinearLayout>
