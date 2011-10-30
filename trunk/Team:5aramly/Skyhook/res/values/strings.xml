@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, SkyhookActivity!</string>
-    <string name="app_name">Skyhook</string>
+    <string name="app_name">WpsApiTest</string>
+
+	<!--  preferences -->
+    <string name="preferences_screen_name">WpsApiTest Settings</string>
 </resources>
