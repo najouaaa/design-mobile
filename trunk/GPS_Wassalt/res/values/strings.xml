@@ -3,5 +3,9 @@
 
     <string name="hello">Hello World, GPS_WassaltActivity!</string>
     <string name="app_name">GPS_Wassalt</string>
-
+	<string-array name="avail_types">
+        <item>GPS</item>
+        <item>AGPS</item>
+        <item>Skyhook Wireless</item>
+    </string-array>
 </resources>
