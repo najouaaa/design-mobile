@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory 
+        android:title="Settings"
+        android:key="settings">
+        
+        <ListPreference 
+            android:key="updates_interval"
+            android:title="Updates interval"
+            android:summary="Define how often location will be updated"
+            android:defaultValue="1000" 
+            android:entries="@array/updateInterval"
+            android:entryValues="@array/updateIntervalValues"
+        />
+        <ListPreference 
+            android:key="type"
+            android:title="Type"
+            android:summary="Define the location getter method"
+            android:defaultValue="wps" 
+            android:entries="@array/types"
+            android:entryValues="@array/types_values"
+        />
+        
+        <ListPreference 
+            android:key="distance"
+            android:title="Distance"
+            android:summary="Define the distance"
+            android:defaultValue="1000" 
+            android:entries="@array/updateInterval"
+            android:entryValues="@array/updateIntervalValues"
+        />
+            
+    </PreferenceCategory>
+    
+</PreferenceScreen>
