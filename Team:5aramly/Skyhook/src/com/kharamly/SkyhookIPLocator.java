@@ -5,7 +5,11 @@ import java.util.TimerTask;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -29,6 +33,9 @@ public class SkyhookIPLocator extends Activity {
 	private WPSAuthentication auth;
 	private IPLocationCallback callback;
 	private boolean serviceOn = false;
+	String GPS_FILTER = "guc.action.GPS_LOCATION";
+	Intent myGpsService;
+	Intent myAGpsService;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -41,12 +48,16 @@ public class SkyhookIPLocator extends Activity {
 	          public void onClick(View v) {
 	            if(serviceOn)
 	            {
-	            	endWPSService();
+//	            	endWPSService();
+	            	endGpsService();
+//	            	endAGpsService();
 	            	start_end.setText(R.string.start);
 	            }
 	            else
-	            {
-	            	startWPSService();
+	            {	
+//	            	startAGpsService();
+	            	startGpsService();
+//	            	startWPSService();
 	            	start_end.setText(R.string.end);
 	            }
 	            serviceOn = !serviceOn;
@@ -115,4 +126,45 @@ public class SkyhookIPLocator extends Activity {
 	    inflater.inflate(R.menu.menu, menu);
 	    return true;
 	}
+	
+	private void startGpsService(){
+		myGpsService = new Intent(this, MyGpsService.class);        
+        startService(myGpsService);   
+        // register & define filter for local listener
+        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+        MyMainLocalReceiver receiver = new MyMainLocalReceiver();
+        registerReceiver(receiver, mainFilter); 
+	}
+	
+	private void endGpsService(){
+		stopService(myGpsService);
+	}
+	
+	private void startAGpsService(){
+		myAGpsService = new Intent(this, MyGpsService.class);        
+        startService(myAGpsService);   
+        // register & define filter for local listener
+        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+        MyMainLocalReceiver receiver = new MyMainLocalReceiver();
+        registerReceiver(receiver, mainFilter);
+	}
+	
+	private void endAGpsService(){
+		stopService(myAGpsService);
+	}
+
+	private class MyMainLocalReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context localContext, Intent callerIntent) {	
+			double latitude = callerIntent.getDoubleExtra("latitude",-1);
+			double longitude = callerIntent.getDoubleExtra("longitude",-1);
+			Log.e ("MAIN>>>",  Double.toString(latitude));
+			Log.e ("MAIN>>>",  Double.toString(longitude));
+			String msg = " lat: " + Double.toString(latitude) + " "
+			+ " lon: " + Double.toString(longitude);
+			System.out.println(msg);	
+			
+		}		
+	}
+
 }
