@@ -26,7 +26,7 @@ public class GPS_UIActivity extends Activity implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         
     	super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.ui_controls);
         
         //************       Spinner      ***************
         
