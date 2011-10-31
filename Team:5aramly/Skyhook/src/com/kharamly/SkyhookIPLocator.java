@@ -8,6 +8,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.skyhookwireless.wps.IPLocation;
 import com.skyhookwireless.wps.IPLocationCallback;
@@ -23,13 +28,40 @@ public class SkyhookIPLocator extends Activity {
 	private XPS xps;
 	private WPSAuthentication auth;
 	private IPLocationCallback callback;
+	private boolean serviceOn = false;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
+		final Button start_end = (Button) findViewById(R.id.MainButton);
+		start_end.setOnClickListener(new OnClickListener() {
+	          @Override
+	          public void onClick(View v) {
+	            if(serviceOn)
+	            {
+	            	endWPSService();
+	            	start_end.setText(R.string.start);
+	            }
+	            else
+	            {
+	            	startWPSService();
+	            	start_end.setText(R.string.end);
+	            }
+	            serviceOn = !serviceOn;
+	          }
+	        });
+		
+	}
+	
+	private void endWPSService()
+	{
+		
+	}
+	
+	private void startWPSService()
+	{
 		xps = new XPS(this);
 		auth = new WPSAuthentication("kamasheto", "German University in Cairo");
 
@@ -75,5 +107,12 @@ public class SkyhookIPLocator extends Activity {
 				dialog.cancel();
 			}
 		}).show();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu, menu);
+	    return true;
 	}
 }
