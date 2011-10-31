@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -28,7 +29,7 @@ import com.skyhookwireless.wps.XPS;
 
 public class SkyhookIPLocator extends Activity {
 	protected static final String TAG = "WPS ERROR";
-	private static final int TIME_INTERVAL = 1000;
+	private int TIME_INTERVAL = 1000;
 	private XPS xps;
 	private WPSAuthentication auth;
 	private IPLocationCallback callback;
@@ -126,6 +127,18 @@ public class SkyhookIPLocator extends Activity {
 	    inflater.inflate(R.menu.menu, menu);
 	    return true;
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch(item.getItemId())
+		{
+		case R.id.settings :
+			Intent i = new Intent(SkyhookIPLocator.this, SettingsActivity.class);
+			startActivity(i);
+			return true;
+		default : return super.onOptionsItemSelected(item);
+		}
+	}
 	
 	private void startGpsService(){
 		myGpsService = new Intent(this, MyGpsService.class);        
@@ -166,5 +179,4 @@ public class SkyhookIPLocator extends Activity {
 			
 		}		
 	}
-
 }
