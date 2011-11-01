@@ -65,4 +65,11 @@ public class MyMap extends MapActivity {
 		super.onRestart();
 		displayCurrentPosition();
 	}
+
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		displayCurrentPosition();
+	}
 }
