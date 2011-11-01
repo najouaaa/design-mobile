@@ -16,6 +16,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 public class LocationActivity extends Activity {
@@ -23,6 +25,13 @@ public class LocationActivity extends Activity {
 	
 	Button btnStopService;    
 	TextView txtMsg;
+	RadioGroup myRadioGroup;
+	RadioButton radioBtn1;
+	RadioButton radioBtn2;
+	RadioButton radioBtn3;
+	TextView frequencyTextView;
+	TextView distanceTextView;
+	Button startBtn;
 	Intent  intentMyService;
 	ComponentName service;
 	BroadcastReceiver receiver;
@@ -30,23 +39,82 @@ public class LocationActivity extends Activity {
 	String Data="";
 
     /** Called when the activity is first created. */
-    @Override
-    
-    
+    @Override 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         setContentView(R.layout.main);
-        txtMsg = (TextView) findViewById(R.id.txtMsg); 
-        // initiate the service
-        intentMyService = new Intent(this, MyGpsService.class);        
-        service = startService(intentMyService);   
-        txtMsg.setText("MyGpsService started - (see DDMS Log)");
-        // register & define filter for local listener
-        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
-        receiver = new MyMainLocalReceiver();
-        registerReceiver(receiver, mainFilter); 
+        txtMsg = (TextView) findViewById(R.id.txtMsg);
+        
+        frequencyTextView = (TextView) findViewById(R.id.freqTextView);
+        distanceTextView = (TextView) findViewById(R.id.distTextView);
+        startBtn = (Button) findViewById(R.id.start); 
         btnStopService = (Button) findViewById(R.id.btnStopService);
+        myRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioBtn1 = (RadioButton) findViewById(R.id.radioBtn1);
+        radioBtn2 = (RadioButton) findViewById(R.id.radioBtn2);
+        radioBtn3 = (RadioButton) findViewById(R.id.radioBtn3);
+        
+        
+        // Start Service Button 
+        startBtn.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            try {
+            
+            	btnStopService.setText("Stop Service");
+            	btnStopService.setEnabled(true);
+            	
+            	// Initiate the service
+            	// GPS
+            	if(myRadioGroup.getCheckedRadioButtonId()==radioBtn1.getId())
+            	{      	
+	                intentMyService = new Intent(LocationActivity.this, MyGpsService.class);
+	                service = startService(intentMyService);  
+	                txtMsg.setText("MyGpsService started - (see DDMS Log)");
+	                // register & define filter for local listener
+	                IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+	                receiver = new MyMainLocalReceiver();
+	                registerReceiver(receiver, mainFilter); 
+	                String freq="";
+	            	String dist="";       
+	                freq=frequencyTextView.getText().toString();
+	                dist= distanceTextView.getText().toString();
+	                
+	                long f = Long.valueOf(freq.trim()).longValue();
+	               	MyGpsService.frequency=(long)f;
+	               	Context context = getApplicationContext();
+	               	Toast.makeText(context,"frequency:"+MyGpsService.frequency , 0).show();
+	               
+	                float d = Float.valueOf(dist.trim()).floatValue();
+	                MyGpsService.distance=d;
+	               	Toast.makeText(context,"distance:"+MyGpsService.distance , 0).show();
+            	}
+            	
+            	// AGPS
+            	if(myRadioGroup.getCheckedRadioButtonId()==radioBtn2.getId())
+            	{
+            		/* Initiating AGPS service */
+            		Context context = getApplicationContext();
+	               	Toast.makeText(context,"AGPS selected" , 0).show();
+            	}
+                
+            	// Skyhook
+            	if(myRadioGroup.getCheckedRadioButtonId()==radioBtn3.getId())
+            	{
+            		/* Initiating Skyhook service */
+            		Context context = getApplicationContext();
+	               	Toast.makeText(context,"Skyhook selected" , 0).show();
+            	}
+                       
+            } catch (Exception e) {
+            Log.e("MYGPS", e.getMessage() );
+            }
+            }        
+            });
+        
+        
+        // Stop Service Button
+        
         btnStopService.setOnClickListener(new OnClickListener() {
         public void onClick(View v) {
         try {
@@ -54,13 +122,13 @@ public class LocationActivity extends Activity {
         txtMsg.setText("After stoping Service: \n" + 
         service.getClassName());
         btnStopService.setText("Finished");
-        btnStopService.setClickable(false);
+        btnStopService.setEnabled(false);
         } catch (Exception e) {
         Log.e("MYGPS", e.getMessage() );
         }
         }        
         });
-    
+        
     }
 
 	@Override
