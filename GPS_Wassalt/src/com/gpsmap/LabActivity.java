@@ -22,8 +22,11 @@ public class LabActivity extends Activity {
 	TextView txtMsg;
 	Intent  intentMyService;
 	ComponentName service;
+	static long frequency = 10000;
+	static float distance = 50;
 	BroadcastReceiver receiver;
 	String GPS_FILTER = "guc.action.GPS_LOCATION";
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,9 @@ public class LabActivity extends Activity {
 		setContentView(R.layout.main);
 		
 		// initiate the service
-		intentMyService = new Intent(this, MyGpsService.class);        
+		intentMyService = new Intent(this, MyGpsService.class);
+		MyGpsService.frequency = frequency;
+		MyGpsService.distance = distance;
 		service = startService(intentMyService);  
 		txtMsg = (TextView) findViewById(R.id.txtMsg); 
 		txtMsg.setText("MyGpsService started - (see DDMS Log)");
