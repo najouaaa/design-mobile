@@ -12,7 +12,6 @@ android:layout_height="wrap_content"
 android:text="Create Notification"
 android:textSize="28sp"
 android:textStyle="bold"
-android:textColor="@color/gray"
 android:layout_x="0px"
 android:layout_y="0px"
 >
