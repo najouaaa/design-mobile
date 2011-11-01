@@ -4,8 +4,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import com.skyhookwireless.wps.*;
-
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -22,6 +20,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.skyhookwireless.wps.IPLocation;
+import com.skyhookwireless.wps.IPLocationCallback;
+import com.skyhookwireless.wps.WPSAuthentication;
+import com.skyhookwireless.wps.WPSContinuation;
+import com.skyhookwireless.wps.WPSLocation;
+import com.skyhookwireless.wps.WPSLocationCallback;
+import com.skyhookwireless.wps.WPSReturnCode;
+import com.skyhookwireless.wps.WPSStreetAddressLookup;
+import com.skyhookwireless.wps.XPS;
 
 public class Location extends Activity {
 	Button btnStopService;
@@ -183,7 +191,7 @@ public class Location extends Activity {
 			try {
 				FileOutputStream fos = openFileOutput("comparison.txt",
 						MODE_APPEND);
-				OutputStreamFWriter osw = new OutputStreamWriter(fos);
+				OutputStreamWriter osw = new OutputStreamWriter(fos);
 
 				osw.write(msg);
 				osw.flush();
