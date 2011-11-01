@@ -104,7 +104,7 @@ android:text="Start Service"
 android:id="@+id/toMap"
 android:layout_width="151px"
 android:layout_height="wrap_content"
-android:text="Stop Service"
+android:text="Go To Map"
 android:enabled="true"
 >  
 </Button>    
