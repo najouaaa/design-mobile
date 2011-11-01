@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory 
+        android:title="Application Status"
+        android:key="cat_status">
+
+         <CheckBoxPreference 
+            android:key="input_activateApp"
+            android:summary="Enable or disable service of location detection"
+            android:title="Enable location detection" 
+            android:defaultValue="false"           
+        />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="Application Parameters"
+        android:key="cat_parameters">
+
+  		<ListPreference 
+            android:key="input_type"
+            android:title="Type of service"
+            android:summary="Define type of service used to determine the location"
+            android:defaultValue="1000" 
+            android:entries="@array/typeOfService"
+            android:entryValues="@array/typeOfServiceValues"
+        />    
+            
+        <EditTextPreference
+            android:key="input_frequency"
+            android:title="Frequency" 
+            android:summary="Define how frequent the location will be detected in seconds"
+            android:defaultValue="120" />
+        
+        
+      <EditTextPreference
+            android:key="input_distance"
+            android:title="Distance" 
+            android:summary="Define minimum distance interval for notifications"
+            android:defaultValue="100" />
+        
+
+    </PreferenceCategory>
+    
+    
+    
+</PreferenceScreen>
