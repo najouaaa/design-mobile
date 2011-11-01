@@ -60,8 +60,8 @@ public class Location extends Activity {
 		setUIHandler();	
 		WPS wps = new WPS(this);
 	    WPSAuthentication auth = new WPSAuthentication("salma_7amed", "German university in cairo");
-	     wps.getIPLocation(auth,WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,_callback);
-	//   wps.getLocation(auth,WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,_callback);
+	//     wps.getIPLocation(auth,WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,_callback);
+	   wps.getLocation(auth,WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,_callback);
 	     
 	     }
 		else{
@@ -159,7 +159,10 @@ public class Location extends Activity {
      public void handleWPSLocation(final WPSLocation location)
      {
          // send a message to display the location
-         _handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, location));
+    	 String x = " lat: " + location.getLatitude() + " " + " lon: "
+			+ location.getLongitude();
+    	 _handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, x));
+         
      }
  }
 
