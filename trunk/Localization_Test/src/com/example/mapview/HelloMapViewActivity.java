@@ -2,16 +2,22 @@ package com.example.mapview;
 
 import java.util.List;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
-
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.widget.LinearLayout;
 
 public class HelloMapViewActivity extends MapActivity {
     /** Called when the activity is first created. */
@@ -21,6 +27,35 @@ public class HelloMapViewActivity extends MapActivity {
 	List<Overlay> mapOverlays;
 	Drawable drawable;
 	HelloItemizedOverlay itemizedOverlay;
+	
+	final String MODE_GPS = "gps";
+	/**
+	 * string representation of skyhooker mode in the application
+	 */
+	final String MODE_SKYHOOKER = "skyhooker";
+	
+	/**
+	 * Indicates app settings of service type used for detecting the location (GPS or Skyhooker)
+	 */
+	String type;
+	/**
+	 * Indicates app settings of the number of seconds between different checks for new location
+	 */
+	int frequency;
+	/**
+	 * Indicates app settings of the ... (DUNNO)
+	 */
+	int distance;
+	
+	/**
+	 * Indicates location result - 1st coordinate
+	 */
+	double latitude;
+	/**
+	 * Indicates location result - 2nd coordinate
+	 */
+	double longitude;
+
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +76,10 @@ public class HelloMapViewActivity extends MapActivity {
         addLocation(point2);
         
         mapOverlays.add(itemizedOverlay);
+        
+        // #Beso
+       runApp();
+        
     }
     
     @Override
@@ -54,4 +93,179 @@ public class HelloMapViewActivity extends MapActivity {
         itemizedOverlay.addOverlay(overlayitem);
     	
     }
+    
+   // #Beso
+    
+    
+	 /**
+	  * Called whenever the "settings" button is clicked
+	  * to open settings preference menu
+	  * @param v button
+	  */
+	 public void onClick_button_settings(View v) {
+		 startActivity(new Intent(this, PreferencesActivity.class));
+    }// end onClick_button_settings	 
+	 
+	 
+	 /**
+	  * Used as the main back end for the application engine.	  * 
+	  */
+	 private void runApp(){
+		 
+		 // Check if the application should collect information or not 
+		 if (isOpenService()){
+		
+			 Log.e("7as7as: ", "The app is ENABLED!");
+			 
+			 // Fetch data settings from the preferences
+			 getAppSettings();
+			 
+			 // Inspect mode to choose location detection engine
+			 if (this.type == MODE_GPS){
+				 detectLocationUsingGps();
+			 }// end if : detect location using GPS/AGPS
+			 else if (this.type == MODE_SKYHOOKER){
+				 detectLocationUsingSkyhooker();
+			 }// end else : detect location using Skyhooker SDK
+			 
+			 // Get battery level
+			 int batteryLevelPercentage=getBatteryLevel();
+			 
+			 // Display on the map (create point + display on the map)
+			 displayLocationOnMap();
+			 
+			 // Write the fetched data in the file (method + location + battery consumption)
+			 writeDataToFile(batteryLevelPercentage);
+		 }// end if : application is in detection mode
+		 else{
+			 
+			 Log.e("7as7as: ", "The app is disabled");
+//			 Toast.makeText(this, "The app is disabled!", 1).show();
+		 }
+		 
+	 }// end runApp
+	 
+	 /**
+	  * Used to get the different settings to detect location like
+	  * frequency , type and distance
+	  */
+	 private void getAppSettings(){
+		 
+		 // Open the shared preferences location in the android phone
+		 SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+		 
+		 // Get frequency as a string. In case not found , default is 2 min 
+		 String frequency_string = sharedPrefs.getString("input_frequency", "120");
+		 // Get distance as a string. In case not found, default is 100 meter
+		 String distance_string = sharedPrefs.getString("input_distance", "100");
+		 
+		 try{
+			 // Parse frequency 
+			 this.frequency = Integer.parseInt(frequency_string);			 
+		 }catch(NumberFormatException nEx1){
+			 this.frequency = 120;
+		 }// end catch : input was not a number -> set to default
+		 
+		 try{
+			 // Parse  distance
+			 this.distance = Integer.parseInt(distance_string);			 
+		 }catch(NumberFormatException nEx2){
+			 this.distance = 100;
+		 }// end catch : input was not a number -> set to default
+		
+		 // Get type of service to be activated. If not found, default is "gps"
+		 this.type = sharedPrefs.getString("input_type", "gps");
+		 
+		 if ((!this.type.equalsIgnoreCase(MODE_GPS)) && (!this.type.equalsIgnoreCase(MODE_SKYHOOKER))){
+			 this.type = "gps";
+		 }// end if : in case of mistake in input -> choose default: gps
+		 
+	 }// end getAppSettings
+
+	 /**
+	  * Used to detect if location should be detected or not (open/close app)
+	  * @return true: detect location , false: stop service
+	  */
+	 private boolean isOpenService(){	 
+		 // Open the shared preferences location in the android phone
+		 SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+		 // Get the status from the preferences. In case nothing is set, default is false
+		 return sharedPrefs.getBoolean("input_activateApp", false);		 
+	 }// end isOpenService
+	
+	 /**
+	  * Used to detect the current location using the GPS / AGPS
+	  */
+	 private void detectLocationUsingGps(){
+		 
+		 // TODO Hossam please implement this method
+		 
+		 /*The method must set latitude and longitude instance parameters are the end*/
+		 
+		 // Location results detected
+		 this.latitude = 0;
+		 this.longitude=0;
+		 
+	 }// end detectLocationUsingGps
+	 
+	 /**
+	  * Used to detect the current location using the Skyhooker SDK
+	  */
+	 private void detectLocationUsingSkyhooker(){
+		 
+		 // TODO Mohsen please implement this method
+		 
+		 /*The method must set latitude and longitude instance parameters are the end*/
+		 
+		 // Location results detected
+		 this.latitude = 0;
+		 this.longitude=0;		 
+	 }// end detectLocationUsingGps
+	 
+	 /**
+	  * Used to get the current battery level of the machine running the app
+	  * @return percentage of remaining battery in the machine running the app
+	  */
+	 private int getBatteryLevel(){
+		 
+		 // TODO Hossam please implement this
+		 
+		 // Feel free to remove the method and just call the respective method
+		 return 0;
+	 }// end getBatteryLevel
+	 
+	 /**
+	  * Used to display the detected location by the engine on the map as a 
+	  * visible point
+	  */
+	 private void displayLocationOnMap(){
+		 
+		 // TODO maged please implement it
+		 
+		 // Create GeoPoint from the longitude and latitude instance parameters
+		 		 
+		 // Display on the map
+	 }// end displayLocationOnMap
+
+	 /**
+	  * Used to write the different data to the file for comparing different methods
+	  * later
+	  * @param batteryLevel remaining charge percentage in the machine running the app
+	  */
+	 private void writeDataToFile(int batteryLevel){
+		 
+		 // TODO Hossam please implement this
+		 
+		 /* You will find all the data you need here. I dunno what format will
+		  * you use:
+		  * 
+		  * batteryLevel: input from method
+		  * Location: longitude and latitude instance parameters
+		  * method used: type instance parameter
+		  * distance : distance instance parameter
+		  * 
+		  * */
+	 }// end writeDataToFile
+ 
+	 
 }
