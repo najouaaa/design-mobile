@@ -67,11 +67,14 @@ public class Location extends Activity {
 			// _callback);
 
 		} else {
+			
+			if(getIntent() != null){
 			intentMyService = new Intent(this, MyGpsService.class);
 			intentMyService.putExtra("minDist", getIntent()
 					.getIntExtra("minDist", 50));
 			intentMyService.putExtra("freq",
 					getIntent().getIntExtra("freq", 10000));
+			}
 			service = startService(intentMyService);
 			textBoxView.setText("MyGpsService started - (see DDMS Log)");
 			IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
@@ -99,7 +102,8 @@ public class Location extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		type = getIntent().getStringExtra("type").toString();
+		if(getIntent() != null)
+			type = getIntent().getStringExtra("type").toString();
 		textBoxView = (TextView) findViewById(R.id.txtMsg);
 	//	connectionHandler();
 		
