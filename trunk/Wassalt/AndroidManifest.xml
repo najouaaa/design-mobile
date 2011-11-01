@@ -14,6 +14,7 @@
         </activity>
         <activity android:name="InComingActivity"></activity>
         <activity android:name="OutGoingActivity"></activity>
+        <activity android:name="Request_Notification"></activity>
 
     </application>
 </manifest>
