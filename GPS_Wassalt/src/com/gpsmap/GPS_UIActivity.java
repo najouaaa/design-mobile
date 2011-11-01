@@ -62,8 +62,8 @@ public class GPS_UIActivity extends Activity implements View.OnClickListener{
                                         " and distance "+dist+"!!";
                         
                         
-                        Intent intent;
-                        if(typ.equals("GPS")
+                        Intent intent = new Intent();
+                        if(typ.equals("GPS"))
                         {
                       				LabActivity.frequency = Long.valueOf(freq.trim()).longValue();
                       				LabActivity.distance = Float.valueOf(dist.trim()).floatValue();
