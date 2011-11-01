@@ -69,13 +69,13 @@ public class GPS_UIActivity extends Activity implements View.OnClickListener{
                       				LabActivity.distance = Float.valueOf(dist.trim()).floatValue();
                                     intent = new Intent().setClass(GPS_UIActivity.this, LabActivity.class);
                         }
-                         /* else
-                         * {
-                         *              if(typ.equals("AGPS"))
-                         *              {
-                         *                      intent = new Intent().setClass(GPS_UIActivity.this, [AGPS Class]);
-                         *              }
-                         *              else
+                          else
+                          {
+                         //             if(typ.equals("AGPS"))
+                         //             {
+                                               intent = new Intent().setClass(GPS_UIActivity.this, AGpsActivity.class);
+                                        }
+                         /*              else
                          *              {
                          *                      intent = new Intent().setClass(GPS_UIActivity.this, [Skyhook Class]);
                          *              }
