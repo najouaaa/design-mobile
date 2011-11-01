@@ -18,6 +18,8 @@ public class MyGpsService extends Service {
 	LocationManager lm;
 	GPSListener myLocationListener;
 	boolean isRunning = true;
+	int minDistance = 50;
+	int minTime = 10000;
 	
 	@Override
 	public void onStart(Intent intent, int startId) {
@@ -26,7 +28,10 @@ public class MyGpsService extends Service {
 		// we place the slow work of the service in its own thread so the 
 		// response we send our caller who run a "startService(...)" method 
 		// gets a quick OK from us.
+		minDistance = intent.getIntExtra("minDist", 50);
+		minTime = intent.getIntExtra("freq", 10000);
 		triggerService = new Thread(new Runnable() {
+			
 		public void run() {
 			try {
 				Looper.prepare();
@@ -34,8 +39,8 @@ public class MyGpsService extends Service {
 				lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 				// This listener will catch and disseminate location updates
 				myLocationListener = new GPSListener();
-				long minTime = 10000;  // frequency update: 10 seconds
-				float minDistance = 50;  // frequency update: 50 meter
+			//	long minTime = 10000;  // frequency update: 10 seconds
+			//	float minDistance = 50;  // frequency update: 50 meter
 				lm.requestLocationUpdates( //request GPS updates
 				LocationManager.GPS_PROVIDER,
 				minTime, 
