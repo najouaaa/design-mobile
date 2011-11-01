@@ -8,32 +8,28 @@
 		android:layout_height="wrap_content" android:text="GPS Type"
 		android:layout_x="44px" android:layout_y="78px" />
 
-	<Spinner android:id="@+id/types" android:layout_width="150px"
-		android:layout_height="30px" android:layout_x="145px"
+	<Spinner android:id="@+id/types" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_x="145px"
 		android:layout_y="72px" />
 
 	<TextView android:id="@+id/frequency_text"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:text="Frequency" android:layout_x="44px" android:layout_y="147px" />
 
-	<EditText android:id="@+id/frequency" android:layout_width="150px"
-	
-		android:layout_height="30px" android:textSize="15sp" android:layout_x="144px"
+	<EditText android:id="@+id/frequency" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="15sp" android:layout_x="144px"
 		android:layout_y="145px" />
 
 	<TextView android:id="@+id/distance_text"
-	
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:text="Distance" android:layout_x="45px" android:layout_y="214px" />
 
-	<EditText android:id="@+id/distance" android:layout_width="150px"
-	
-		android:layout_height="30px" android:textSize="15sp" android:layout_x="144px"
+	<EditText android:id="@+id/distance" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="15sp" android:layout_x="144px"
 		android:layout_y="213px" />
 
-	<Button android:id="@+id/start_end" android:layout_width="150px"
-	
-		android:layout_height="50px" android:text="Start" android:layout_x="92px"
+	<Button android:id="@+id/start_end" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Start" android:layout_x="92px"
 		android:layout_y="294px" />
 
 </AbsoluteLayout>
