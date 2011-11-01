@@ -24,8 +24,8 @@ public class HelloMapView extends MapActivity {
 	Drawable drawable;
 	HelloItemizedOverlay itemizedOverlay;
 	//GeoPoint point = new GeoPoint(19240000,-99120000);
-	GeoPoint point = new GeoPoint(0,0);
-	//GeoPoint point = new GeoPoint((int)GPSTestActivity.latitude,(int)GPSTestActivity.longitude);
+	//GeoPoint point = new GeoPoint(0,0);
+	GeoPoint point = new GeoPoint((int)GPSTestActivity.latitude,(int)GPSTestActivity.longitude);
 	//GeoPoint point=new GeomagneticField(gdLatitudeDeg, gdLongitudeDeg, altitudeMeters, timeMillis)
 	OverlayItem overlayitem = new OverlayItem(point, "", "");
     @Override
