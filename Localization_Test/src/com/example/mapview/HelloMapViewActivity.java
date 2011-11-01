@@ -1,8 +1,14 @@
 package com.example.mapview;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.List;
+import java.util.Scanner;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -27,6 +33,13 @@ public class HelloMapViewActivity extends MapActivity {
 	List<Overlay> mapOverlays;
 	Drawable drawable;
 	HelloItemizedOverlay itemizedOverlay;
+	String filename;
+	FileOutputStream fos;
+	FileInputStream fis;
+	int filecontent;
+	Scanner scanner;
+	double batteryLevelPercentage;
+	
 	
 	final String MODE_GPS = "gps";
 	/**
@@ -62,6 +75,8 @@ public class HelloMapViewActivity extends MapActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        
+        filename = "hello_file";
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);
         
@@ -76,8 +91,7 @@ public class HelloMapViewActivity extends MapActivity {
         addLocation(point2);
         
         mapOverlays.add(itemizedOverlay);
-        
-        // #Beso
+       
        runApp();
         
     }
@@ -93,9 +107,6 @@ public class HelloMapViewActivity extends MapActivity {
         itemizedOverlay.addOverlay(overlayitem);
     	
     }
-    
-   // #Beso
-    
     
 	 /**
 	  * Called whenever the "settings" button is clicked
@@ -129,13 +140,13 @@ public class HelloMapViewActivity extends MapActivity {
 			 }// end else : detect location using Skyhooker SDK
 			 
 			 // Get battery level
-			 int batteryLevelPercentage=getBatteryLevel();
+			 getBatteryLevel();
 			 
 			 // Display on the map (create point + display on the map)
 			 displayLocationOnMap();
 			 
 			 // Write the fetched data in the file (method + location + battery consumption)
-			 writeDataToFile(batteryLevelPercentage);
+//			 writeDataToFile();
 		 }// end if : application is in detection mode
 		 else{
 			 
@@ -226,12 +237,29 @@ public class HelloMapViewActivity extends MapActivity {
 	  * Used to get the current battery level of the machine running the app
 	  * @return percentage of remaining battery in the machine running the app
 	  */
-	 private int getBatteryLevel(){
+	 private void getBatteryLevel(){
 		 
-		 // TODO Hossam please implement this
-		 
-		 // Feel free to remove the method and just call the respective method
-		 return 0;
+		BroadcastReceiver batteryLevelReceiver = new BroadcastReceiver() 
+		{
+		
+			
+		public void onReceive(Context context, Intent intent) {
+				context.unregisterReceiver(this);
+		                int rawlevel = intent.getIntExtra("level", -1);
+		                int scale = intent.getIntExtra("scale", -1);
+		                batteryLevelPercentage = -1;
+		                if (rawlevel >= 0 && scale > 0) {
+		                	
+		                    batteryLevelPercentage =  (rawlevel * 100) / (1.0*scale);
+		                    writeDataToFile();
+		                }
+		            }
+		        };
+		        
+		        
+		        IntentFilter batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+		        registerReceiver(batteryLevelReceiver, batteryLevelFilter);
+		    	 
 	 }// end getBatteryLevel
 	 
 	 /**
@@ -252,10 +280,8 @@ public class HelloMapViewActivity extends MapActivity {
 	  * later
 	  * @param batteryLevel remaining charge percentage in the machine running the app
 	  */
-	 private void writeDataToFile(int batteryLevel){
-		 
-		 // TODO Hossam please implement this
-		 
+	 private void writeDataToFile(){
+
 		 /* You will find all the data you need here. I dunno what format will
 		  * you use:
 		  * 
@@ -265,6 +291,45 @@ public class HelloMapViewActivity extends MapActivity {
 		  * distance : distance instance parameter
 		  * 
 		  * */
+		 
+		 try{
+
+				fos = openFileOutput(filename, Context.MODE_PRIVATE);
+				String text = " " +type+ " "+longitude + " "+latitude+" "+ batteryLevelPercentage+"\n"; 
+		        fos.write(text.getBytes());
+		        fos.close();
+			 
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				
+			}
+
+//			// #7as7as Reading!
+//			
+//			try {
+//				fis = openFileInput(filename);
+//				scanner = new Scanner(fis);
+//				filecontent = fis.read();
+//				String text = "";
+//				
+//				// Empty the textbox
+//				Log.e("7as7as Reading: ", "Now ");
+//				
+//				while (scanner.hasNextLine())
+//					text += scanner.nextLine();
+//
+//				
+//				Log.e("7as7as Reading: ", text);
+//				fis.close();
+//				scanner.close();
+//			
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+			
 	 }// end writeDataToFile
  
 	 
