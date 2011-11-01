@@ -119,13 +119,8 @@ public class Location extends Activity {
 			public void handleMessage(final Message msg) {
 				switch (msg.what) {
 				case LOCATION_MESSAGE:
-					// Log.e("location msg","ay kalam");
-					// final Location location = (Location) msg.obj;
-					// Log.e("location msg","ay kalam");
-					// txtMsg.setText("yarab");
 					textBoxView.setText(msg.obj.toString());
 					Log.e("location msg", "ay kalam");
-
 					return;
 				case ERROR_MESSAGE:
 					Log.e("error msg", ((WPSReturnCode) msg.obj).name());
@@ -167,7 +162,15 @@ public class Location extends Activity {
 			String x = " lat: " + location.getLatitude() + " " + " lon: "
 					+ location.getLongitude();
 			_handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, x));
-			writeToFile(location.getLongitude(), location.getLatitude());
+			String msg = "Service Type: Skyhook IP" + "\nMin Distance: " /*
+																		 * +
+																		 * minDist
+																		 */
+					+ "\nFrequency: " /* + freq */
+					+ "\nLongitude: " + location.getLongitude()
+					+ "\nLatitude: " + location.getLatitude()
+					+ "\n------------------------------------------\n";
+			writeToFile(msg);
 		}
 
 		public void handleWPSLocation(final WPSLocation location) {
@@ -176,16 +179,19 @@ public class Location extends Activity {
 			String x = " lat: " + location.getLatitude() + " " + " lon: "
 					+ location.getLongitude();
 			_handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, x));
-			writeToFile(location.getLongitude(), location.getLatitude());
+			String msg = "Service Type: Skyhook WPS" + "\nMin Distance: " /*
+																		 * +
+																		 * minDist
+																		 */
+					+ "\nFrequency: " /* + freq */
+					+ "\nLongitude: " + location.getLongitude()
+					+ "\nLatitude: " + location.getLatitude()
+					+ "\n------------------------------------------\n";
+			writeToFile(msg);
 		}
 	}
 
-	private void writeToFile(double longitude, double latitude) {
-		String msg = "Service Type: " /* + serviceType */
-				+ "\nMin Distance: " /* + minDist */
-				+ "\nFrequency: " /* + freq */
-				+ "\nLongitude: " + longitude + "\nLatitude: " + latitude
-				+ "\n------------------------------------------\n";
+	private void writeToFile(String msg) {
 		try {
 			FileOutputStream fos = openFileOutput("comparison.txt", MODE_APPEND);
 			OutputStreamWriter osw = new OutputStreamWriter(fos);
@@ -206,7 +212,12 @@ public class Location extends Activity {
 			double longitude = callerIntent.getDoubleExtra("longitude", -1);
 			Log.e("onReceive - Latitude", Double.toString(latitude));
 			Log.e("onReceive - Longitude", Double.toString(longitude));
-			writeToFile(longitude, latitude);
+			String msg = "Service Type: " /* + serviceType */
+					+ "\nMin Distance: " /* + minDist */
+					+ "\nFrequency: " /* + freq */
+					+ "\nLongitude: " + longitude + "\nLatitude: " + latitude
+					+ "\n------------------------------------------\n";
+			writeToFile(msg);
 		}
 	}
 }
