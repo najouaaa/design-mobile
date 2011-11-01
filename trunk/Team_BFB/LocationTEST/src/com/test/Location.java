@@ -58,9 +58,9 @@ public class Location extends Activity {
 		//setContentView(R.layout.main);
 		if(skyhook){
 		setUIHandler();	
-		WPS wps = new WPS(this);
+		XPS wps = new XPS(this);
 	    WPSAuthentication auth = new WPSAuthentication("salma_7amed", "German university in cairo");
-	//     wps.getIPLocation(auth,WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,_callback);
+	//    wps.getIPLocation(auth,WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,_callback);
 	   wps.getLocation(auth,WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP,_callback);
 	     
 	     }
@@ -158,6 +158,8 @@ public class Location extends Activity {
 
      public void handleWPSLocation(final WPSLocation location)
      {
+    	 Log.e("location msg","handlewps");
+         
          // send a message to display the location
     	 String x = " lat: " + location.getLatitude() + " " + " lon: "
 			+ location.getLongitude();
