@@ -13,23 +13,26 @@
             android:defaultValue="1000" 
             android:entries="@array/updateInterval"
             android:entryValues="@array/updateIntervalValues"
+            android:persistent="true"
         />
         <ListPreference 
             android:key="type"
             android:title="Type"
             android:summary="Define the location getter method"
-            android:defaultValue="wps" 
+            android:defaultValue="0" 
             android:entries="@array/types"
             android:entryValues="@array/types_values"
+            android:persistent="true"
         />
         
         <ListPreference 
             android:key="distance"
             android:title="Distance"
-            android:summary="Define the distance"
-            android:defaultValue="1000" 
-            android:entries="@array/updateInterval"
-            android:entryValues="@array/updateIntervalValues"
+            android:summary="Define the minimum distance change for showing notifications"
+            android:defaultValue="100" 
+            android:entries="@array/updateDistance"
+            android:entryValues="@array/updateDistanceValues"
+            android:persistent="true"
         />
             
     </PreferenceCategory>
