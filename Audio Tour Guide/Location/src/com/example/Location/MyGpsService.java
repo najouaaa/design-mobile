@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 public class MyGpsService extends Service{
 
@@ -18,6 +19,9 @@ public class MyGpsService extends Service{
 	LocationManager lm;
 	GPSListener myLocationListener;
 	boolean isRunning = true;
+	
+	static long frequency=45;
+	static float distance=45;
 
 	
 	@Override
@@ -37,12 +41,15 @@ public class MyGpsService extends Service{
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		// This listener will catch and disseminate location updates
 		myLocationListener = new GPSListener();
-		long minTime = 10000;  // frequency update: 10 seconds
-		float minDistance = 50;  // frequency update: 50 meter
+		//frequency= 10000;  // frequency update: 10 seconds
+		//distance = 50;  // frequency update: 50 meter
+		//Context context = getApplicationContext();
+		//Toast.makeText(context,"frequency:"+frequency , 0).show();
+		//Toast.makeText(context,"distance:"+distance , 0).show();
 		lm.requestLocationUpdates( //request GPS updates
 		LocationManager.GPS_PROVIDER,
-		minTime, 
-		minDistance, 
+		frequency, 
+		distance, 
 		myLocationListener);
 		Looper.loop();
 		} catch (Exception e) {
@@ -78,19 +85,16 @@ public class MyGpsService extends Service{
 		sendBroadcast(myFilteredResponse);
 		}
 
-		@Override
 		public void onProviderDisabled(String arg0) {
 			// TODO Auto-generated method stub
 			
 		}
 
-		@Override
 		public void onProviderEnabled(String arg0) {
 			// TODO Auto-generated method stub
 			
 		}
 
-		@Override
 		public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
 			// TODO Auto-generated method stub
 			
