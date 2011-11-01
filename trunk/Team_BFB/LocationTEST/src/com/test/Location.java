@@ -183,7 +183,7 @@ public class Location extends Activity {
 			try {
 				FileOutputStream fos = openFileOutput("comparison.txt",
 						MODE_APPEND);
-				OutputStreamFWriter osw = new OutputStreamWriter(fOut);
+				OutputStreamFWriter osw = new OutputStreamWriter(fos);
 
 				osw.write(msg);
 				osw.flush();
