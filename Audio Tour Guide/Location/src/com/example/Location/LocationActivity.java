@@ -1,5 +1,9 @@
 package com.example.Location;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -23,6 +27,7 @@ public class LocationActivity extends Activity {
 	ComponentName service;
 	BroadcastReceiver receiver;
 	String GPS_FILTER = "guc.action.GPS_LOCATION";
+	String Data="";
 
     /** Called when the activity is first created. */
     @Override
@@ -76,6 +81,8 @@ public class LocationActivity extends Activity {
 	private class MyMainLocalReceiver extends BroadcastReceiver {
 		@Override
 		public void onReceive(Context localContext, Intent callerIntent) {
+			
+			
 		double latitude = callerIntent.getDoubleExtra("latitude",-1);
 		double longitude = callerIntent.getDoubleExtra("longitude",-1);
 		Log.e ("MAIN>>>",  Double.toString(latitude));
@@ -85,8 +92,29 @@ public class LocationActivity extends Activity {
 		txtMsg.append("\n" + msg);
 		//testing the SMS-texting feature
 		texting(msg);
-		}
 		
+		try { 
+		       // catches IOException below
+		       Data=Data+"\nLatitude="+Double.toString(latitude)+" "+
+		    "Longitude="+Double.toString(longitude)+" \n"+batteryLevel()+"\n";
+
+		
+		        
+		       FileOutputStream fOut = openFileOutput("samplefile.txt",
+		                                                            MODE_WORLD_READABLE);
+		       OutputStreamWriter osw = new OutputStreamWriter(fOut); 
+
+		       // Write the string to the file
+		       osw.write(Data);
+
+		    
+		       osw.flush();
+		       osw.close();
+
+
+		    } catch (IOException ioe) 
+		      {ioe.printStackTrace();}
+		}
 		
 
 		}
@@ -105,6 +133,26 @@ public class LocationActivity extends Activity {
 		Toast.makeText(this, "texting\n" + e.getMessage(), 1).show();
 		}
 		}// texting
+	
+	String s="";
+	 private String batteryLevel() {
+		 
+	        BroadcastReceiver batteryLevelReceiver = new BroadcastReceiver() {
+	            public void onReceive(Context context, Intent intent) {
+	                context.unregisterReceiver(this);
+	                int rawlevel = intent.getIntExtra("level", -1);
+	                int scale = intent.getIntExtra("scale", -1);
+	                int level = -1;
+	                if (rawlevel >= 0 && scale > 0) {
+	                    level = (rawlevel * 100) / scale;
+	                }
+	          s="Battery Level Remaining: " + level + "%";
+	            }
+	        };
+	        IntentFilter batteryLevelFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+	        registerReceiver(batteryLevelReceiver, batteryLevelFilter);
+	        return s;
+	    }
 	
 	
 
