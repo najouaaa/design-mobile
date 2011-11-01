@@ -27,11 +27,7 @@ public class MyGPS extends Activity {
 	ComponentName service;
 	BroadcastReceiver receiver;
 	String GPS_FILTER = "guc.action.GPS_LOCATION";
-	Spinner spinner;
-	String serviceType = "gps";
-	int minDist = 50;
-	int freq = 10000;
-	
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,14 +35,7 @@ public class MyGPS extends Activity {
         setContentView(R.layout.home_page);
         
 
-        spinner = (Spinner) findViewById(R.id.typeSpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.typeArray, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
-        
+ 
         
 //        txtMsg = (TextView) findViewById(R.id.txtMsg); 
         // initiate the service
@@ -61,13 +50,14 @@ public class MyGPS extends Activity {
         registerReceiver(receiver, mainFilter); 
      
         
+        
         final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.serviceToggle);
         togglebutton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Perform action on clicks
                 if (togglebutton.isChecked()) {
-                	intentMyService.putExtra("minDist", minDist);
-                	intentMyService.putExtra("freq", freq);
+                	intentMyService.putExtra("minDist", getIntent().getIntExtra("minDist", 50));
+                	intentMyService.putExtra("freq", getIntent().getIntExtra("freq", 10000));
                 	service = startService(intentMyService);
                 	
                 } else {
@@ -76,14 +66,13 @@ public class MyGPS extends Activity {
             }
         });
         
-        
 
     }
-    public void saveSettings(View view) {
-    	stopService(new Intent(intentMyService) );
-    	minDist = Integer.parseInt(((EditText)findViewById(R.id.minDist)).getText().toString());
-    	freq = Integer.parseInt(((EditText)findViewById(R.id.freq)).getText().toString());
-    }
+  public void openSettings(View view)
+  {
+	  Intent i = new Intent(getBaseContext(), editSettingsActivity.class);
+	  startActivity(i);
+  }
     @Override
     protected void onDestroy() {
     	// TODO Auto-generated method stub
@@ -97,19 +86,7 @@ public class MyGPS extends Activity {
     		Log.e ("MAIN-DESTROY>>>" , "Adios" );
     }
     
-    public class MyOnItemSelectedListener implements OnItemSelectedListener {
-
-        public void onItemSelected(AdapterView<?> parent,
-            View view, int pos, long id) {
-        	serviceType = parent.getItemAtPosition(pos).toString();
-//          Toast.makeText(parent.getContext(), "The selected type is " +
-//              parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
-        }
-
-        public void onNothingSelected(AdapterView parent) {
-          // Do nothing.
-        }
-    }
+  
     private class MyMainLocalReceiver extends BroadcastReceiver {
     	@Override
     	public void onReceive(Context localContext, Intent callerIntent) {
