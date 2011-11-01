@@ -45,16 +45,14 @@ public class Location extends Activity {
 	private static final int LOCATION_MESSAGE = 1;
 	private static final int ERROR_MESSAGE = 2;
 	private static final int DONE_MESSAGE = 3;
-
+	int minDist = 50;
+	int freq = 10000;
+	String type = "skyhook";
 	private final MyLocationCallback _callback = new MyLocationCallback();
 	boolean skyhook = true;
 
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-		textBoxView = (TextView) findViewById(R.id.txtMsg);
+	public void connectionHandler()
+	{
 		if (skyhook) {
 			setUIHandler();
 			XPS wps = new XPS(this);
@@ -70,6 +68,10 @@ public class Location extends Activity {
 
 		} else {
 			intentMyService = new Intent(this, MyGpsService.class);
+			intentMyService.putExtra("minDist", getIntent()
+					.getIntExtra("minDist", 50));
+			intentMyService.putExtra("freq",
+					getIntent().getIntExtra("freq", 10000));
 			service = startService(intentMyService);
 			textBoxView.setText("MyGpsService started - (see DDMS Log)");
 			IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
@@ -90,16 +92,26 @@ public class Location extends Activity {
 				}
 			});
 		}
-		final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.serviceToggle);
+
+	}
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		type = getIntent().getStringExtra("type").toString();
+		textBoxView = (TextView) findViewById(R.id.txtMsg);
+	//	connectionHandler();
+		
+		
+			final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.serviceToggle);
 		togglebutton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				// Perform action on clicks
 				if (togglebutton.isChecked()) {
-					intentMyService.putExtra("minDist", getIntent()
-							.getIntExtra("minDist", 50));
-					intentMyService.putExtra("freq",
-							getIntent().getIntExtra("freq", 10000));
-					service = startService(intentMyService);
+					
+					connectionHandler();
+					
 
 				} else {
 					stopService(new Intent(intentMyService));

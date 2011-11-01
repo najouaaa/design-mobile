@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="/home/salma/Downloads/wpsapi-4.2.0.14-android/lib/wpsapi.jar"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="C:/Users/Rana/Desktop/wpsapi.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
