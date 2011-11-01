@@ -42,38 +42,34 @@ public class SkyhookIPLocator extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-		final Button start_end = (Button) findViewById(R.id.MainButton);
-		start_end.setOnClickListener(new OnClickListener() {
-	          @Override
-	          public void onClick(View v) {
-	            if(serviceOn)
-	            {
-//	            	endWPSService();
-	            	endGpsService();
-//	            	endAGpsService();
-	            	start_end.setText(R.string.start);
-	            }
-	            else
-	            {	
-//	            	startAGpsService();
-	            	startGpsService();
-//	            	startWPSService();
-	            	start_end.setText(R.string.end);
-	            }
-	            serviceOn = !serviceOn;
-	          }
-	        });
-		
+		// setContentView(R.layout.main);
+		// final Button start_end = (Button) findViewById(R.id.MainButton);
+		// start_end.setOnClickListener(new OnClickListener() {
+		//
+		// public void onClick(View arg0) {
+		// if (serviceOn) {
+		// // endWPSService();
+		// endGpsService();
+		// // endAGpsService();
+		// start_end.setText(R.string.start);
+		// } else {
+		// // startAGpsService();
+		// startGpsService();
+		// // startWPSService();
+		// start_end.setText(R.string.end);
+		// }
+		// serviceOn = !serviceOn;
+		// }
+		//
+		// });
+
 	}
-	
-	private void endWPSService()
-	{
-		
+
+	private void endWPSService() {
+
 	}
-	
-	private void startWPSService()
-	{
+
+	private void startWPSService() {
 		xps = new XPS(this);
 		auth = new WPSAuthentication("kamasheto", "German University in Cairo");
 
@@ -90,7 +86,8 @@ public class SkyhookIPLocator extends Activity {
 			}
 
 			public void handleIPLocation(IPLocation location) {
-				showToast("Latitude: " + location.getLatitude() + ", longitude: " + location.getLongitude());
+				showToast("Latitude: " + location.getLatitude()
+						+ ", longitude: " + location.getLongitude());
 			}
 
 			public WPSContinuation handleError(WPSReturnCode error) {
@@ -110,73 +107,77 @@ public class SkyhookIPLocator extends Activity {
 	}
 
 	private void getLocation() {
-		xps.getIPLocation(auth, WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP, callback);
+		xps.getIPLocation(auth,
+				WPSStreetAddressLookup.WPS_NO_STREET_ADDRESS_LOOKUP, callback);
 	}
 
 	public void showToast(String text) {
-		new AlertDialog.Builder(this).setMessage(text).setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int id) {
-				dialog.cancel();
-			}
-		}).show();
+		new AlertDialog.Builder(this)
+				.setMessage(text)
+				.setNegativeButton("Dismiss",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						}).show();
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.menu, menu);
-	    return true;
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu, menu);
+		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch(item.getItemId())
-		{
-		case R.id.settings :
+		switch (item.getItemId()) {
+		case R.id.settings:
 			Intent i = new Intent(SkyhookIPLocator.this, SettingsActivity.class);
 			startActivity(i);
 			return true;
-		default : return super.onOptionsItemSelected(item);
+		default:
+			return super.onOptionsItemSelected(item);
 		}
 	}
-	
-	private void startGpsService(){
-		myGpsService = new Intent(this, MyGpsService.class);        
-        startService(myGpsService);   
-        // register & define filter for local listener
-        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
-        MyMainLocalReceiver receiver = new MyMainLocalReceiver();
-        registerReceiver(receiver, mainFilter); 
+
+	private void startGpsService() {
+		myGpsService = new Intent(this, MyGpsService.class);
+		startService(myGpsService);
+		// register & define filter for local listener
+		IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+		MyMainLocalReceiver receiver = new MyMainLocalReceiver();
+		registerReceiver(receiver, mainFilter);
 	}
-	
-	private void endGpsService(){
+
+	private void endGpsService() {
 		stopService(myGpsService);
 	}
-	
-	private void startAGpsService(){
-		myAGpsService = new Intent(this, MyGpsService.class);        
-        startService(myAGpsService);   
-        // register & define filter for local listener
-        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
-        MyMainLocalReceiver receiver = new MyMainLocalReceiver();
-        registerReceiver(receiver, mainFilter);
+
+	private void startAGpsService() {
+		myAGpsService = new Intent(this, MyGpsService.class);
+		startService(myAGpsService);
+		// register & define filter for local listener
+		IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+		MyMainLocalReceiver receiver = new MyMainLocalReceiver();
+		registerReceiver(receiver, mainFilter);
 	}
-	
-	private void endAGpsService(){
+
+	private void endAGpsService() {
 		stopService(myAGpsService);
 	}
 
 	private class MyMainLocalReceiver extends BroadcastReceiver {
 		@Override
-		public void onReceive(Context localContext, Intent callerIntent) {	
-			double latitude = callerIntent.getDoubleExtra("latitude",-1);
-			double longitude = callerIntent.getDoubleExtra("longitude",-1);
-			Log.e ("MAIN>>>",  Double.toString(latitude));
-			Log.e ("MAIN>>>",  Double.toString(longitude));
-			String msg = " lat: " + Double.toString(latitude) + " "
-			+ " lon: " + Double.toString(longitude);
-			System.out.println(msg);	
-			
-		}		
+		public void onReceive(Context localContext, Intent callerIntent) {
+			double latitude = callerIntent.getDoubleExtra("latitude", -1);
+			double longitude = callerIntent.getDoubleExtra("longitude", -1);
+			Log.e("MAIN>>>", Double.toString(latitude));
+			Log.e("MAIN>>>", Double.toString(longitude));
+			String msg = " lat: " + Double.toString(latitude) + " " + " lon: "
+					+ Double.toString(longitude);
+			System.out.println(msg);
+
+		}
 	}
 }
