@@ -50,7 +50,7 @@ public class GPS_UIActivity extends Activity implements View.OnClickListener{
         public void onClick(View v) {
                 toggle = !toggle;               
                 String str = "";
-                if(toggle)
+                if(!toggle)
                 {
                         String typ = type.getSelectedItem().toString();
                         String freq = frequency.getText().toString();
