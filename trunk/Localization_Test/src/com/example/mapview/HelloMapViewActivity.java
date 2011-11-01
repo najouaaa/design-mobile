@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -37,6 +38,14 @@ public class HelloMapViewActivity extends MapActivity {
 	int filecontent;
 	Scanner scanner;
 	double batteryLevelPercentage;
+	
+	// GPS variables
+	Intent  intentMyService;
+	ComponentName service;
+	BroadcastReceiver receiver;
+	String GPS_FILTER = "guc.action.GPS_LOCATION";
+
+
 	
 	
 	final String MODE_GPS = "gps";
@@ -73,7 +82,7 @@ public class HelloMapViewActivity extends MapActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        
+       
         filename = "hello_file";
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);
@@ -81,6 +90,7 @@ public class HelloMapViewActivity extends MapActivity {
         mapOverlays = mapView.getOverlays();
         drawable = this.getResources().getDrawable(R.drawable.androidmarker);
         itemizedOverlay = new HelloItemizedOverlay(drawable);
+        
         
         GeoPoint point = new GeoPoint(19240000,-99120000);
         addLocation(point);
@@ -130,10 +140,10 @@ public class HelloMapViewActivity extends MapActivity {
 			 getAppSettings();
 			 
 			 // Inspect mode to choose location detection engine
-			 if (this.type == MODE_GPS){
+			 if (this.type.equals(MODE_GPS)){
 				 detectLocationUsingGps();
 			 }// end if : detect location using GPS/AGPS
-			 else if (this.type == MODE_SKYHOOKER){
+			 else if (this.type.equals(MODE_SKYHOOKER)){
 				 detectLocationUsingSkyhooker();
 			 }// end else : detect location using Skyhooker SDK
 			 
@@ -147,9 +157,9 @@ public class HelloMapViewActivity extends MapActivity {
 //			 writeDataToFile();
 		 }// end if : application is in detection mode
 		 else{
-			 
+
 			 Log.e("7as7as: ", "The app is disabled");
-//			 Toast.makeText(this, "The app is disabled!", 1).show();
+
 		 }
 		 
 	 }// end runApp
@@ -209,13 +219,71 @@ public class HelloMapViewActivity extends MapActivity {
 		 
 		 // TODO Hossam please implement this method
 		 
+		 
+//		 	Log.e("7as7as: ", "detectLocationUsingGps():start");
+	        // initiate the service
+	        intentMyService = new Intent(this, MyGpsService.class);        
+	        service = startService(intentMyService); 
+	        	
+//	        Log.e("7as7as: ", "detectLocationUsingGps():Intent  : " + intentMyService);
+//	        Log.e("7as7as: ", "detectLocationUsingGps():start : " + service);
+	        
+	        // register & define filter for local listener
+	        IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
+	        // receiver = new MyMainLocalReceiver();
+	        
+	        receiver = new BroadcastReceiver() 
+			{
+	        	@Override
+		    	public void onReceive(Context localContext, Intent callerIntent) {
+		    		Log.e("7as7as: ", "MyMainLocalReceiver: onReceive()");
+		    	latitude = (int) callerIntent.getDoubleExtra("latitude",-1);
+		    	longitude = (int) callerIntent.getDoubleExtra("longitude",-1);
+		    	Log.e ("MAIN>>>",  Double.toString(latitude));
+		    	Log.e ("MAIN>>>",  Double.toString(longitude));
+		    	String msg = " lat: " + Double.toString(latitude) + " "
+		    	+ " lon: " + Double.toString(longitude);
+		    	
+		    	//testing the SMS-texting feature
+		    	Log.e("7as7as receiver", msg);
+		    	
+		    	stopService(intentMyService);
+		    	unregisterReceiver(receiver);
+                		    	
+		    	}};
+			        		
+//		    	Log.e("7as7as receiver2222",  " lat: " + Double.toString(latitude) + " "
+//				    	+ " lon: " + Double.toString(longitude));
+//	         
+			 
+	        registerReceiver(receiver, mainFilter); 
+	        Log.e("7as7as: ", "detectLocationUsingGps():end regsiteration of receiver");
+		 
+		 
 		 /*The method must set latitude and longitude instance parameters are the end*/
 		 
-		 // Location results detected
-		 this.latitude = 0;
-		 this.longitude=0;
 		 
 	 }// end detectLocationUsingGps
+	 
+	 private class MyMainLocalReceiver extends BroadcastReceiver 
+	 {
+	    	@Override
+	    	public void onReceive(Context localContext, Intent callerIntent) {
+	    		Log.e("7as7as: ", "MyMainLocalReceiver: onReceive()");
+	    	double latitude = callerIntent.getDoubleExtra("latitude",-1);
+	    	double longitude = callerIntent.getDoubleExtra("longitude",-1);
+	    	Log.e ("MAIN>>>",  Double.toString(latitude));
+	    	Log.e ("MAIN>>>",  Double.toString(longitude));
+	    	String msg = " lat: " + Double.toString(latitude) + " "
+	    	+ " lon: " + Double.toString(longitude);
+	    	
+	    	//testing the SMS-texting feature
+	    	Log.e("7as7as receiver", msg);
+	    	
+	    	}
+	    	
+	 }
+	 
 	 
 	 /**
 	  * Used to detect the current location using the Skyhooker SDK
@@ -303,30 +371,30 @@ public class HelloMapViewActivity extends MapActivity {
 				
 			}
 
-//			// #7as7as Reading!
-//			
-//			try {
-//				fis = openFileInput(filename);
-//				scanner = new Scanner(fis);
-//				filecontent = fis.read();
-//				String text = "";
-//				
-//				// Empty the textbox
-//				Log.e("7as7as Reading: ", "Now ");
-//				
-//				while (scanner.hasNextLine())
-//					text += scanner.nextLine();
-//
-//				
-//				Log.e("7as7as Reading: ", text);
-//				fis.close();
-//				scanner.close();
-//			
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
+			// #7as7as Reading!
+			
+			try {
+				fis = openFileInput(filename);
+				scanner = new Scanner(fis);
+				filecontent = fis.read();
+				String text = "";
+				
+				// Empty the textbox
+				Log.e("7as7as Reading: ", "Now ");
+				
+				while (scanner.hasNextLine())
+					text += scanner.nextLine();
+
+				
+				Log.e("7as7as Reading: ", text);
+				fis.close();
+				scanner.close();
+			
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			
 	 }// end writeDataToFile
  
