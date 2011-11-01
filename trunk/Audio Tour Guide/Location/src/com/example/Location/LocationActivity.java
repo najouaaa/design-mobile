@@ -161,12 +161,33 @@ public class LocationActivity extends Activity {
 		//testing the SMS-texting feature
 		texting(msg);
 		
+		
+		String type="";
 		try { 
+			
+			if(myRadioGroup.getCheckedRadioButtonId()==radioBtn1.getId())
+        	{
+        		type="GPS used";
+        	}
+			
+			if(myRadioGroup.getCheckedRadioButtonId()==radioBtn2.getId())
+        	{
+        		type="AGPS used";
+        	}
+            
+        	// Skyhook
+        	if(myRadioGroup.getCheckedRadioButtonId()==radioBtn3.getId())
+        	{
+        		type="Skyhook used";
+        	}
+			
+			
 		       // catches IOException below
 		       Data=Data+"\nLatitude="+Double.toString(latitude)+" "+
-		    "Longitude="+Double.toString(longitude)+" \n"+batteryLevel()+"\n";
-
-		
+		    "Longitude="+Double.toString(longitude)+"\nFrequency= "+frequencyTextView.getText()+
+		    "  Distance= "+distanceTextView.getText()+"\n"+type+"\n"+batteryLevel()+"\n";
+		       
+		       
 		        
 		       FileOutputStream fOut = openFileOutput("samplefile.txt",
 		                                                            MODE_WORLD_READABLE);
