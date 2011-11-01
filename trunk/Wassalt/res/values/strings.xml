@@ -2,4 +2,10 @@
 <resources>
     <string name="hello">Hello World, WassaltActivity!</string>
     <string name="app_name">Wassalt</string>
+    
+    <string-array name="type">
+    	<item>Time</item>
+        <item>Range</item>
+    </string-array>
+    
 </resources>
