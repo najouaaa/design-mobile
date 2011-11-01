@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget32"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<EditText
+	android:id="@+id/txtMSg"  
+    android:layout_width="fill_parent" 
+    android:layout_height="120px" 
+    android:textSize="12sp"
+    />
+    <Button
+    android:id="@+id/btnStopService"
+    android:layout_width="151px"
+    android:layout_height="wrap_content"
+    android:text="Stop Service">
+    
+    </Button>
+</LinearLayout>
