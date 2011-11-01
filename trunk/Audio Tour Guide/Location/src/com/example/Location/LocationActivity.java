@@ -24,6 +24,7 @@ public class LocationActivity extends Activity {
 	
 	
 	Button btnStopService;    
+	Button toMap;
 	TextView txtMsg;
 	RadioGroup myRadioGroup;
 	RadioButton radioBtn1;
@@ -33,6 +34,7 @@ public class LocationActivity extends Activity {
 	TextView distanceTextView;
 	Button startBtn;
 	Intent  intentMyService;
+	Intent mapIntent;
 	ComponentName service;
 	BroadcastReceiver receiver;
 	String GPS_FILTER = "guc.action.GPS_LOCATION";
@@ -54,6 +56,7 @@ public class LocationActivity extends Activity {
         radioBtn1 = (RadioButton) findViewById(R.id.radioBtn1);
         radioBtn2 = (RadioButton) findViewById(R.id.radioBtn2);
         radioBtn3 = (RadioButton) findViewById(R.id.radioBtn3);
+        toMap = (Button) findViewById(R.id.toMap);
         
         
         // Start Service Button 
@@ -129,7 +132,24 @@ public class LocationActivity extends Activity {
         }        
         });
         
+        toMap.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            try {
+            	mapIntent = new Intent(LocationActivity.this, MyMap.class);
+            	startActivity(mapIntent);
+            //	Toast.makeText(getApplicationContext(), "lalalala", Toast.LENGTH_SHORT).show();
+            
+            } catch (Exception e) {
+           
+            	 Log.e("MYGPS", e.getMessage() );
+            }
+            }        
+            });
+        
+        
     }
+    
+    
 
 	@Override
 	protected void onDestroy() {
