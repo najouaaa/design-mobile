@@ -29,10 +29,11 @@ public class LabActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		txtMsg = (TextView) findViewById(R.id.txtMsg); 
+		
 		// initiate the service
 		intentMyService = new Intent(this, MyGpsService.class);        
-		service = startService(intentMyService);   
+		service = startService(intentMyService);  
+		txtMsg = (TextView) findViewById(R.id.txtMsg); 
 		txtMsg.setText("MyGpsService started - (see DDMS Log)");
 		// register & define filter for local listener
 		IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
@@ -81,8 +82,8 @@ public class LabActivity extends Activity {
 			//texting(msg);
 			
 			Intent i = new Intent(getBaseContext(), HelloMapViewActivity.class);
-			i.putExtra("long",Double.toString(longitude));
-			i.putExtra("lat", Double.toString(latitude));
+			i.putExtra("long",longitude);
+			i.putExtra("lat",latitude);
 			startActivity(i);
 		}
 	}
