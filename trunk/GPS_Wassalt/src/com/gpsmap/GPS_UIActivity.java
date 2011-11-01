@@ -61,19 +61,27 @@ public class GPS_UIActivity extends Activity implements View.OnClickListener{
                                         " service with a frequency of "+freq+
                                         " and distance "+dist+"!!";
                         
-                        /*
-                         * Intent intent;
-                         * if(typ.equals("GPS")
-                         *              intent = new Intent().setClass(GPS_UIActivity.this, [GPS Class]);
-                         * else
+                        
+                        Intent intent;
+                        if(typ.equals("GPS")
+                        {
+                      				LabActivity.frequency = Long.valueOf(freq.trim()).longValue();
+                      				LabActivity.distance = Float.valueOf(dist.trim()).floatValue();
+                                    intent = new Intent().setClass(GPS_UIActivity.this, LabActivity.class);
+                        }
+                         /* else
                          * {
                          *              if(typ.equals("AGPS"))
+                         *              {
                          *                      intent = new Intent().setClass(GPS_UIActivity.this, [AGPS Class]);
+                         *              }
                          *              else
+                         *              {
                          *                      intent = new Intent().setClass(GPS_UIActivity.this, [Skyhook Class]);
+                         *              }
                          * }
-                         * startActivity(intent);
-                        */
+                         */
+                        startActivity(intent);
                         type.setEnabled(false);
                         frequency.setEnabled(false);
                         distance.setEnabled(false);
