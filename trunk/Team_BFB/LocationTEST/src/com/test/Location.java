@@ -51,8 +51,7 @@ public class Location extends Activity {
 	private final MyLocationCallback _callback = new MyLocationCallback();
 	boolean skyhook = true;
 
-	public void connectionHandler()
-	{
+	public void connectionHandler() {
 		if (type.equals("skyhook")) {
 			setUIHandler();
 			XPS wps = new XPS(this);
@@ -70,8 +69,8 @@ public class Location extends Activity {
 			
 			if(getIntent() != null){
 			intentMyService = new Intent(this, MyGpsService.class);
-			intentMyService.putExtra("minDist", getIntent()
-					.getIntExtra("minDist", 50));
+			intentMyService.putExtra("minDist",
+					getIntent().getIntExtra("minDist", 50));
 			intentMyService.putExtra("freq",
 					getIntent().getIntExtra("freq", 10000));
 			}
@@ -95,8 +94,8 @@ public class Location extends Activity {
 				}
 			});
 		}
-
 	}
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -105,18 +104,14 @@ public class Location extends Activity {
 		if(getIntent() != null)
 			type = getIntent().getStringExtra("type").toString();
 		textBoxView = (TextView) findViewById(R.id.txtMsg);
-	//	connectionHandler();
-		
-		
-			final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.serviceToggle);
+		// connectionHandler();
+
+		final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.serviceToggle);
 		togglebutton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				// Perform action on clicks
 				if (togglebutton.isChecked()) {
-					
 					connectionHandler();
-					
-
 				} else {
 					stopService(new Intent(intentMyService));
 				}
@@ -178,13 +173,10 @@ public class Location extends Activity {
 			String x = " lat: " + location.getLatitude() + " " + " lon: "
 					+ location.getLongitude();
 			_handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, x));
-			String msg = "Service Type: Skyhook IP" + "\nMin Distance: " /*
-																		 * +
-																		 * minDist
-																		 */
-					+ "\nFrequency: " /* + freq */
-					+ "\nLongitude: " + location.getLongitude()
-					+ "\nLatitude: " + location.getLatitude()
+			String msg = "Service Type: Skyhook IP" + "\nMin Distance: "
+					+ minDist + "\nFrequency: " + freq + "\nLongitude: "
+					+ location.getLongitude() + "\nLatitude: "
+					+ location.getLatitude()
 					+ "\n------------------------------------------\n";
 			writeToFile(msg);
 		}
@@ -195,13 +187,10 @@ public class Location extends Activity {
 			String x = " lat: " + location.getLatitude() + " " + " lon: "
 					+ location.getLongitude();
 			_handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, x));
-			String msg = "Service Type: Skyhook WPS" + "\nMin Distance: " /*
-																		 * +
-																		 * minDist
-																		 */
-					+ "\nFrequency: " /* + freq */
-					+ "\nLongitude: " + location.getLongitude()
-					+ "\nLatitude: " + location.getLatitude()
+			String msg = "Service Type: Skyhook IP" + "\nMin Distance: "
+					+ minDist + "\nFrequency: " + freq + "\nLongitude: "
+					+ location.getLongitude() + "\nLatitude: "
+					+ location.getLatitude()
 					+ "\n------------------------------------------\n";
 			writeToFile(msg);
 		}
@@ -228,10 +217,9 @@ public class Location extends Activity {
 			double longitude = callerIntent.getDoubleExtra("longitude", -1);
 			Log.e("onReceive - Latitude", Double.toString(latitude));
 			Log.e("onReceive - Longitude", Double.toString(longitude));
-			String msg = "Service Type: " /* + serviceType */
-					+ "\nMin Distance: " /* + minDist */
-					+ "\nFrequency: " /* + freq */
-					+ "\nLongitude: " + longitude + "\nLatitude: " + latitude
+			String msg = "Service Type: GPS/AGPS" + "\nMin Distance: "
+					+ minDist + "\nFrequency: " + freq + "\nLongitude: "
+					+ longitude + "\nLatitude: " + latitude
 					+ "\n------------------------------------------\n";
 			writeToFile(msg);
 		}
