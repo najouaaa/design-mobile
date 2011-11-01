@@ -20,7 +20,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
+import com.gps.test.R;
+import com.gps.test.editSettingsActivity;
 import com.skyhookwireless.wps.IPLocation;
 import com.skyhookwireless.wps.IPLocationCallback;
 import com.skyhookwireless.wps.WPSAuthentication;
@@ -101,8 +104,26 @@ public class Location extends Activity {
 				}
 			});
 		}
+		final ToggleButton togglebutton = (ToggleButton) findViewById(R.id.serviceToggle);
+        togglebutton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on clicks
+                if (togglebutton.isChecked()) {
+                	intentMyService.putExtra("minDist", getIntent().getIntExtra("minDist", 50));
+                	intentMyService.putExtra("freq", getIntent().getIntExtra("freq", 10000));
+                	service = startService(intentMyService);
+                	
+                } else {
+                    stopService(new Intent(intentMyService) );
+                }
+            }
+        });
 	}
-
+	 public void openSettings(View view)
+	  {
+		  Intent i = new Intent(getBaseContext(), editSettingsActivity.class);
+		  startActivity(i);
+	  }
 	private void setUIHandler() {
 
 		_handler = new Handler() {

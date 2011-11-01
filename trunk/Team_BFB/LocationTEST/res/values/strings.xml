@@ -2,4 +2,14 @@
 <resources>
     <string name="hello">Hello World, Location!</string>
     <string name="app_name">LocationTEST</string>
+    <string name="typePrompt">Choose a type</string>
+    <string name="saveButtonLabel">save</string>
+    <string name="minDistLabel">Minimum Distance:</string>
+    <string name="freqLabel">Frequency:</string>
+    <string name="typeLabel">Type:</string>
+    <string-array name="typeArray">
+        <item>GPS</item>
+        <item>AGPS</item>
+        <item>Skyhook</item>
+    </string-array>
 </resources>

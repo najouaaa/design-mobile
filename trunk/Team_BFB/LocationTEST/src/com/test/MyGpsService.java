@@ -13,6 +13,10 @@ import android.util.Log;
 
 public class MyGpsService extends Service {
 
+	
+	int minDistance = 50;
+	int minTime = 10000;
+	
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
@@ -27,6 +31,8 @@ public class MyGpsService extends Service {
 
 	@Override
 	public void onStart(Intent intent, int startId) {
+		minDistance = intent.getIntExtra("minDist", 50);
+		minTime = intent.getIntExtra("freq", 10000);
 		Log.e("<<MyGpsService-onStart>>", "I am alive-GPS!");
 		// we place the slow work of the service in its own thread so the 
 		// response we send our caller who run a "startService(...)" method 
