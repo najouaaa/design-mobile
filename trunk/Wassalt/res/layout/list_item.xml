@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AbsoluteLayout android:id="@+id/widget34"
+	android:layout_width="fill_parent" android:layout_height="50px"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<TextView android:id="@+id/contact_name" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="TextView"
+		android:layout_x="10px" android:layout_y="14px" />
+
+	<TextView android:id="@+id/notification_status"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="TextView" android:layout_x="235px" android:layout_y="14px" />
+
+</AbsoluteLayout>
