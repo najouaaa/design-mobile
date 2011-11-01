@@ -1,3 +1,4 @@
+/*
 package com.example.mapview;
 
 import android.os.Handler;
@@ -47,3 +48,4 @@ msg.obj = (IPLocation)location;
 handler.sendMessage(msg);
 }
 }
+*/
