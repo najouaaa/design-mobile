@@ -53,7 +53,7 @@ public class Location extends Activity {
 
 	public void connectionHandler()
 	{
-		if (skyhook) {
+		if (type.equals("skyhook")) {
 			setUIHandler();
 			XPS wps = new XPS(this);
 			WPSAuthentication auth = new WPSAuthentication("salma_7amed",
