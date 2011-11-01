@@ -17,7 +17,9 @@ public class MyGpsService extends Service {
 	LocationManager lm;
 	GPSListener myLocationListener;
 	boolean isRunning = true;
-
+	static long frequency = 10000;
+	static float distance = 50;
+	
 	@Override
 	public IBinder onBind(Intent arg0) {
 		// TODO Auto-generated method stub
@@ -38,12 +40,12 @@ public class MyGpsService extends Service {
 					//lm = getSystemService(TELEPHONY_SERVICE)
 					// This listener will catch and disseminate location updates
 					myLocationListener = new GPSListener();
-					long minTime = 10000;  // frequency update: 10 seconds
-					float minDistance = 50;  // frequency update: 50 meter
+					//long minTime = 10000;  // frequency update: 10 seconds
+					//float minDistance = 50;  // frequency update: 50 meter
 					lm.requestLocationUpdates( //request GPS updates
 							LocationManager.GPS_PROVIDER,
-							minTime, 
-							minDistance, 
+							frequency, 
+							distance, 
 							myLocationListener);
 					Looper.loop();
 				} catch (Exception e) {
