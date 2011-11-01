@@ -105,7 +105,7 @@ public class Location extends Activity {
 //                 final Location location = (Location) msg.obj;
 //                   Log.e("location msg","ay kalam");
 //                   txtMsg.setText("yarab");
-                	txtMsg.setText( msg.toString());
+                	txtMsg.setText( msg.obj.toString());
                 	Log.e("location msg","ay kalam");
                     
                     return;
@@ -149,8 +149,10 @@ public class Location extends Activity {
      {
     	 
     	 Log.e("location msg","handle");
-         // send a message to display the location 
-      _handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, location.toString()));
+         // send a message to display the location
+    	 String x = " lat: " + location.getLatitude() + " " + " lon: "
+					+ location.getLongitude();
+      _handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, x));
       
      }
 
