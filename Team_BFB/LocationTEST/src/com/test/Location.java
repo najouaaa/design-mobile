@@ -46,7 +46,7 @@ public class Location extends Activity {
 	private static final int DONE_MESSAGE = 3;
 
 	private final MyLocationCallback _callback = new MyLocationCallback();
-	boolean skyhook = true;
+	boolean skyhook = false;
 
 	// @Override
 	// protected void onDestroy() {
