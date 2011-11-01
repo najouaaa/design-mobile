@@ -16,12 +16,18 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.test.R;
 import com.test.editSettingsActivity;
+import com.test.editSettingsActivity.MyOnItemSelectedListener;
 import com.skyhookwireless.wps.IPLocation;
 import com.skyhookwireless.wps.IPLocationCallback;
 import com.skyhookwireless.wps.WPSAuthentication;
@@ -41,6 +47,7 @@ public class Location extends Activity {
 	BroadcastReceiver receiver;
 	String GPS_FILTER = "guc.action.GPS_LOCATION";
 	private Handler _handler;
+	Spinner spinner;
 	boolean _stop = false;
 	private static final int LOCATION_MESSAGE = 1;
 	private static final int ERROR_MESSAGE = 2;
@@ -67,13 +74,11 @@ public class Location extends Activity {
 
 		} else {
 			
-			if(getIntent() != null){
+	//		if(getIntent() != null){
 			intentMyService = new Intent(this, MyGpsService.class);
-			intentMyService.putExtra("minDist",
-					getIntent().getIntExtra("minDist", 50));
-			intentMyService.putExtra("freq",
-					getIntent().getIntExtra("freq", 10000));
-			}
+			intentMyService.putExtra("minDist", Integer.parseInt(((EditText)findViewById(R.id.minDist)).getText().toString()));
+			intentMyService.putExtra("freq",Integer.parseInt(((EditText)findViewById(R.id.freq)).getText().toString()));
+	//		}
 			service = startService(intentMyService);
 			textBoxView.setText("MyGpsService started - (see DDMS Log)");
 			IntentFilter mainFilter = new IntentFilter(GPS_FILTER);
@@ -95,14 +100,25 @@ public class Location extends Activity {
 			});
 		}
 	}
-
-	/** Called when the activity is first created. */
+	public void saveSettings(View view) {
+		minDist = Integer.parseInt(((EditText) findViewById(R.id.minDist))
+				.getText().toString());
+		freq = Integer.parseInt(((EditText) findViewById(R.id.freq)).getText()
+				.toString());
+	
+	}	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		if(getIntent() != null)
-			type = getIntent().getStringExtra("type").toString();
+		spinner = (Spinner) findViewById(R.id.typeSpinner);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.typeArray, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
+
+		spinner.setOnItemSelectedListener(new MyOnItemSelectedListener());
+		
 		textBoxView = (TextView) findViewById(R.id.txtMsg);
 		// connectionHandler();
 
@@ -113,12 +129,26 @@ public class Location extends Activity {
 				if (togglebutton.isChecked()) {
 					connectionHandler();
 				} else {
-					stopService(new Intent(intentMyService));
+					if(type.equals("gps"))
+						stopService(new Intent(intentMyService));
 				}
 			}
 		});
 	}
+	public class MyOnItemSelectedListener implements OnItemSelectedListener {
 
+		public void onItemSelected(AdapterView<?> parent, View view, int pos,
+				long id) {
+			type = parent.getItemAtPosition(pos).toString();
+			// Toast.makeText(parent.getContext(), "The selected type is " +
+			// parent.getItemAtPosition(pos).toString(),
+			// Toast.LENGTH_LONG).show();
+		}
+
+		public void onNothingSelected(AdapterView<?> parent) {
+			// Do nothing.
+		}
+	}
 	public void openSettings(View view) {
 		Intent i = new Intent(getBaseContext(), editSettingsActivity.class);
 		startActivity(i);
