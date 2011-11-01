@@ -28,6 +28,7 @@ public class Location extends Activity {
 	BroadcastReceiver receiver;
 	String GPS_FILTER = "guc.action.GPS_LOCATION";
 	private Handler _handler;
+	boolean _stop = false;
     private static final int LOCATION_MESSAGE = 1;
     private static final int ERROR_MESSAGE = 2;
     private static final int DONE_MESSAGE = 3;
@@ -91,6 +92,7 @@ public class Location extends Activity {
 
 	 private void setUIHandler()
     {
+		 
         _handler = new Handler()
         {
             @Override
@@ -99,17 +101,21 @@ public class Location extends Activity {
                 switch (msg.what)
                 {
                 case LOCATION_MESSAGE:
-                 //   final Location location = (Location) msg.obj;
-                    txtMsg.setText( ((Location) msg.obj).toString());
-                    Log.e("location msg","ay kalam");
+//                	Log.e("location msg","ay kalam");
+//                 final Location location = (Location) msg.obj;
+//                   Log.e("location msg","ay kalam");
+//                   txtMsg.setText("yarab");
+                	txtMsg.setText( msg.toString());
+                	Log.e("location msg","ay kalam");
+                    
                     return;
                 case ERROR_MESSAGE:
-                	txtMsg.setText(((WPSReturnCode) msg.obj).name());
                 	Log.e("error msg",((WPSReturnCode) msg.obj).name());
+                  	txtMsg.setText(((WPSReturnCode) msg.obj).name());
                     return;
                 case DONE_MESSAGE:
                 	Log.e("end","false");
-                    skyhook = false;
+                    _stop = false;
                 }
             }
         };
@@ -132,16 +138,20 @@ public class Location extends Activity {
     	 
          _handler.sendMessage(_handler.obtainMessage(ERROR_MESSAGE, error));
          // return WPS_STOP if the user pressed the Stop button
+//         if (! _stop)
+//             return WPSContinuation.WPS_CONTINUE;
+//         else
              return WPSContinuation.WPS_STOP;
+             
      }
 
      public void handleIPLocation(final IPLocation location)
      {
+    	 
     	 Log.e("location msg","handle");
-         // send a message to display the location
-    	 txtMsg.setText(location.toString());
-    	  Log.e("yarab",location.toString());
-//         _handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, location));
+         // send a message to display the location 
+      _handler.sendMessage(_handler.obtainMessage(LOCATION_MESSAGE, location.toString()));
+      
      }
 
      public void handleWPSLocation(final WPSLocation location)
