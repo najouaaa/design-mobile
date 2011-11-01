@@ -8,8 +8,7 @@
     <string name="freqLabel">Frequency:</string>
     <string name="typeLabel">Type:</string>
     <string-array name="typeArray">
-        <item>GPS</item>
-        <item>AGPS</item>
-        <item>Skyhook</item>
+        <item>gps</item>
+        <item>skyhook</item>
     </string-array>
 </resources>

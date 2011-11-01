@@ -13,7 +13,7 @@ import android.widget.Spinner;
 public class editSettingsActivity extends Activity {
 
 	Spinner spinner;
-	String serviceType = "gps";
+	String serviceType = "skyhook";
 	int minDist = 50;
 	int freq = 10000;
 
@@ -40,6 +40,7 @@ public class editSettingsActivity extends Activity {
 		Intent i = new Intent(getBaseContext(), Location.class);
 		i.putExtra("minDist", minDist);
 		i.putExtra("freq", freq);
+		i.putExtra("type", serviceType);
 		startActivity(i);
 	}
 
