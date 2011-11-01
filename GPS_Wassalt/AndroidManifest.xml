@@ -13,18 +13,17 @@
         android:label="@string/app_name" >
         <uses-library android:name="com.google.android.maps" />
         
-        <activity
-            android:label="@string/app_name"
-            android:name=".LabActivity" >
-            <intent-filter >
+        <activity android:label="@string/app_name" android:name="LabActivity" >
+        </activity>
+        <service android:name="MyGpsService"></service>
+        <activity android:name="HelloMapViewActivity"></activity>
+        <activity android:name="GPS_WassaltActivity"></activity>
+        <activity android:name="GPS_UIActivity">
+        	<intent-filter >
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="MyGpsService">
-		</service>
-        <activity android:name="HelloMapViewActivity"></activity>
     </application>
 
 </manifest>
