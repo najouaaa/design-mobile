@@ -122,25 +122,6 @@ public class SkyhookIPLocator extends Activity {
 						}).show();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.settings:
-			Intent i = new Intent(SkyhookIPLocator.this, SettingsActivity.class);
-			startActivity(i);
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
-
 	private void startGpsService() {
 		myGpsService = new Intent(this, MyGpsService.class);
 		startService(myGpsService);
