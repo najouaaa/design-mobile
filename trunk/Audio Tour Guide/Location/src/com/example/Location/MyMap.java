@@ -13,11 +13,11 @@ import com.google.android.maps.OverlayItem;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class MyMap extends MapActivity {
 	
-	LinearLayout linearLayout;
+	RelativeLayout linearLayout;
 	MapView mapView;
 	List<Overlay> mapOverlays;
 	Drawable drawable;
