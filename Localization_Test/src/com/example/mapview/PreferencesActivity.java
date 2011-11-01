@@ -35,8 +35,6 @@ public class PreferencesActivity extends PreferenceActivity {
             }
             return false;
         } 
-        
-   
 
     
 }
