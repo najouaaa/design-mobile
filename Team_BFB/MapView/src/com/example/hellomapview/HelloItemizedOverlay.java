@@ -16,6 +16,10 @@ public class HelloItemizedOverlay extends ItemizedOverlay {
 		super(boundCenterBottom(arg0));
 		// TODO Auto-generated constructor stub
 	}
+	public void set(int i,OverlayItem item){
+		
+		mOverlays.set(i,item);
+	}
 	public void addOverlay(OverlayItem overlay) {
 	    mOverlays.add(overlay);
 	    populate();
