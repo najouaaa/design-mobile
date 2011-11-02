@@ -2,12 +2,7 @@ package com.example.hellomapview;
 
 import java.util.List;
 
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.hardware.GeomagneticField;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
@@ -23,25 +18,29 @@ public class HelloMapView extends MapActivity {
 	List<Overlay> mapOverlays;
 	Drawable drawable;
 	HelloItemizedOverlay itemizedOverlay;
-	//GeoPoint point = new GeoPoint(19240000,-99120000);
-	//GeoPoint point = new GeoPoint(0,0);
-	GeoPoint point = new GeoPoint((int)GPSTestActivity.latitude,(int)GPSTestActivity.longitude);
-	//GeoPoint point=new GeomagneticField(gdLatitudeDeg, gdLongitudeDeg, altitudeMeters, timeMillis)
-	OverlayItem overlayitem = new OverlayItem(point, "", "");
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view1);
+        setContentView(R.layout.mapview);
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);
         mapOverlays = mapView.getOverlays();
         drawable = this.getResources().getDrawable(R.drawable.androidmarker);
         itemizedOverlay = new HelloItemizedOverlay(drawable);
-        itemizedOverlay.addOverlay(overlayitem);
+       // itemizedOverlay.addOverlay(overlayitem);
         mapOverlays.add(itemizedOverlay);
-  
-       
-        
+        showLocation();
+    }
+    public void showLocation()
+    {
+    	//GeoPoint point = new GeoPoint(19240000,-99120000);
+    	int longi = (int)(getIntent().getDoubleExtra("longtitude", 0))*1000000;
+        int lat = (int)(getIntent().getDoubleExtra("latitude", 0))*1000000;
+        //GeoPoint point = new GeoPoint(lat, longi);
+        GeoPoint point = new GeoPoint((int)GPSTestActivity.lat,(int) GPSTestActivity.lon);
+    	OverlayItem overlayitem = new OverlayItem(point, "", "");
+    	itemizedOverlay.addOverlay(overlayitem);
     }
 
 	@Override
