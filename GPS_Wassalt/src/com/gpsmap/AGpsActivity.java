@@ -1,6 +1,11 @@
 package com.gpsmap;
 
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -80,11 +85,22 @@ public class AGpsActivity extends Activity {
 			double longitude = callerIntent.getDoubleExtra("longitude",-1);
 			Log.e ("MAIN>>>",  Double.toString(latitude));
 			Log.e ("MAIN>>>",  Double.toString(longitude));
-			//String msg = " lat: " + Double.toString(latitude) + " "
-			//+ " lon: " + Double.toString(longitude);
-			//txtMsg.append("\n" + msg);
-			//testing the SMS-texting feature
-			//texting(msg);
+			FileOutputStream fOut;
+			try {
+				fOut = openFileOutput("logLoc.txt", MODE_WORLD_READABLE);
+			
+			    OutputStreamWriter osw = new OutputStreamWriter(fOut);  
+			    String logged="GPS,"+AGpsService.frequency +","+AGpsService.distance+","+Double.toString(latitude)+","+Double.toString(longitude)+","+System.currentTimeMillis(); 
+			    osw.append(logged ); 
+			    osw.flush(); 
+			    osw.close();
+			} catch (FileNotFoundException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
 			
 			Intent i = new Intent(getBaseContext(), HelloMapViewActivity.class);
 			i.putExtra("long",longitude);

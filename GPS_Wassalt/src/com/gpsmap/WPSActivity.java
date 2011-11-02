@@ -1,23 +1,16 @@
 package com.gpsmap;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -44,7 +37,7 @@ public class WPSActivity extends Activity {
 	WPSLocationCallback wpsCallback;
 	// ------------------------------------------------------------------------------
 	// boolean usingEmulator = true; // generate code for the EMULATOR
-	boolean usingEmulator = false;
+	boolean usingEmulator = true;
 	Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -62,6 +55,8 @@ public class WPSActivity extends Activity {
 				result += "using IP,";
 				result += "Latitude: " + latitude + "\n" + "Longitude: "
 						+ longitude + "\n";
+				
+				
 			} else {
 
 				wpsLocation = (WPSLocation) msg.obj;
@@ -74,6 +69,24 @@ public class WPSActivity extends Activity {
 						+ wpsLocation.getStreetAddress() + "\n"
 						+ "Accuracy (ft): " + wpsLocation.getHPE() + "\n";
 			}
+
+			FileOutputStream fOut;
+			try {
+				fOut = openFileOutput("logLoc.txt", MODE_WORLD_READABLE);
+			
+			    OutputStreamWriter osw = new OutputStreamWriter(fOut);  
+			    String logged="WPS,"+Double.toString(latitude)+","+Double.toString(longitude)+","+System.currentTimeMillis(); 
+			    osw.append(logged ); 
+			    osw.flush(); 
+			    osw.close();
+			} catch (FileNotFoundException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			
 			// show results in the text box
 			txtBox.setText(result);
 			// get rid of the circular progress bar
@@ -86,13 +99,13 @@ public class WPSActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	//	setContentView(R.layout.WPS);
+		setContentView(R.layout.wps);
 		Toast t = Toast.makeText(getApplicationContext(), "Here 0", 0);
 		t.show();
 		dialog = new ProgressDialog(this);
 		dialog.setMessage("Wait\ngetting your current location...");
 		dialog.show();
-	//	txtBox = (EditText) findViewById(R.id.txtBox);
+		txtBox = (EditText) findViewById(R.id.txtBox);
 		WPS wps = new WPS(getApplicationContext());
 		WPSAuthentication auth = new WPSAuthentication("loai.ghoraba", "GUC");
 		if (usingEmulator) {

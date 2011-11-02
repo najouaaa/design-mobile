@@ -70,16 +70,16 @@ public class GPS_UIActivity extends Activity implements View.OnClickListener{
                         }
                           else
                           {
-                         //             if(typ.equals("AGPS"))
-                         //             {
+                                     if(typ.equals("AGPS"))
+                                      {
                                                intent = new Intent().setClass(GPS_UIActivity.this, AGpsActivity.class);
                                         }
-                         /*              else
-                         *              {
-                         *                      intent = new Intent().setClass(GPS_UIActivity.this, [Skyhook Class]);
-                         *              }
-                         * }
-                         */
+                                       else
+                                      {
+                                               intent = new Intent().setClass(GPS_UIActivity.this, WPSActivity.class);
+                                       }
+                          }
+                         
                         startActivity(intent);
                         type.setEnabled(false);
                         frequency.setEnabled(false);
