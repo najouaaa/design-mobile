@@ -24,15 +24,14 @@ public class GPSTestActivity extends Activity {
 	ComponentName service;
 	BroadcastReceiver receiver;
 	String GPS_FILTER = "guc.action.GPS_LOCATION";
-	public static double latitude;
-	public static double longitude;
-	
+	static double lon;
+	static double lat;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        txtMsg = (TextView) findViewById(R.id.txtMSg); 
+        txtMsg = (TextView) findViewById(R.id.txtMsg); 
         // initiate the service
         intentMyService = new Intent(this, MyGpsService.class);        
         service = startService(intentMyService);   
@@ -75,15 +74,21 @@ public class GPSTestActivity extends Activity {
 	private class MyMainLocalReceiver extends BroadcastReceiver {
 		@Override
 		public void onReceive(Context localContext, Intent callerIntent) {
-		 latitude = callerIntent.getDoubleExtra("latitude",-1);
-		 longitude = callerIntent.getDoubleExtra("longitude",-1);
+		double latitude = callerIntent.getDoubleExtra("latitude",-1);
+		double longitude = callerIntent.getDoubleExtra("longitude",-1);
 		Log.e ("MAIN>>>",  Double.toString(latitude));
 		Log.e ("MAIN>>>",  Double.toString(longitude));
-		String msg = " lat: " + Double.toString(latitude) + " "
-		+ " lon: " + Double.toString(longitude);
-		txtMsg.append("\n" + msg);
+		//String msg = " lat: " + Double.toString(latitude) + " "
+		//+ " lon: " + Double.toString(longitude);
+		//txtMsg.append("\n" + msg);
 		//testing the SMS-texting feature
-		texting(msg);
+		//texting(msg);
+		Intent i = new Intent(getBaseContext(), HelloMapView.class);
+		lon=longitude;
+		lat=latitude;
+		i.putExtra("long",longitude);
+		i.putExtra("lat",latitude);
+		startActivity(i);
 		}
 		
 			
