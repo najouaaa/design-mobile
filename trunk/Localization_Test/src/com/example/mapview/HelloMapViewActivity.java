@@ -70,11 +70,11 @@ public class HelloMapViewActivity extends MapActivity {
 	/**
 	 * Indicates location result - 1st coordinate
 	 */
-	double latitude;
+	int latitude;
 	/**
 	 * Indicates location result - 2nd coordinate
 	 */
-	double longitude;
+	int longitude;
 
 	
     @Override
@@ -247,8 +247,14 @@ public class HelloMapViewActivity extends MapActivity {
 		    	//testing the SMS-texting feature
 		    	Log.e("7as7as receiver", msg);
 		    	
-		    	stopService(intentMyService);
-		    	unregisterReceiver(receiver);
+		    	addLocation(new GeoPoint(latitude, longitude));
+		    	mapOverlays.add(itemizedOverlay);
+		    	writeDataToFile();
+		    	
+		    	Log.e("7as7as receiver22222", msg);
+		    	
+//		    	stopService(intentMyService);
+//		    	unregisterReceiver(receiver);
                 		    	
 		    	}};
 			        		
@@ -373,27 +379,27 @@ public class HelloMapViewActivity extends MapActivity {
 
 			// #7as7as Reading!
 			
-			try {
-				fis = openFileInput(filename);
-				scanner = new Scanner(fis);
-				filecontent = fis.read();
-				String text = "";
-				
-				// Empty the textbox
-				Log.e("7as7as Reading: ", "Now ");
-				
-				while (scanner.hasNextLine())
-					text += scanner.nextLine();
-
-				
-				Log.e("7as7as Reading: ", text);
-				fis.close();
-				scanner.close();
-			
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				fis = openFileInput(filename);
+//				scanner = new Scanner(fis);
+//				filecontent = fis.read();
+//				String text = "";
+//				
+//				// Empty the textbox
+//				Log.e("7as7as Reading: ", "Now ");
+//				
+//				while (scanner.hasNextLine())
+//					text += scanner.nextLine();
+//
+//				
+//				Log.e("7as7as Reading: ", text);
+//				fis.close();
+//				scanner.close();
+//			
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			
 			
 	 }// end writeDataToFile
